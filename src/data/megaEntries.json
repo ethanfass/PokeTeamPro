@@ -1,0 +1,572 @@
+[
+  {
+    "pokemonName": "venusaur-mega",
+    "displayName": "Mega Venusaur",
+    "generation": 1,
+    "speciesId": 3
+  },
+  {
+    "pokemonName": "charizard-mega-x",
+    "displayName": "Mega Charizard X",
+    "generation": 1,
+    "speciesId": 6
+  },
+  {
+    "pokemonName": "charizard-mega-y",
+    "displayName": "Mega Charizard Y",
+    "generation": 1,
+    "speciesId": 6
+  },
+  {
+    "pokemonName": "blastoise-mega",
+    "displayName": "Mega Blastoise",
+    "generation": 1,
+    "speciesId": 9
+  },
+  {
+    "pokemonName": "beedrill-mega",
+    "displayName": "Mega Beedrill",
+    "generation": 1,
+    "speciesId": 15
+  },
+  {
+    "pokemonName": "pidgeot-mega",
+    "displayName": "Mega Pidgeot",
+    "generation": 1,
+    "speciesId": 18
+  },
+  {
+    "pokemonName": "raichu-mega-x",
+    "displayName": "Mega Raichu X",
+    "generation": 1,
+    "speciesId": 26
+  },
+  {
+    "pokemonName": "raichu-mega-y",
+    "displayName": "Mega Raichu Y",
+    "generation": 1,
+    "speciesId": 26
+  },
+  {
+    "pokemonName": "clefable-mega",
+    "displayName": "Mega Clefable",
+    "generation": 1,
+    "speciesId": 36
+  },
+  {
+    "pokemonName": "alakazam-mega",
+    "displayName": "Mega Alakazam",
+    "generation": 1,
+    "speciesId": 65
+  },
+  {
+    "pokemonName": "victreebel-mega",
+    "displayName": "Mega Victreebel",
+    "generation": 1,
+    "speciesId": 71
+  },
+  {
+    "pokemonName": "slowbro-mega",
+    "displayName": "Mega Slowbro",
+    "generation": 1,
+    "speciesId": 80
+  },
+  {
+    "pokemonName": "gengar-mega",
+    "displayName": "Mega Gengar",
+    "generation": 1,
+    "speciesId": 94
+  },
+  {
+    "pokemonName": "kangaskhan-mega",
+    "displayName": "Mega Kangaskhan",
+    "generation": 1,
+    "speciesId": 115
+  },
+  {
+    "pokemonName": "starmie-mega",
+    "displayName": "Mega Starmie",
+    "generation": 1,
+    "speciesId": 121
+  },
+  {
+    "pokemonName": "pinsir-mega",
+    "displayName": "Mega Pinsir",
+    "generation": 1,
+    "speciesId": 127
+  },
+  {
+    "pokemonName": "gyarados-mega",
+    "displayName": "Mega Gyarados",
+    "generation": 1,
+    "speciesId": 130
+  },
+  {
+    "pokemonName": "aerodactyl-mega",
+    "displayName": "Mega Aerodactyl",
+    "generation": 1,
+    "speciesId": 142
+  },
+  {
+    "pokemonName": "dragonite-mega",
+    "displayName": "Mega Dragonite",
+    "generation": 1,
+    "speciesId": 149
+  },
+  {
+    "pokemonName": "mewtwo-mega-x",
+    "displayName": "Mega Mewtwo X",
+    "generation": 1,
+    "speciesId": 150
+  },
+  {
+    "pokemonName": "mewtwo-mega-y",
+    "displayName": "Mega Mewtwo Y",
+    "generation": 1,
+    "speciesId": 150
+  },
+  {
+    "pokemonName": "meganium-mega",
+    "displayName": "Mega Meganium",
+    "generation": 2,
+    "speciesId": 154
+  },
+  {
+    "pokemonName": "feraligatr-mega",
+    "displayName": "Mega Feraligatr",
+    "generation": 2,
+    "speciesId": 160
+  },
+  {
+    "pokemonName": "ampharos-mega",
+    "displayName": "Mega Ampharos",
+    "generation": 2,
+    "speciesId": 181
+  },
+  {
+    "pokemonName": "steelix-mega",
+    "displayName": "Mega Steelix",
+    "generation": 2,
+    "speciesId": 208
+  },
+  {
+    "pokemonName": "scizor-mega",
+    "displayName": "Mega Scizor",
+    "generation": 2,
+    "speciesId": 212
+  },
+  {
+    "pokemonName": "heracross-mega",
+    "displayName": "Mega Heracross",
+    "generation": 2,
+    "speciesId": 214
+  },
+  {
+    "pokemonName": "skarmory-mega",
+    "displayName": "Mega Skarmory",
+    "generation": 2,
+    "speciesId": 227
+  },
+  {
+    "pokemonName": "houndoom-mega",
+    "displayName": "Mega Houndoom",
+    "generation": 2,
+    "speciesId": 229
+  },
+  {
+    "pokemonName": "tyranitar-mega",
+    "displayName": "Mega Tyranitar",
+    "generation": 2,
+    "speciesId": 248
+  },
+  {
+    "pokemonName": "sceptile-mega",
+    "displayName": "Mega Sceptile",
+    "generation": 3,
+    "speciesId": 254
+  },
+  {
+    "pokemonName": "blaziken-mega",
+    "displayName": "Mega Blaziken",
+    "generation": 3,
+    "speciesId": 257
+  },
+  {
+    "pokemonName": "swampert-mega",
+    "displayName": "Mega Swampert",
+    "generation": 3,
+    "speciesId": 260
+  },
+  {
+    "pokemonName": "gardevoir-mega",
+    "displayName": "Mega Gardevoir",
+    "generation": 3,
+    "speciesId": 282
+  },
+  {
+    "pokemonName": "sableye-mega",
+    "displayName": "Mega Sableye",
+    "generation": 3,
+    "speciesId": 302
+  },
+  {
+    "pokemonName": "mawile-mega",
+    "displayName": "Mega Mawile",
+    "generation": 3,
+    "speciesId": 303
+  },
+  {
+    "pokemonName": "aggron-mega",
+    "displayName": "Mega Aggron",
+    "generation": 3,
+    "speciesId": 306
+  },
+  {
+    "pokemonName": "medicham-mega",
+    "displayName": "Mega Medicham",
+    "generation": 3,
+    "speciesId": 308
+  },
+  {
+    "pokemonName": "manectric-mega",
+    "displayName": "Mega Manectric",
+    "generation": 3,
+    "speciesId": 310
+  },
+  {
+    "pokemonName": "sharpedo-mega",
+    "displayName": "Mega Sharpedo",
+    "generation": 3,
+    "speciesId": 319
+  },
+  {
+    "pokemonName": "camerupt-mega",
+    "displayName": "Mega Camerupt",
+    "generation": 3,
+    "speciesId": 323
+  },
+  {
+    "pokemonName": "altaria-mega",
+    "displayName": "Mega Altaria",
+    "generation": 3,
+    "speciesId": 334
+  },
+  {
+    "pokemonName": "banette-mega",
+    "displayName": "Mega Banette",
+    "generation": 3,
+    "speciesId": 354
+  },
+  {
+    "pokemonName": "chimecho-mega",
+    "displayName": "Mega Chimecho",
+    "generation": 3,
+    "speciesId": 358
+  },
+  {
+    "pokemonName": "absol-mega",
+    "displayName": "Mega Absol",
+    "generation": 3,
+    "speciesId": 359
+  },
+  {
+    "pokemonName": "absol-mega-z",
+    "displayName": "Mega Absol Z",
+    "generation": 3,
+    "speciesId": 359
+  },
+  {
+    "pokemonName": "glalie-mega",
+    "displayName": "Mega Glalie",
+    "generation": 3,
+    "speciesId": 362
+  },
+  {
+    "pokemonName": "salamence-mega",
+    "displayName": "Mega Salamence",
+    "generation": 3,
+    "speciesId": 373
+  },
+  {
+    "pokemonName": "metagross-mega",
+    "displayName": "Mega Metagross",
+    "generation": 3,
+    "speciesId": 376
+  },
+  {
+    "pokemonName": "latias-mega",
+    "displayName": "Mega Latias",
+    "generation": 3,
+    "speciesId": 380
+  },
+  {
+    "pokemonName": "latios-mega",
+    "displayName": "Mega Latios",
+    "generation": 3,
+    "speciesId": 381
+  },
+  {
+    "pokemonName": "rayquaza-mega",
+    "displayName": "Mega Rayquaza",
+    "generation": 3,
+    "speciesId": 384
+  },
+  {
+    "pokemonName": "staraptor-mega",
+    "displayName": "Mega Staraptor",
+    "generation": 4,
+    "speciesId": 398
+  },
+  {
+    "pokemonName": "lopunny-mega",
+    "displayName": "Mega Lopunny",
+    "generation": 4,
+    "speciesId": 428
+  },
+  {
+    "pokemonName": "garchomp-mega",
+    "displayName": "Mega Garchomp",
+    "generation": 4,
+    "speciesId": 445
+  },
+  {
+    "pokemonName": "garchomp-mega-z",
+    "displayName": "Mega Garchomp Z",
+    "generation": 4,
+    "speciesId": 445
+  },
+  {
+    "pokemonName": "lucario-mega",
+    "displayName": "Mega Lucario",
+    "generation": 4,
+    "speciesId": 448
+  },
+  {
+    "pokemonName": "lucario-mega-z",
+    "displayName": "Mega Lucario Z",
+    "generation": 4,
+    "speciesId": 448
+  },
+  {
+    "pokemonName": "abomasnow-mega",
+    "displayName": "Mega Abomasnow",
+    "generation": 4,
+    "speciesId": 460
+  },
+  {
+    "pokemonName": "gallade-mega",
+    "displayName": "Mega Gallade",
+    "generation": 4,
+    "speciesId": 475
+  },
+  {
+    "pokemonName": "froslass-mega",
+    "displayName": "Mega Froslass",
+    "generation": 4,
+    "speciesId": 478
+  },
+  {
+    "pokemonName": "heatran-mega",
+    "displayName": "Mega Heatran",
+    "generation": 4,
+    "speciesId": 485
+  },
+  {
+    "pokemonName": "darkrai-mega",
+    "displayName": "Mega Darkrai",
+    "generation": 4,
+    "speciesId": 491
+  },
+  {
+    "pokemonName": "emboar-mega",
+    "displayName": "Mega Emboar",
+    "generation": 5,
+    "speciesId": 500
+  },
+  {
+    "pokemonName": "excadrill-mega",
+    "displayName": "Mega Excadrill",
+    "generation": 5,
+    "speciesId": 530
+  },
+  {
+    "pokemonName": "audino-mega",
+    "displayName": "Mega Audino",
+    "generation": 5,
+    "speciesId": 531
+  },
+  {
+    "pokemonName": "scolipede-mega",
+    "displayName": "Mega Scolipede",
+    "generation": 5,
+    "speciesId": 545
+  },
+  {
+    "pokemonName": "scrafty-mega",
+    "displayName": "Mega Scrafty",
+    "generation": 5,
+    "speciesId": 560
+  },
+  {
+    "pokemonName": "eelektross-mega",
+    "displayName": "Mega Eelektross",
+    "generation": 5,
+    "speciesId": 604
+  },
+  {
+    "pokemonName": "chandelure-mega",
+    "displayName": "Mega Chandelure",
+    "generation": 5,
+    "speciesId": 609
+  },
+  {
+    "pokemonName": "golurk-mega",
+    "displayName": "Mega Golurk",
+    "generation": 5,
+    "speciesId": 623
+  },
+  {
+    "pokemonName": "chesnaught-mega",
+    "displayName": "Mega Chesnaught",
+    "generation": 6,
+    "speciesId": 652
+  },
+  {
+    "pokemonName": "delphox-mega",
+    "displayName": "Mega Delphox",
+    "generation": 6,
+    "speciesId": 655
+  },
+  {
+    "pokemonName": "greninja-mega",
+    "displayName": "Mega Greninja",
+    "generation": 6,
+    "speciesId": 658
+  },
+  {
+    "pokemonName": "pyroar-mega",
+    "displayName": "Mega Pyroar",
+    "generation": 6,
+    "speciesId": 668
+  },
+  {
+    "pokemonName": "floette-mega",
+    "displayName": "Mega Floette Eternal Flower",
+    "generation": 6,
+    "speciesId": 670
+  },
+  {
+    "pokemonName": "meowstic-mega",
+    "displayName": "Mega Meowstic",
+    "generation": 6,
+    "speciesId": 678
+  },
+  {
+    "pokemonName": "malamar-mega",
+    "displayName": "Mega Malamar",
+    "generation": 6,
+    "speciesId": 687
+  },
+  {
+    "pokemonName": "barbaracle-mega",
+    "displayName": "Mega Barbaracle",
+    "generation": 6,
+    "speciesId": 689
+  },
+  {
+    "pokemonName": "dragalge-mega",
+    "displayName": "Mega Dragalge",
+    "generation": 6,
+    "speciesId": 691
+  },
+  {
+    "pokemonName": "hawlucha-mega",
+    "displayName": "Mega Hawlucha",
+    "generation": 6,
+    "speciesId": 701
+  },
+  {
+    "pokemonName": "zygarde-mega",
+    "displayName": "Mega Zygarde",
+    "generation": 6,
+    "speciesId": 718
+  },
+  {
+    "pokemonName": "diancie-mega",
+    "displayName": "Mega Diancie",
+    "generation": 6,
+    "speciesId": 719
+  },
+  {
+    "pokemonName": "crabominable-mega",
+    "displayName": "Mega Crabominable",
+    "generation": 7,
+    "speciesId": 740
+  },
+  {
+    "pokemonName": "golisopod-mega",
+    "displayName": "Mega Golisopod",
+    "generation": 7,
+    "speciesId": 768
+  },
+  {
+    "pokemonName": "drampa-mega",
+    "displayName": "Mega Drampa",
+    "generation": 7,
+    "speciesId": 780
+  },
+  {
+    "pokemonName": "magearna-mega",
+    "displayName": "Mega Magearna",
+    "generation": 7,
+    "speciesId": 801
+  },
+  {
+    "pokemonName": "zeraora-mega",
+    "displayName": "Mega Zeraora",
+    "generation": 7,
+    "speciesId": 807
+  },
+  {
+    "pokemonName": "falinks-mega",
+    "displayName": "Mega Falinks",
+    "generation": 8,
+    "speciesId": 870
+  },
+  {
+    "pokemonName": "scovillain-mega",
+    "displayName": "Mega Scovillain",
+    "generation": 9,
+    "speciesId": 952
+  },
+  {
+    "pokemonName": "glimmora-mega",
+    "displayName": "Mega Glimmora",
+    "generation": 9,
+    "speciesId": 970
+  },
+  {
+    "pokemonName": "tatsugiri-curly-mega",
+    "displayName": "Mega Tatsugiri Curly Form",
+    "generation": 9,
+    "speciesId": 978
+  },
+  {
+    "pokemonName": "tatsugiri-droopy-mega",
+    "displayName": "Mega Tatsugiri Droopy Form",
+    "generation": 9,
+    "speciesId": 978
+  },
+  {
+    "pokemonName": "tatsugiri-stretchy-mega",
+    "displayName": "Mega Tatsugiri Stretchy Form",
+    "generation": 9,
+    "speciesId": 978
+  },
+  {
+    "pokemonName": "baxcalibur-mega",
+    "displayName": "Mega Baxcalibur",
+    "generation": 9,
+    "speciesId": 998
+  }
+]
