@@ -6150,7 +6150,7 @@ function App() {
             )}
             <h1>
               <span className="page-title-main">
-                PokéTeamPro
+                PartyDex
               </span>
               <br />
               <span className="page-subtitle">(Pokemon{' '}Team{' '}Builder)</span>
