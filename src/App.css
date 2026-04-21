@@ -2794,6 +2794,18 @@ h1 {
   color: var(--theme-muted);
 }
 
+.saved-teams-storage-note {
+  max-width: 760px;
+  margin: 10px auto 0;
+  padding: 10px 12px;
+  border: 1px solid rgba(108, 128, 161, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--theme-muted);
+  font-size: 0.68rem;
+  line-height: 1.55;
+}
+
 .item-database-controls {
   display: flex;
   align-items: center;
@@ -3736,6 +3748,417 @@ h1 {
   color: var(--theme-muted);
 }
 
+.team-matchup-panel {
+  gap: 14px;
+}
+
+.team-matchup-coverage-toggle {
+  margin-bottom: 0;
+}
+
+.team-matchup-side-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.team-matchup-side-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(108, 128, 161, 0.16);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(243, 248, 255, 0.98) 100%);
+}
+
+.team-matchup-side-title {
+  color: var(--theme-heading);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.team-matchup-label {
+  color: var(--theme-muted);
+  font-size: 0.53rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.team-matchup-select {
+  font-size: 0.62rem;
+  min-height: 42px;
+}
+
+.team-matchup-source-note {
+  margin-top: 4px;
+  color: var(--theme-muted);
+  font-size: 0.58rem;
+  line-height: 1.45;
+}
+
+.team-matchup-custom-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.team-matchup-custom-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.team-matchup-custom-count {
+  color: var(--theme-heading);
+  font-size: 0.58rem;
+}
+
+.team-matchup-custom-actions {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.team-matchup-custom-button {
+  min-height: 30px;
+  padding: 6px 9px;
+  border: 1px solid rgba(90, 132, 255, 0.22);
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(235, 243, 255, 0.98) 100%);
+  color: #2f63d8;
+  font-family: 'PKMN RBYGSC', monospace;
+  font-size: 0.46rem;
+  cursor: pointer;
+}
+
+.team-matchup-custom-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.team-matchup-custom-helper {
+  color: var(--theme-muted);
+  font-size: 0.52rem;
+  line-height: 1.45;
+}
+
+.team-matchup-custom-slots {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.team-matchup-custom-slot {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 122px;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 8px;
+  border: 1px dashed rgba(108, 128, 161, 0.28);
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(250, 253, 255, 0.98) 0%, rgba(239, 245, 255, 0.98) 100%);
+  cursor: pointer;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.team-matchup-custom-slot:hover,
+.team-matchup-custom-slot:focus-visible {
+  border-color: rgba(90, 132, 255, 0.44);
+  box-shadow: 0 10px 18px rgba(90, 132, 255, 0.12);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.team-matchup-custom-slot.filled {
+  border-style: solid;
+  border-color: rgba(90, 132, 255, 0.22);
+}
+
+.team-matchup-custom-slot.target {
+  border-color: #2f63d8;
+  box-shadow: 0 0 0 3px rgba(90, 132, 255, 0.14), 0 10px 18px rgba(90, 132, 255, 0.12);
+}
+
+.team-matchup-custom-slot.move-target {
+  border-color: #2e9b45;
+  box-shadow: 0 0 0 3px rgba(46, 155, 69, 0.14), 0 10px 18px rgba(46, 155, 69, 0.12);
+}
+
+.team-matchup-custom-remove {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: inline-grid;
+  width: 22px;
+  height: 22px;
+  place-items: center;
+  border: 1px solid rgba(214, 69, 69, 0.22);
+  border-radius: 50%;
+  background: rgba(255, 244, 244, 0.96);
+  color: #b53a3a;
+  font-family: 'PKMN RBYGSC', monospace;
+  font-size: 0.48rem;
+  cursor: pointer;
+}
+
+.team-matchup-custom-image,
+.team-matchup-custom-image-stack {
+  width: 58px;
+  height: 54px;
+  object-fit: contain;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.team-matchup-custom-name {
+  width: 100%;
+  color: var(--theme-heading);
+  font-size: 0.58rem;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: capitalize;
+  overflow-wrap: anywhere;
+}
+
+.team-matchup-custom-types {
+  display: flex;
+  min-width: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+}
+
+.team-matchup-custom-type {
+  font-size: 0.4rem;
+}
+
+.team-matchup-custom-moves {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.team-matchup-custom-move {
+  display: inline-flex;
+  min-width: 0;
+  min-height: 24px;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 5px;
+  border: 1px solid rgba(108, 128, 161, 0.16);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.82);
+  font-family: 'PKMN RBYGSC', monospace;
+  font-size: 0.4rem;
+  line-height: 1.1;
+  cursor: pointer;
+}
+
+.team-matchup-custom-move.empty {
+  border-style: dashed;
+  color: #7e8ca2;
+}
+
+.team-matchup-custom-move span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.team-matchup-custom-empty {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #8390a3;
+  font-size: 0.54rem;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.team-matchup-warning {
+  margin-top: 4px;
+}
+
+.team-matchup-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.team-matchup-summary-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(108, 128, 161, 0.16);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(243, 248, 255, 0.98) 100%);
+}
+
+.team-matchup-summary-title {
+  color: var(--theme-heading);
+  font-size: 0.7rem;
+  line-height: 1.35;
+}
+
+.team-matchup-summary-copy {
+  color: var(--theme-muted);
+  font-size: 0.55rem;
+  line-height: 1.4;
+}
+
+.team-matchup-summary-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.team-matchup-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(108, 128, 161, 0.18);
+  font-size: 0.48rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #31405c;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.team-matchup-pill.favorable {
+  border-color: rgba(52, 166, 88, 0.34);
+  background: rgba(221, 248, 229, 0.8);
+  color: #2e8a4c;
+}
+
+.team-matchup-pill.neutral {
+  border-color: rgba(90, 132, 255, 0.24);
+  background: rgba(227, 238, 255, 0.82);
+  color: #2f63d8;
+}
+
+.team-matchup-pill.resisted {
+  border-color: rgba(234, 132, 47, 0.3);
+  background: rgba(255, 238, 220, 0.82);
+  color: #a55a16;
+}
+
+.team-matchup-pill.immune {
+  border-color: rgba(133, 109, 204, 0.32);
+  background: rgba(237, 229, 255, 0.82);
+  color: #654fa8;
+}
+
+.team-matchup-pill.unknown {
+  border-color: rgba(108, 128, 161, 0.26);
+  background: rgba(236, 241, 249, 0.88);
+  color: #51637f;
+}
+
+.team-matchup-matrix-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.team-matchup-matrix-title {
+  color: var(--theme-heading);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.team-matchup-table-shell {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 14px;
+  border: 1px solid rgba(108, 128, 161, 0.14);
+  background: rgba(255, 255, 255, 0.84);
+}
+
+.team-matchup-table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+}
+
+.team-matchup-table th,
+.team-matchup-table td {
+  padding: 8px;
+  border-bottom: 1px solid rgba(108, 128, 161, 0.12);
+  border-right: 1px solid rgba(108, 128, 161, 0.12);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.team-matchup-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, #f9fbff 0%, #edf3ff 100%);
+  color: #30405e;
+  font-size: 0.54rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.team-matchup-table tbody th {
+  min-width: 138px;
+  background: linear-gradient(180deg, #f9fbff 0%, #edf3ff 100%);
+  color: #30405e;
+  font-size: 0.56rem;
+  text-align: left;
+}
+
+.team-matchup-cell {
+  min-width: 86px;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.team-matchup-cell.favorable {
+  background: rgba(221, 248, 229, 0.72);
+}
+
+.team-matchup-cell.neutral {
+  background: rgba(227, 238, 255, 0.7);
+}
+
+.team-matchup-cell.resisted {
+  background: rgba(255, 238, 220, 0.74);
+}
+
+.team-matchup-cell.immune {
+  background: rgba(237, 229, 255, 0.72);
+}
+
+.team-matchup-cell.unknown {
+  background: rgba(236, 241, 249, 0.8);
+}
+
+.team-matchup-cell-value {
+  color: #22304a;
+  font-size: 0.64rem;
+  line-height: 1.2;
+}
+
+.team-matchup-cell-type {
+  margin-top: 4px;
+  font-size: 0.42rem;
+  padding: 3px 5px;
+}
+
 .comparison-slot-picker {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -4426,6 +4849,7 @@ h1 {
 .app-shell.dark-ui .browse-filter-label,
 .app-shell.dark-ui .browse-empty-state,
 .app-shell.dark-ui .saved-teams-helper,
+.app-shell.dark-ui .saved-teams-storage-note,
 .app-shell.dark-ui .saved-teams-empty-state,
 .app-shell.dark-ui .saved-team-meta,
 .app-shell.dark-ui .saved-team-date,
@@ -4668,6 +5092,11 @@ h1 {
 .app-shell.dark-ui .slot-move-chip.empty {
   border-style: dashed;
   color: #8796ab;
+}
+
+.app-shell.dark-ui .saved-teams-storage-note {
+  border-color: rgba(124, 146, 184, 0.16);
+  background: rgba(28, 39, 57, 0.72);
 }
 
 .app-shell.dark-ui .slot-build-title,
@@ -5040,6 +5469,75 @@ h1 {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
 }
 
+.app-shell.dark-ui .team-matchup-side-card,
+.app-shell.dark-ui .team-matchup-summary-card,
+.app-shell.dark-ui .team-matchup-table-shell,
+.app-shell.dark-ui .team-matchup-custom-slot {
+  border-color: rgba(124, 146, 184, 0.2);
+  background: linear-gradient(180deg, rgba(28, 39, 57, 0.96) 0%, rgba(21, 30, 44, 0.96) 100%);
+}
+
+.app-shell.dark-ui .team-matchup-side-title,
+.app-shell.dark-ui .team-matchup-summary-title,
+.app-shell.dark-ui .team-matchup-matrix-title,
+.app-shell.dark-ui .team-matchup-cell-value,
+.app-shell.dark-ui .team-matchup-custom-count,
+.app-shell.dark-ui .team-matchup-custom-name,
+.app-shell.dark-ui .team-matchup-table thead th,
+.app-shell.dark-ui .team-matchup-table tbody th {
+  color: #d6dfec;
+}
+
+.app-shell.dark-ui .team-matchup-label,
+.app-shell.dark-ui .team-matchup-source-note,
+.app-shell.dark-ui .team-matchup-custom-helper,
+.app-shell.dark-ui .team-matchup-custom-empty,
+.app-shell.dark-ui .team-matchup-summary-copy {
+  color: #9fb0c8;
+}
+
+.app-shell.dark-ui .team-matchup-custom-button,
+.app-shell.dark-ui .team-matchup-custom-move {
+  border-color: rgba(124, 146, 184, 0.18);
+  background: linear-gradient(180deg, rgba(31, 43, 61, 0.96) 0%, rgba(24, 35, 52, 0.96) 100%);
+  color: #8fb1ff;
+}
+
+.app-shell.dark-ui .team-matchup-custom-remove {
+  border-color: rgba(255, 134, 134, 0.22);
+  background: rgba(87, 34, 38, 0.88);
+  color: #ffb1b1;
+}
+
+.app-shell.dark-ui .team-matchup-table thead th,
+.app-shell.dark-ui .team-matchup-table tbody th {
+  background: linear-gradient(180deg, #182334 0%, #131d2b 100%);
+}
+
+.app-shell.dark-ui .team-matchup-cell {
+  background: rgba(19, 28, 41, 0.9);
+}
+
+.app-shell.dark-ui .team-matchup-cell.favorable {
+  background: rgba(46, 138, 76, 0.2);
+}
+
+.app-shell.dark-ui .team-matchup-cell.neutral {
+  background: rgba(47, 99, 216, 0.2);
+}
+
+.app-shell.dark-ui .team-matchup-cell.resisted {
+  background: rgba(165, 90, 22, 0.24);
+}
+
+.app-shell.dark-ui .team-matchup-cell.immune {
+  background: rgba(101, 79, 168, 0.24);
+}
+
+.app-shell.dark-ui .team-matchup-cell.unknown {
+  background: rgba(50, 65, 90, 0.26);
+}
+
 .app-shell.dark-ui .move-card-name,
 .app-shell.dark-ui .move-card-pp,
 .app-shell.dark-ui .move-hover-stat-value,
@@ -5101,6 +5599,17 @@ h1 {
 
 .app-shell.dark-ui .comparison-card.compare-red .comparison-stat-flag {
   background: rgba(214, 107, 107, 0.18);
+}
+
+@media (max-width: 980px) {
+  .team-matchup-side-grid,
+  .team-matchup-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-matchup-table {
+    min-width: 560px;
+  }
 }
 
 .app-shell.dark-ui .pokemon-hover-stat-label,

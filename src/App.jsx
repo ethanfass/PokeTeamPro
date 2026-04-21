@@ -106,6 +106,39 @@ const ANALYZER_COVERAGE_SOURCES = [
   }
 ]
 
+const TEAM_MATCHUP_PLAYER_SOURCE_OPTIONS = [
+  {
+    key: 'builder',
+    label: 'Current Team Builder'
+  },
+  {
+    key: 'preset',
+    label: 'Gym / Elite Four Preset'
+  }
+]
+
+const TEAM_MATCHUP_ENEMY_SOURCE_OPTIONS = [
+  {
+    key: 'preset',
+    label: 'Gym / Elite Four Preset'
+  },
+  {
+    key: 'custom',
+    label: 'Custom Matchup Team'
+  }
+]
+
+const TEAM_MATCHUP_PRESET_OPTIONS = [
+  {
+    key: 'gym',
+    label: 'Gym Leader Team'
+  },
+  {
+    key: 'elite-four',
+    label: 'Elite Four Team'
+  }
+]
+
 const MOVE_GENERATION_TO_NUMBER = {
   'generation-i': 1,
   'generation-ii': 2,
@@ -381,11 +414,52 @@ const specialGameSections = [
     games: [{ name: 'Legends Arceus', color: '#8f6d41', region: 'Hisui', supportsAvailability: true }]
   },
   {
-    label: 'Lumiose City',
+    label: 'Kalos',
     orderAfterGen: 9,
-    games: [{ name: 'Legends Z-A', color: '#47a86f', region: 'Lumiose City', supportsAvailability: true }]
+    games: [{ name: 'Legends Z-A', color: '#47a86f', region: 'Kalos', supportsAvailability: true }]
   }
 ]
+
+const GAME_REGION_BY_KEY = {
+  red: 'Kanto',
+  blue: 'Kanto',
+  yellow: 'Kanto',
+  'fire-red': 'Kanto',
+  'leaf-green': 'Kanto',
+  'let-s-go-pikachu': 'Kanto',
+  'let-s-go-eevee': 'Kanto',
+  gold: 'Johto',
+  silver: 'Johto',
+  crystal: 'Johto',
+  'heart-gold': 'Johto',
+  'soul-silver': 'Johto',
+  ruby: 'Hoenn',
+  sapphire: 'Hoenn',
+  emerald: 'Hoenn',
+  'omega-ruby': 'Hoenn',
+  'alpha-sapphire': 'Hoenn',
+  diamond: 'Sinnoh',
+  pearl: 'Sinnoh',
+  platinum: 'Sinnoh',
+  'brilliant-diamond': 'Sinnoh',
+  'shining-pearl': 'Sinnoh',
+  black: 'Unova',
+  white: 'Unova',
+  'black-2': 'Unova',
+  'white-2': 'Unova',
+  x: 'Kalos',
+  y: 'Kalos',
+  'legends-z-a': 'Kalos',
+  sun: 'Alola',
+  moon: 'Alola',
+  'ultra-sun': 'Alola',
+  'ultra-moon': 'Alola',
+  sword: 'Galar',
+  shield: 'Galar',
+  'legends-arceus': 'Hisui',
+  scarlet: 'Paldea',
+  violet: 'Paldea'
+}
 
 const gameStyleLookup = Object.fromEntries(
   [
@@ -421,12 +495,11 @@ const regionGameDetails = {
   Hoenn: buildRegionGames(['Sapphire', 'Ruby', 'Emerald', 'Alpha Sapphire', 'Omega Ruby']),
   Sinnoh: buildRegionGames(['Diamond', 'Pearl', 'Platinum', 'Brilliant Diamond', 'Shining Pearl']),
   Unova: buildRegionGames(['White', 'Black', 'White 2', 'Black 2']),
-  Kalos: buildRegionGames(['X', 'Y']),
+  Kalos: buildRegionGames(['X', 'Y', 'Legends Z-A']),
   Alola: buildRegionGames(['Sun', 'Moon', 'Ultra Sun', 'Ultra Moon']),
   Galar: buildRegionGames(['Sword', 'Shield']),
   Hisui: buildRegionGames(['Legends Arceus']),
-  Paldea: buildRegionGames(['Scarlet', 'Violet']),
-  'Lumiose City': buildRegionGames(['Legends Z-A'])
+  Paldea: buildRegionGames(['Scarlet', 'Violet'])
 }
 
 const regionalVariantEntries = [
@@ -2645,6 +2718,17 @@ function App() {
   const [showEliteFour, setShowEliteFour] = useState(false)
   const [showSavedTeams, setShowSavedTeams] = useState(false)
   const [analyzerCoverageSource, setAnalyzerCoverageSource] = useState('moves')
+  const [teamMatchupCoverageSource, setTeamMatchupCoverageSource] = useState('moves')
+  const [playerMatchupSource, setPlayerMatchupSource] = useState('builder')
+  const [enemyMatchupSource, setEnemyMatchupSource] = useState('preset')
+  const [customMatchupTeam, setCustomMatchupTeam] = useState(() => Array(TEAM_SLOT_COUNT).fill(null))
+  const [customMatchupTargetSlot, setCustomMatchupTargetSlot] = useState(null)
+  const [playerPresetType, setPlayerPresetType] = useState('gym')
+  const [enemyPresetType, setEnemyPresetType] = useState('gym')
+  const [playerPresetGameKey, setPlayerPresetGameKey] = useState(gymLeaderGames[0]?.key || '')
+  const [enemyPresetGameKey, setEnemyPresetGameKey] = useState(gymLeaderGames[0]?.key || '')
+  const [playerPresetTrainerKey, setPlayerPresetTrainerKey] = useState('')
+  const [enemyPresetTrainerKey, setEnemyPresetTrainerKey] = useState('')
   const [selectedDesignTemplate, setSelectedDesignTemplate] = useState('classic')
   const [showShinySprites, setShowShinySprites] = useState(false)
   const [includeZaMegas, setIncludeZaMegas] = useState(false)
@@ -3383,6 +3467,14 @@ function App() {
   }, [showMoveDatabase])
 
   useEffect(() => {
+    if (showComparison && enemyMatchupSource === 'custom') {
+      return
+    }
+
+    setCustomMatchupTargetSlot(null)
+  }, [showComparison, enemyMatchupSource])
+
+  useEffect(() => {
     if (!shiftPressed || !hoveredItemCard?.item) {
       return undefined
     }
@@ -3877,6 +3969,131 @@ function App() {
     }
 
     clearMoveFromTeamSlot(slotIndex, moveIndex)
+  }
+
+  const assignPokemonToCustomMatchupSlot = (slotIndex, pokemon) => {
+    if (!pokemon || slotIndex < 0 || slotIndex >= TEAM_SLOT_COUNT) {
+      return
+    }
+
+    setCustomMatchupTeam((current) => {
+      const nextTeam = cloneTeamSlots(current)
+      nextTeam[slotIndex] = createTeamPokemonEntry(pokemon)
+      return nextTeam
+    })
+    setCustomMatchupTargetSlot(null)
+    setEnemyMatchupSource('custom')
+  }
+
+  const removeCustomMatchupPokemon = (slotIndex) => {
+    setCustomMatchupTeam((current) => {
+      const nextTeam = cloneTeamSlots(current)
+      nextTeam[slotIndex] = null
+      return nextTeam
+    })
+    setCustomMatchupTargetSlot((current) => (current === slotIndex ? null : current))
+  }
+
+  const clearCustomMatchupTeam = () => {
+    setCustomMatchupTeam(Array(TEAM_SLOT_COUNT).fill(null))
+    setCustomMatchupTargetSlot(null)
+  }
+
+  const assignMoveToCustomMatchupSlot = (slotIndex, move, preferredMoveIndex = null) => {
+    const pokemon = customMatchupTeam[slotIndex]
+
+    if (!pokemon || !move) {
+      return
+    }
+
+    const currentMoves = normalizeAssignedMoves(pokemon.moves)
+    const duplicateMoveIndex = currentMoves.findIndex((entry) => entry?.apiName === move.apiName)
+
+    if (duplicateMoveIndex !== -1 && duplicateMoveIndex !== preferredMoveIndex) {
+      alert(`${pokemon.name} already has ${move.name}.`)
+      setMoveTargetSelection(null)
+      return
+    }
+
+    const targetMoveIndex = preferredMoveIndex ?? currentMoves.findIndex((entry) => !entry)
+
+    if (targetMoveIndex === -1) {
+      alert(`${pokemon.name} already has four moves. Click one of its move slots to replace or clear it.`)
+      return
+    }
+
+    setCustomMatchupTeam((current) => {
+      const nextTeam = cloneTeamSlots(current)
+      const nextMoves = normalizeAssignedMoves(nextTeam[slotIndex].moves)
+      nextMoves[targetMoveIndex] = createAssignedMoveEntry(move)
+      nextTeam[slotIndex] = {
+        ...nextTeam[slotIndex],
+        moves: nextMoves
+      }
+      return nextTeam
+    })
+    setMoveTargetSelection(null)
+  }
+
+  const clearMoveFromCustomMatchupSlot = (slotIndex, moveIndex) => {
+    const pokemon = customMatchupTeam[slotIndex]
+
+    if (!pokemon) {
+      return
+    }
+
+    setCustomMatchupTeam((current) => {
+      const nextTeam = cloneTeamSlots(current)
+      const nextMoves = normalizeAssignedMoves(nextTeam[slotIndex].moves)
+      nextMoves[moveIndex] = null
+      nextTeam[slotIndex] = {
+        ...nextTeam[slotIndex],
+        moves: nextMoves
+      }
+      return nextTeam
+    })
+  }
+
+  const handleCustomMatchupSlotClick = (pokemon, slotIndex) => {
+    if (pokemon && moveTargetSelection) {
+      assignMoveToCustomMatchupSlot(slotIndex, moveTargetSelection)
+      return
+    }
+
+    setCustomMatchupTargetSlot((current) => (current === slotIndex ? null : slotIndex))
+    setEnemyMatchupSource('custom')
+  }
+
+  const handleCustomMatchupMoveSlotClick = (event, slotIndex, moveIndex) => {
+    const pokemon = customMatchupTeam[slotIndex]
+
+    if (!pokemon) {
+      return
+    }
+
+    event.stopPropagation()
+
+    if (moveTargetSelection) {
+      assignMoveToCustomMatchupSlot(slotIndex, moveTargetSelection, moveIndex)
+      return
+    }
+
+    clearMoveFromCustomMatchupSlot(slotIndex, moveIndex)
+  }
+
+  const handleMovePickerTeamControlClick = (event, pokemon) => {
+    if (!moveTargetSelection || !pokemon) {
+      return false
+    }
+
+    event.stopPropagation()
+    const slotIndex = team.findIndex((entry) => entry && getPokemonCacheKey(entry) === getPokemonCacheKey(pokemon))
+
+    if (slotIndex !== -1) {
+      assignMoveToTeamSlot(slotIndex, moveTargetSelection)
+    }
+
+    return true
   }
 
   const assignPokemonToComparisonSlot = (slotIndex, pokemon) => {
@@ -4503,6 +4720,8 @@ function App() {
     team.some((entry) => entry && getPokemonCacheKey(entry) === getPokemonCacheKey(pokemon))
 
   const teamCount = team.filter(p => p !== null).length
+  const customMatchupTeamCount = customMatchupTeam.filter(Boolean).length
+  const customMatchupActiveTeam = customMatchupTeam.filter(Boolean)
   const canUndoTeamChange = teamHistoryPast.length > 0
   const canRedoTeamChange = teamHistoryFuture.length > 0
   const hasFeaturePanel = !showGamePicker && (
@@ -4784,14 +5003,14 @@ function App() {
     const generationSection = {
       key: `gen-${gen.gen}`,
       label: `Gen ${gen.gen}`,
-      games: generationGameDetails[gen.gen].games.map((game) => ({
-        ...game,
-        key: toGameKey(game.name),
-        gen: gen.gen,
-        region: gen.name,
-        systemClass: gen.gen <= 5 ? 'pixel' : '3d',
-        supportsAvailability: true
-      }))
+        games: generationGameDetails[gen.gen].games.map((game) => ({
+          ...game,
+          key: toGameKey(game.name),
+          gen: gen.gen,
+          region: GAME_REGION_BY_KEY[toGameKey(game.name)] || gen.name,
+          systemClass: gen.gen <= 5 ? 'pixel' : '3d',
+          supportsAvailability: true
+        }))
     }
 
     const attachedSpecialSections = specialGameSections
@@ -4803,7 +5022,7 @@ function App() {
           ...game,
           key: toGameKey(game.name),
           gen: gen.gen,
-          region: game.region || section.label,
+          region: GAME_REGION_BY_KEY[toGameKey(game.name)] || game.region || section.label,
           systemClass: '3d'
         }))
       }))
@@ -4918,6 +5137,389 @@ function App() {
 
     return `${selectedGameDetails?.name || 'This game'} does not have Elite Four data here yet, so the panel is showing ${activeEliteFourGame.name} instead.`
   })()
+
+  const getTeamMatchupPresetDataset = (presetType) => (
+    presetType === 'gym'
+      ? {
+          games: dropdownGymLeaderGames,
+          gameLookup: gymLeaderGameLookup,
+          entriesByGame: gymLeadersByGame,
+          rankFallback: 'Gym #'
+        }
+      : {
+          games: dropdownEliteFourGames,
+          gameLookup: eliteFourGameLookup,
+          entriesByGame: eliteFourByGame,
+          rankFallback: 'Entry #'
+        }
+  )
+
+  const buildTeamMatchupTrainerLabel = (entry, presetType, entryIndex) => {
+    const rankLabel = entry.rankLabel || (presetType === 'gym' ? `Gym #${entry.number}` : `Entry #${entry.number || entryIndex + 1}`)
+    const subtitle = entry.subtitle || entry.gymName || ''
+    return subtitle ? `${rankLabel} - ${entry.leader} (${subtitle})` : `${rankLabel} - ${entry.leader}`
+  }
+
+  const buildPresetTrainerOptions = (presetType, gameKey) => {
+    const dataset = getTeamMatchupPresetDataset(presetType)
+    const activeGame = dataset.gameLookup[gameKey] || dataset.games[0] || null
+    const entries = activeGame ? dataset.entriesByGame[activeGame.key] || [] : []
+
+    return {
+      dataset,
+      activeGame,
+      options: entries.map((entry, index) => ({
+        key: `${presetType}-${activeGame?.key || 'game'}-${entry.number || index + 1}-${entry.leader}-${index}`,
+        entry,
+        label: buildTeamMatchupTrainerLabel(entry, presetType, index)
+      }))
+    }
+  }
+
+  const playerPresetSelection = buildPresetTrainerOptions(playerPresetType, playerPresetGameKey)
+  const enemyPresetSelection = buildPresetTrainerOptions(enemyPresetType, enemyPresetGameKey)
+  const activePlayerTrainer =
+    playerPresetSelection.options.find((option) => option.key === playerPresetTrainerKey) ||
+    playerPresetSelection.options[0] ||
+    null
+  const activeEnemyTrainer =
+    enemyPresetSelection.options.find((option) => option.key === enemyPresetTrainerKey) ||
+    enemyPresetSelection.options[0] ||
+    null
+
+  const createTeamMatchupMemberFromBuilderPokemon = (pokemon, index) => {
+    const displayPokemon = getPokemonDisplayVariant(pokemon, showShinySprites)
+    const assignedMoves = getAssignedMovesForPokemon(pokemon)
+
+    return {
+      key: `${getPokemonCacheKey(pokemon)}-${index}`,
+      name: formatDisplayName(pokemon.name),
+      apiName: pokemon.apiName,
+      level: TEAM_BUILD_LEVEL,
+      image: displayPokemon?.image || pokemon.image || null,
+      types: pokemon.types || [],
+      moveTypes: [...new Set(assignedMoves.map((move) => move.type).filter(Boolean))],
+      moveNames: assignedMoves.map((move) => move.name)
+    }
+  }
+
+  const createTeamMatchupMemberFromPreset = (member, index) => {
+    const knownPokemon =
+      browsePokemonByApiName[member.apiName] ||
+      allKnownPokemonByApiName?.[member.apiName] ||
+      null
+    const displayPokemon = knownPokemon ? getPokemonDisplayVariant(knownPokemon, showShinySprites) : null
+    const moveTypes = [...new Set(
+      (member.moves || [])
+        .map((move) => moveLookupByNormalizedName[normalizeDisplayName(move)]?.type || null)
+        .filter(Boolean)
+    )]
+
+    return {
+      key: `${member.apiName || member.name}-${member.level || 0}-${index}`,
+      name: member.name,
+      apiName: member.apiName,
+      level: member.level || null,
+      image: displayPokemon?.image || knownPokemon?.image || null,
+      types: knownPokemon?.types || [],
+      moveTypes,
+      moveNames: member.moves || []
+    }
+  }
+
+  const playerMatchupTeam = playerMatchupSource === 'preset'
+    ? (activePlayerTrainer?.entry?.team || []).map(createTeamMatchupMemberFromPreset)
+    : activeTeam.map(createTeamMatchupMemberFromBuilderPokemon)
+  const enemyMatchupTeam = enemyMatchupSource === 'custom'
+    ? customMatchupActiveTeam.map(createTeamMatchupMemberFromBuilderPokemon)
+    : enemyMatchupSource === 'builder'
+      ? activeTeam.map(createTeamMatchupMemberFromBuilderPokemon)
+      : (activeEnemyTrainer?.entry?.team || []).map(createTeamMatchupMemberFromPreset)
+  const playerMatchupTeamLabel = playerMatchupSource === 'builder'
+    ? 'Current Team Builder'
+    : activePlayerTrainer
+      ? `${activePlayerTrainer.entry.leader} (${playerPresetSelection.activeGame?.name || 'Preset'})`
+      : 'No trainer selected'
+  const enemyMatchupTeamLabel = enemyMatchupSource === 'custom'
+    ? 'Custom Matchup Team'
+    : enemyMatchupSource === 'builder'
+      ? 'Current Team Builder'
+      : activeEnemyTrainer
+        ? `${activeEnemyTrainer.entry.leader} (${enemyPresetSelection.activeGame?.name || 'Preset'})`
+        : 'No trainer selected'
+
+  const resolveMatchupAttackTypes = (member, coverageSource) => (
+    coverageSource === 'pokemon-types'
+      ? (member.types || [])
+      : (member.moveTypes || [])
+  )
+
+  const evaluateTeamMatchupCell = (attacker, defender, coverageSource) => {
+    if (!attacker || !defender || !Array.isArray(defender.types) || defender.types.length === 0) {
+      return {
+        multiplier: null,
+        bestAttackType: null,
+        bucket: 'unknown'
+      }
+    }
+
+    const attackTypes = resolveMatchupAttackTypes(attacker, coverageSource)
+    if (!Array.isArray(attackTypes) || attackTypes.length === 0) {
+      return {
+        multiplier: null,
+        bestAttackType: null,
+        bucket: 'unknown'
+      }
+    }
+
+    let bestMultiplier = -1
+    let bestAttackType = null
+
+    attackTypes.forEach((attackType) => {
+      const multiplier = getCombinedTypeMultiplier(attackType, defender.types)
+      if (multiplier > bestMultiplier) {
+        bestMultiplier = multiplier
+        bestAttackType = attackType
+      }
+    })
+
+    if (bestMultiplier < 0) {
+      return {
+        multiplier: null,
+        bestAttackType: null,
+        bucket: 'unknown'
+      }
+    }
+
+    if (bestMultiplier === 0) {
+      return {
+        multiplier: 0,
+        bestAttackType,
+        bucket: 'immune'
+      }
+    }
+
+    if (bestMultiplier >= 2) {
+      return {
+        multiplier: bestMultiplier,
+        bestAttackType,
+        bucket: 'favorable'
+      }
+    }
+
+    if (bestMultiplier < 1) {
+      return {
+        multiplier: bestMultiplier,
+        bestAttackType,
+        bucket: 'resisted'
+      }
+    }
+
+    return {
+      multiplier: bestMultiplier,
+      bestAttackType,
+      bucket: 'neutral'
+    }
+  }
+
+  const buildTeamMatchupMatrix = (attackers, defenders, coverageSource) =>
+    attackers.map((attacker) => defenders.map((defender) => evaluateTeamMatchupCell(attacker, defender, coverageSource)))
+
+  const summarizeTeamPressure = (attackers, defenders, matrix) => {
+    const emptySummary = {
+      favorable: 0,
+      neutral: 0,
+      resisted: 0,
+      immune: 0,
+      unknown: 0
+    }
+
+    if (!attackers.length || !defenders.length || matrix.length === 0) {
+      return emptySummary
+    }
+
+    const summary = { ...emptySummary }
+
+    defenders.forEach((_, defenderIndex) => {
+      let bestCell = null
+
+      matrix.forEach((row) => {
+        const candidate = row[defenderIndex]
+        if (!candidate || candidate.multiplier === null) {
+          return
+        }
+
+        if (!bestCell || candidate.multiplier > bestCell.multiplier) {
+          bestCell = candidate
+        }
+      })
+
+      if (!bestCell) {
+        summary.unknown += 1
+        return
+      }
+
+      summary[bestCell.bucket] += 1
+    })
+
+    return summary
+  }
+
+  const formatMatchupMultiplier = (multiplier) => {
+    if (typeof multiplier !== 'number') {
+      return '--'
+    }
+
+    if (Number.isInteger(multiplier)) {
+      return `${multiplier}x`
+    }
+
+    return `${multiplier.toFixed(2).replace(/\.00$/, '').replace(/0$/, '')}x`
+  }
+
+  const teamMatchupForwardMatrix = buildTeamMatchupMatrix(
+    playerMatchupTeam,
+    enemyMatchupTeam,
+    teamMatchupCoverageSource
+  )
+  const teamMatchupReverseMatrix = buildTeamMatchupMatrix(
+    enemyMatchupTeam,
+    playerMatchupTeam,
+    teamMatchupCoverageSource
+  )
+  const teamMatchupForwardSummary = summarizeTeamPressure(playerMatchupTeam, enemyMatchupTeam, teamMatchupForwardMatrix)
+  const teamMatchupReverseSummary = summarizeTeamPressure(enemyMatchupTeam, playerMatchupTeam, teamMatchupReverseMatrix)
+  const teamMatchupNeedsPlayerTrainer = playerMatchupSource === 'preset' && !activePlayerTrainer
+  const teamMatchupNeedsEnemyTrainer = enemyMatchupSource === 'preset' && !activeEnemyTrainer
+  const teamMatchupNeedsCustomTeam = enemyMatchupSource === 'custom' && customMatchupActiveTeam.length === 0
+  const teamMatchupCanRender =
+    playerMatchupTeam.length > 0 &&
+    enemyMatchupTeam.length > 0 &&
+    !teamMatchupNeedsPlayerTrainer &&
+    !teamMatchupNeedsEnemyTrainer &&
+    !teamMatchupNeedsCustomTeam
+  const teamMatchupCoverageHelperText = teamMatchupCoverageSource === 'pokemon-types'
+    ? 'Matchups are scored using each Pokemon\'s own typing as the attacking profile.'
+    : 'Matchups are scored using assigned moves for builder/custom teams and listed moves for preset teams.'
+
+  const renderCustomMatchupTeamBuilder = () => (
+    <div className="team-matchup-custom-panel">
+      <div className="team-matchup-custom-toolbar">
+        <div className="team-matchup-custom-count">
+          {customMatchupTeamCount}/{TEAM_SLOT_COUNT} Pokemon
+        </div>
+        <div className="team-matchup-custom-actions">
+          <button
+            type="button"
+            className="team-matchup-custom-button"
+            onClick={() => {
+              const nextSlot = customMatchupTeam.findIndex((slot) => slot === null)
+              setCustomMatchupTargetSlot(nextSlot === -1 ? 0 : nextSlot)
+              setEnemyMatchupSource('custom')
+            }}
+          >
+            {customMatchupTargetSlot === null ? 'Pick Slot' : `Slot ${customMatchupTargetSlot + 1} Ready`}
+          </button>
+          <button
+            type="button"
+            className="team-matchup-custom-button"
+            onClick={clearCustomMatchupTeam}
+            disabled={customMatchupTeamCount === 0}
+          >
+            Clear
+          </button>
+        </div>
+      </div>
+
+      <div className="team-matchup-custom-helper">
+        {customMatchupTargetSlot !== null
+          ? `Click a Pokemon in the browser to place it in custom slot ${customMatchupTargetSlot + 1}.`
+          : 'Pick a custom slot, then click Pokemon in the browser. Use Move Database cards to fill move slots.'}
+      </div>
+
+      <div className="team-matchup-custom-slots">
+        {customMatchupTeam.map((pokemon, index) => {
+          const displayPokemon = pokemon ? getPokemonDisplayVariant(pokemon, showShinySprites) : null
+          const slotMoves = normalizeAssignedMoves(pokemon?.moves)
+
+          return (
+            <div
+              key={`custom-matchup-slot-${index}`}
+              className={`team-matchup-custom-slot ${pokemon ? 'filled' : ''} ${customMatchupTargetSlot === index ? 'target' : ''} ${moveTargetSelection && pokemon ? 'move-target' : ''}`}
+              role="button"
+              tabIndex={0}
+              onClick={() => handleCustomMatchupSlotClick(pokemon, index)}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                  event.preventDefault()
+                  handleCustomMatchupSlotClick(pokemon, index)
+                }
+              }}
+              onMouseEnter={(event) => pokemon && handlePokemonHoverStart(pokemon, event)}
+              onMouseLeave={handlePokemonHoverEnd}
+            >
+              {pokemon ? (
+                <>
+                  <button
+                    type="button"
+                    className="team-matchup-custom-remove"
+                    onClick={(event) => {
+                      event.stopPropagation()
+                      removeCustomMatchupPokemon(index)
+                    }}
+                    title={`Remove ${formatDisplayName(pokemon.name)} from the custom matchup team.`}
+                  >
+                    x
+                  </button>
+                  {renderPokemonSprite(displayPokemon || pokemon, {
+                    baseClassName: 'team-matchup-custom-image',
+                    stackClassName: 'team-matchup-custom-image-stack',
+                    animateOnHover: isPokemonCurrentlyHovered(pokemon),
+                    alt: pokemon.name
+                  })}
+                  <div className="team-matchup-custom-name">{formatDisplayName(pokemon.name)}</div>
+                  <div className="team-matchup-custom-types">
+                    {(pokemon.types || []).map((type) => (
+                      <span key={`custom-${index}-${type}`} className={`type-badge team-matchup-custom-type type-${type}`}>
+                        {formatDisplayName(type)}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="team-matchup-custom-moves">
+                    {slotMoves.map((move, moveIndex) => (
+                      <button
+                        key={`custom-${pokemon.apiName}-move-${moveIndex}`}
+                        type="button"
+                        className={`team-matchup-custom-move ${move ? 'filled' : 'empty'}`}
+                        onClick={(event) => handleCustomMatchupMoveSlotClick(event, index, moveIndex)}
+                        title={
+                          moveTargetSelection
+                            ? `Assign ${moveTargetSelection.name} to custom move slot ${moveIndex + 1}`
+                            : move
+                              ? `Remove ${move.name}`
+                              : `Custom Move Slot ${moveIndex + 1}`
+                        }
+                      >
+                        <span className={move ? `move-type-text move-type-text-${move.type}` : ''}>
+                          {move?.name || 'Move'}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <div className="team-matchup-custom-empty">
+                  <span>Slot {index + 1}</span>
+                  <span>Pick Pokemon</span>
+                </div>
+              )}
+            </div>
+          )
+        })}
+      </div>
+    </div>
+  )
+
   const selectedGameRule = selectedGameDetails ? gameAvailabilityRules[selectedGameDetails.key] || {} : null
   const selectedGameDlcConfig = selectedGameDetails ? gameDlcSectionConfigs[selectedGameDetails.key] || null : null
   const chartMoveRuleGameKey = selectedGame === 'champions' ? 'all' : selectedGame
@@ -5601,6 +6203,11 @@ function App() {
       return
     }
 
+    if (showComparison && customMatchupTargetSlot !== null) {
+      assignPokemonToCustomMatchupSlot(customMatchupTargetSlot, pokemon)
+      return
+    }
+
     if (isInTeam(pokemon.id)) {
       removePokemonById(pokemon.id)
       return
@@ -6027,7 +6634,7 @@ function App() {
                         checked={showComparison}
                         onChange={(event) => setShowComparison(event.target.checked)}
                       />
-                      <span>Comparer</span>
+                      <span>Team Matchup</span>
                     </label>
                     <label className="feature-toggle">
                       <input
@@ -6302,7 +6909,7 @@ function App() {
                           </div>
                         </div>
                         <span className="game-picker-card-copy">
-                          {`Gen ${game.gen}`}
+                          {game.region || GAME_REGION_BY_KEY[game.key] || `Gen ${game.gen}`}
                         </span>
                       </button>
                     )
@@ -6492,6 +7099,11 @@ function App() {
             <div className="pokemon-helper">
               Hold Shift while hovering over the blue region name or generation text to see their games, or any Pokemon to see their details.
             </div>
+            {customMatchupTargetSlot !== null && (
+              <div className="pokemon-helper pokemon-helper-active">
+                Custom matchup slot {customMatchupTargetSlot + 1} is ready. Click a Pokemon below to place it there.
+              </div>
+            )}
             {isSpecificGameSelected && selectedGameDetails && (
               <div className="pokemon-helper pokemon-helper-active">
                 Showing Pokemon from {selectedGameDetails.name}:
@@ -7098,178 +7710,274 @@ function App() {
             )}
 
             {showComparison && (
-              <aside className="comparison-panel">
-                <div className="comparison-title">Pokemon Comparer</div>
+              <aside className="comparison-panel team-matchup-panel">
+                <div className="comparison-title">Team Matchup</div>
                 <div className="comparison-helper">
-                  {comparisonTargetSlot !== null
-                    ? `Pick a Pokemon for the ${comparisonSlotLabels[comparisonTargetSlot].toLowerCase()}.`
-                    : 'Click a blue or red slot, then pick a Pokemon from the page.'}
+                  Compare a full team against another team. You can use your current builder lineup or load a Gym Leader/Elite Four preset.
                 </div>
 
-                <div className="comparison-slot-picker">
-                  {comparisonSlotLabels.map((label, index) => (
+                <div className="analyzer-coverage-toggle team-matchup-coverage-toggle">
+                  {ANALYZER_COVERAGE_SOURCES.map((source) => (
                     <button
-                      key={label}
+                      key={`matchup-source-${source.key}`}
                       type="button"
-                      className={`comparison-target comparison-target-${index === 0 ? 'blue' : 'red'} ${comparisonSlots[index] ? 'filled' : ''} ${comparisonTargetSlot === index ? 'armed' : ''}`}
-                      onClick={() => handleComparisonSlotClick(index)}
+                      className={`analyzer-coverage-option ${teamMatchupCoverageSource === source.key ? 'active' : ''}`}
+                      aria-pressed={teamMatchupCoverageSource === source.key}
+                      onClick={() => setTeamMatchupCoverageSource(source.key)}
                     >
-                      <span className="comparison-target-label">{label}</span>
-                      <span className="comparison-target-name">
-                        {comparisonSlots[index] ? formatDisplayName(comparisonSlots[index].name) : 'Choose Pokemon'}
-                      </span>
+                      {source.label}
                     </button>
                   ))}
                 </div>
+                <div className="analyzer-coverage-helper">{teamMatchupCoverageHelperText}</div>
 
-                <div className="comparison-grid">
-                  {comparisonSlots.map((pokemon, index) => {
-                    const panelInfo = comparisonPokemonInfo[index]
-                    const panelAbilities = panelInfo?.abilities || []
-                    const panelStats = getPokemonStatRows(pokemon)
-                    const panelBst = getPokemonBst(pokemon)
-                    const panelNameKey = pokemon ? normalizeDisplayName(pokemon.name) : ''
-                    const slotColorClass = index === 0 ? 'compare-blue' : 'compare-red'
-                    const otherIndex = index === 0 ? 1 : 0
-                    const otherBst = comparisonBsts[otherIndex]
-                    const hasComparableBst = typeof otherBst === 'number' && comparisonSlots[otherIndex]
-                    const isWinningBst = hasComparableBst && panelBst > otherBst
+                <div className="team-matchup-side-grid">
+                  <div className="team-matchup-side-card">
+                    <div className="team-matchup-side-title">Your Side</div>
+                    <label className="team-matchup-label" htmlFor="team-matchup-player-source">Team Source</label>
+                    <select
+                      id="team-matchup-player-source"
+                      className="feature-select team-matchup-select"
+                      value={playerMatchupSource}
+                      onChange={(event) => setPlayerMatchupSource(event.target.value)}
+                    >
+                      {TEAM_MATCHUP_PLAYER_SOURCE_OPTIONS.map((source) => (
+                        <option key={`player-source-${source.key}`} value={source.key}>
+                          {source.label}
+                        </option>
+                      ))}
+                    </select>
 
-                    return (
-                      <div key={`compare-slot-${index}`} className={`comparison-card ${slotColorClass}`}>
-                        {!pokemon ? (
-                          <div className="comparison-empty-state">
-                            <div className="comparison-empty-title">{comparisonSlotLabels[index]}</div>
-                            <div className="comparison-empty-copy">
-                              Arm this slot, then click any Pokemon card or team slot to compare it here.
-                            </div>
-                          </div>
-                        ) : (
-                          <>
-                            <div className="pokemon-hover-header">
-                              <img
-                                src={pokemon.image}
-                                alt={pokemon.name}
-                                className={getPokemonSpriteClassName(pokemon, 'pokemon-hover-image')}
-                              />
-                              <div className="pokemon-hover-heading">
-                                <div className="pokemon-hover-name">{formatDisplayName(pokemon.name)}</div>
-                                <div className="pokemon-hover-types">
-                                  {pokemon.types.map((type) => (
-                                    <span key={type} className={`type-badge type-${type}`}>
-                                      {formatDisplayName(type)}
-                                    </span>
-                                  ))}
-                                </div>
-                              </div>
-                            </div>
+                    {playerMatchupSource === 'preset' ? (
+                      <>
+                        <label className="team-matchup-label" htmlFor="team-matchup-player-preset-type">Preset Type</label>
+                        <select
+                          id="team-matchup-player-preset-type"
+                          className="feature-select team-matchup-select"
+                          value={playerPresetType}
+                          onChange={(event) => setPlayerPresetType(event.target.value)}
+                        >
+                          {TEAM_MATCHUP_PRESET_OPTIONS.map((preset) => (
+                            <option key={`player-preset-${preset.key}`} value={preset.key}>
+                              {preset.label}
+                            </option>
+                          ))}
+                        </select>
 
-                            <div className="pokemon-hover-section">
-                              <div className="pokemon-hover-section-title">Base Stats</div>
-                              <div className="pokemon-hover-stats-chart comparison-stats-chart">
-                                <div className="pokemon-hover-stat-scale">
-                                  <div className="pokemon-hover-stat-scale-spacer"></div>
-                                  <div className="pokemon-hover-stat-scale-spacer"></div>
-                                  <div className="pokemon-hover-stat-scale-bar-label">Base</div>
-                                </div>
-                                {panelStats.map((stat) => {
-                                  const otherValue = comparisonStatMaps[otherIndex]?.[stat.key]
-                                  const isWinningStat = typeof otherValue === 'number' && stat.value > otherValue
+                        <label className="team-matchup-label" htmlFor="team-matchup-player-game">Game</label>
+                        <select
+                          id="team-matchup-player-game"
+                          className="feature-select team-matchup-select"
+                          value={playerPresetSelection.activeGame?.key || ''}
+                          onChange={(event) => setPlayerPresetGameKey(event.target.value)}
+                        >
+                          {playerPresetSelection.dataset.games.map((game) => (
+                            <option key={`player-game-${game.key}`} value={game.key}>
+                              {game.name}
+                            </option>
+                          ))}
+                        </select>
 
+                        <label className="team-matchup-label" htmlFor="team-matchup-player-trainer">Gym/Elite Member</label>
+                        <select
+                          id="team-matchup-player-trainer"
+                          className="feature-select team-matchup-select"
+                          value={activePlayerTrainer?.key || ''}
+                          onChange={(event) => setPlayerPresetTrainerKey(event.target.value)}
+                        >
+                          {playerPresetSelection.options.map((option) => (
+                            <option key={option.key} value={option.key}>
+                              {option.label}
+                            </option>
+                          ))}
+                        </select>
+                      </>
+                    ) : (
+                      <div className="team-matchup-source-note">Uses the Pokemon currently in your Team Builder bar.</div>
+                    )}
+                  </div>
+
+                  <div className="team-matchup-side-card">
+                    <div className="team-matchup-side-title">Enemy Side</div>
+                    <label className="team-matchup-label" htmlFor="team-matchup-enemy-source">Team Source</label>
+                    <select
+                      id="team-matchup-enemy-source"
+                      className="feature-select team-matchup-select"
+                      value={enemyMatchupSource}
+                      onChange={(event) => setEnemyMatchupSource(event.target.value)}
+                    >
+                      {TEAM_MATCHUP_ENEMY_SOURCE_OPTIONS.map((source) => (
+                        <option key={`enemy-source-${source.key}`} value={source.key}>
+                          {source.label}
+                        </option>
+                      ))}
+                    </select>
+
+                    {enemyMatchupSource === 'preset' ? (
+                      <>
+                        <label className="team-matchup-label" htmlFor="team-matchup-enemy-preset-type">Preset Type</label>
+                        <select
+                          id="team-matchup-enemy-preset-type"
+                          className="feature-select team-matchup-select"
+                          value={enemyPresetType}
+                          onChange={(event) => setEnemyPresetType(event.target.value)}
+                        >
+                          {TEAM_MATCHUP_PRESET_OPTIONS.map((preset) => (
+                            <option key={`enemy-preset-${preset.key}`} value={preset.key}>
+                              {preset.label}
+                            </option>
+                          ))}
+                        </select>
+
+                        <label className="team-matchup-label" htmlFor="team-matchup-enemy-game">Game</label>
+                        <select
+                          id="team-matchup-enemy-game"
+                          className="feature-select team-matchup-select"
+                          value={enemyPresetSelection.activeGame?.key || ''}
+                          onChange={(event) => setEnemyPresetGameKey(event.target.value)}
+                        >
+                          {enemyPresetSelection.dataset.games.map((game) => (
+                            <option key={`enemy-game-${game.key}`} value={game.key}>
+                              {game.name}
+                            </option>
+                          ))}
+                        </select>
+
+                        <label className="team-matchup-label" htmlFor="team-matchup-enemy-trainer">Gym/Elite Member</label>
+                        <select
+                          id="team-matchup-enemy-trainer"
+                          className="feature-select team-matchup-select"
+                          value={activeEnemyTrainer?.key || ''}
+                          onChange={(event) => setEnemyPresetTrainerKey(event.target.value)}
+                        >
+                          {enemyPresetSelection.options.map((option) => (
+                            <option key={option.key} value={option.key}>
+                              {option.label}
+                            </option>
+                          ))}
+                        </select>
+                      </>
+                    ) : enemyMatchupSource === 'custom' ? (
+                      renderCustomMatchupTeamBuilder()
+                    ) : (
+                      <div className="team-matchup-source-note">Uses the Pokemon currently in your Team Builder bar.</div>
+                    )}
+                  </div>
+                </div>
+
+                {!teamMatchupCanRender ? (
+                  <div className="analyzer-warning-card team-matchup-warning">
+                    {teamMatchupNeedsCustomTeam
+                      ? 'Build a custom enemy team to run the matchup.'
+                      : teamMatchupNeedsPlayerTrainer || teamMatchupNeedsEnemyTrainer
+                      ? 'Pick both preset trainers to run the matchup.'
+                      : 'Both sides need at least one Pokemon to compute a matchup matrix.'}
+                  </div>
+                ) : (
+                  <>
+                    <div className="team-matchup-summary-grid">
+                      <div className="team-matchup-summary-card">
+                        <div className="team-matchup-summary-title">{playerMatchupTeamLabel}</div>
+                        <div className="team-matchup-summary-copy">Pressure into enemy team</div>
+                        <div className="team-matchup-summary-metrics">
+                          <span className="team-matchup-pill favorable">SE {teamMatchupForwardSummary.favorable}</span>
+                          <span className="team-matchup-pill neutral">Neutral {teamMatchupForwardSummary.neutral}</span>
+                          <span className="team-matchup-pill resisted">Resisted {teamMatchupForwardSummary.resisted}</span>
+                          <span className="team-matchup-pill immune">Immune {teamMatchupForwardSummary.immune}</span>
+                          {teamMatchupForwardSummary.unknown > 0 ? (
+                            <span className="team-matchup-pill unknown">Unknown {teamMatchupForwardSummary.unknown}</span>
+                          ) : null}
+                        </div>
+                      </div>
+
+                      <div className="team-matchup-summary-card">
+                        <div className="team-matchup-summary-title">{enemyMatchupTeamLabel}</div>
+                        <div className="team-matchup-summary-copy">Pressure into your team</div>
+                        <div className="team-matchup-summary-metrics">
+                          <span className="team-matchup-pill favorable">SE {teamMatchupReverseSummary.favorable}</span>
+                          <span className="team-matchup-pill neutral">Neutral {teamMatchupReverseSummary.neutral}</span>
+                          <span className="team-matchup-pill resisted">Resisted {teamMatchupReverseSummary.resisted}</span>
+                          <span className="team-matchup-pill immune">Immune {teamMatchupReverseSummary.immune}</span>
+                          {teamMatchupReverseSummary.unknown > 0 ? (
+                            <span className="team-matchup-pill unknown">Unknown {teamMatchupReverseSummary.unknown}</span>
+                          ) : null}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="team-matchup-matrix-group">
+                      <div className="team-matchup-matrix-title">Your Team Into Enemy Team</div>
+                      <div className="team-matchup-table-shell">
+                        <table className="team-matchup-table">
+                          <thead>
+                            <tr>
+                              <th>Attacker</th>
+                              {enemyMatchupTeam.map((member) => (
+                                <th key={`forward-head-${member.key}`}>{member.name}</th>
+                              ))}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {playerMatchupTeam.map((attacker, attackerIndex) => (
+                              <tr key={`forward-row-${attacker.key}`}>
+                                <th>{attacker.name}</th>
+                                {enemyMatchupTeam.map((defender, defenderIndex) => {
+                                  const cell = teamMatchupForwardMatrix[attackerIndex]?.[defenderIndex]
                                   return (
-                                    <div key={stat.key} className={`pokemon-hover-stat-row ${isWinningStat ? 'comparison-stat-winner' : ''}`}>
-                                      <div className="pokemon-hover-stat-label">{stat.label}</div>
-                                      <div className="pokemon-hover-stat-value">{stat.value}</div>
-                                      <div className="pokemon-hover-stat-bar-track">
-                                        <div
-                                          className={`pokemon-hover-stat-bar ${getStatBarColorClass(stat.value)}`}
-                                          style={{ width: `${Math.max(10, (stat.value / 255) * 100)}%` }}
-                                        ></div>
-                                      </div>
-                                    </div>
+                                    <td key={`forward-cell-${attacker.key}-${defender.key}`} className={`team-matchup-cell ${cell?.bucket || 'unknown'}`}>
+                                      <div className="team-matchup-cell-value">{formatMatchupMultiplier(cell?.multiplier)}</div>
+                                      {cell?.bestAttackType ? (
+                                        <span className={`type-badge team-matchup-cell-type type-${cell.bestAttackType}`}>
+                                          {formatDisplayName(cell.bestAttackType)}
+                                        </span>
+                                      ) : null}
+                                    </td>
                                   )
                                 })}
-                                <div className={`pokemon-hover-stat-row total-row ${isWinningBst ? 'comparison-stat-winner' : ''}`}>
-                                  <div className="pokemon-hover-stat-label">BST</div>
-                                  <div className="pokemon-hover-stat-value">{panelBst}</div>
-                                  <div className="pokemon-hover-stat-bar-track total-track">
-                                    <div
-                                      className="pokemon-hover-stat-bar total"
-                                      style={{ width: `${Math.max(12, Math.min(100, (panelBst / 780) * 100))}%` }}
-                                    ></div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-
-                            {renderPokemonProfileSummary(panelInfo?.profileDetails || null, { includeEggGroups: false })}
-
-                            <div className="pokemon-hover-section">
-                              <div className="pokemon-hover-section-title">Evolution Line</div>
-                              {panelInfo ? (
-                                <div className="pokemon-hover-evolution">
-                                  {panelInfo.evolutionLine.map((entry, evolutionIndex) => (
-                                    <Fragment key={`${entry.name}-${evolutionIndex}`}>
-                                      <div
-                                        className={`pokemon-hover-evolution-item ${
-                                          normalizeDisplayName(entry.name) === panelNameKey ? 'current' : ''
-                                        }`}
-                                      >
-                                        <div className="pokemon-hover-evolution-name">{entry.name}</div>
-                                        <div className="pokemon-hover-evolution-requirement">{entry.requirement}</div>
-                                      </div>
-                                      {evolutionIndex < panelInfo.evolutionLine.length - 1 && (
-                                        <div className="pokemon-hover-evolution-connector">
-                                          <span>evolves into</span>
-                                        </div>
-                                      )}
-                                    </Fragment>
-                                  ))}
-                                </div>
-                              ) : (
-                                <div className="pokemon-hover-loading">Loading evolution line...</div>
-                              )}
-                            </div>
-
-                            <div className="pokemon-hover-section">
-                              <div className="pokemon-hover-section-title">Abilities</div>
-                              {panelAbilities.length > 0 ? (
-                                <div className="pokemon-hover-abilities">
-                                  <div className="pokemon-hover-ability-list">
-                                    {panelAbilities.map((ability) => (
-                                      <div
-                                        key={`${pokemon.name}-${ability.name}`}
-                                        className={`pokemon-hover-ability ${ability.isHidden ? 'hidden' : ''}`}
-                                        onMouseEnter={() => {
-                                          setComparisonHoveredAbilities((current) =>
-                                            current.map((entry, abilityIndex) => (abilityIndex === index ? ability : entry))
-                                          )
-                                        }}
-                                        onMouseLeave={() => {
-                                          setComparisonHoveredAbilities((current) =>
-                                            current.map((entry, abilityIndex) => (abilityIndex === index ? null : entry))
-                                          )
-                                        }}
-                                      >
-                                        <span>{ability.name}</span>
-                                        {ability.isHidden && <span className="pokemon-hover-ability-tag">Hidden</span>}
-                                      </div>
-                                    ))}
-                                  </div>
-                                  <div className="pokemon-hover-ability-tooltip">
-                                    {comparisonHoveredAbilities[index]?.effect || 'Hover an ability to see what it does.'}
-                                  </div>
-                                </div>
-                              ) : (
-                                <div className="pokemon-hover-loading">Loading abilities...</div>
-                              )}
-                            </div>
-                          </>
-                        )}
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
                       </div>
-                    )
-                  })}
-                </div>
+                    </div>
+
+                    <div className="team-matchup-matrix-group">
+                      <div className="team-matchup-matrix-title">Enemy Team Into Your Team</div>
+                      <div className="team-matchup-table-shell">
+                        <table className="team-matchup-table">
+                          <thead>
+                            <tr>
+                              <th>Attacker</th>
+                              {playerMatchupTeam.map((member) => (
+                                <th key={`reverse-head-${member.key}`}>{member.name}</th>
+                              ))}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {enemyMatchupTeam.map((attacker, attackerIndex) => (
+                              <tr key={`reverse-row-${attacker.key}`}>
+                                <th>{attacker.name}</th>
+                                {playerMatchupTeam.map((defender, defenderIndex) => {
+                                  const cell = teamMatchupReverseMatrix[attackerIndex]?.[defenderIndex]
+                                  return (
+                                    <td key={`reverse-cell-${attacker.key}-${defender.key}`} className={`team-matchup-cell ${cell?.bucket || 'unknown'}`}>
+                                      <div className="team-matchup-cell-value">{formatMatchupMultiplier(cell?.multiplier)}</div>
+                                      {cell?.bestAttackType ? (
+                                        <span className={`type-badge team-matchup-cell-type type-${cell.bestAttackType}`}>
+                                          {formatDisplayName(cell.bestAttackType)}
+                                        </span>
+                                      ) : null}
+                                    </td>
+                                  )
+                                })}
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </>
+                )}
               </aside>
             )}
 
@@ -7369,6 +8077,9 @@ function App() {
                   <div className="saved-teams-title">Saved Teams</div>
                   <div className="saved-teams-helper">
                     Save a lineup from the main team bar, then load it back in, export it, or import a shared code here.
+                  </div>
+                  <div className="saved-teams-storage-note">
+                    Saved teams are stored in this browser only. They do not leave your device unless you export or share a team code. You can delete saved teams anytime from Saved Teams or by clearing browser data.
                   </div>
                   <div className="saved-teams-header-actions">
                     <button
@@ -7540,7 +8251,7 @@ function App() {
                   <div className="move-database-title">Move Database</div>
                   <div className="move-database-helper">
                     {moveTargetSelection
-                      ? `Click a team slot or one of its four move slots to teach ${moveTargetSelection.name}. ${getMoveAssignmentRuleText()}`
+                      ? `Click a team slot${showComparison && enemyMatchupSource === 'custom' ? ', a custom matchup slot,' : ''} or one of its four move slots to teach ${moveTargetSelection.name}. ${getMoveAssignmentRuleText()}`
                       : 'Search, filter, or sort any move.'}
                   </div>
                 </div>
