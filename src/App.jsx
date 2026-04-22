@@ -206,11 +206,13 @@ const gamePickerMascotSpriteConfigs = {
   white: { animatedScale: 1.36 },
   'omega-ruby': {
     staticSpriteUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10078.png',
-    shinyStaticSpriteUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10078.png'
+    shinyStaticSpriteUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10078.png',
+    disableAnimatedSprite: true
   },
   'alpha-sapphire': {
     staticSpriteUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10077.png',
-    shinyStaticSpriteUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10077.png'
+    shinyStaticSpriteUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10077.png',
+    disableAnimatedSprite: true
   },
   'black-2': { apiName: 'black-kyurem', animatedScale: 1.36 },
   'white-2': { apiName: 'white-kyurem', animatedScale: 1.36 }
@@ -2433,36 +2435,6 @@ const fitCanvasText = (context, value, maxWidth) => {
   return `${nextValue}...`
 }
 
-const getPokemonAnimatedHoverSprite = (pokemon) => {
-  if (!pokemon || legendsZaMegaPokemonNames.has(pokemon.apiName)) {
-    return null
-  }
-
-  const allowSpeciesAnimatedFallback = !isRegionalVariantPokemon(pokemon)
-
-  if (pokemon.isShiny) {
-    return (
-      pokemon.animatedShinyImage ||
-      (allowSpeciesAnimatedFallback
-        ? getBlackWhiteSpeciesAnimatedSpriteUrl(pokemon.speciesId || pokemon.id, true)
-        : null) ||
-      pokemon.animatedNormalImage ||
-      (allowSpeciesAnimatedFallback
-        ? getBlackWhiteSpeciesAnimatedSpriteUrl(pokemon.speciesId || pokemon.id, false)
-        : null) ||
-      null
-    )
-  }
-
-  return (
-    pokemon.animatedNormalImage ||
-    (allowSpeciesAnimatedFallback
-      ? getBlackWhiteSpeciesAnimatedSpriteUrl(pokemon.speciesId || pokemon.id, false)
-      : null) ||
-    null
-  )
-}
-
 const renderTrainerEntryCards = (entries, activeGame, options) => {
   const {
     browsePokemonByApiName,
@@ -2608,7 +2580,6 @@ const getPokemonSpriteClassName = (pokemon, baseClassName, extraClassName = '') 
 
 const renderPokemonSprite = (pokemon, {
   baseClassName,
-  stackClassName = '',
   animateOnHover = false,
   alt = pokemon?.name || ''
 }) => {
@@ -2616,39 +2587,17 @@ const renderPokemonSprite = (pokemon, {
     return null
   }
 
-  const animatedSprite = getPokemonAnimatedHoverSprite(pokemon)
   const isHovered = Boolean(animateOnHover)
-  const isAnimatedHoverActive = Boolean(isHovered && animatedSprite)
-
-  if (!animatedSprite) {
-    return (
-      <img
-        src={pokemon.image}
-        alt={alt}
-        className={getPokemonSpriteClassName(
-          pokemon,
-          `${baseClassName}${isHovered ? ' pokemon-sprite-hovered' : ''}`
-        )}
-      />
-    )
-  }
 
   return (
-    <span
-      className={`pokemon-sprite-stack ${stackClassName} ${isHovered ? 'is-hovered' : ''} ${isAnimatedHoverActive ? 'is-animated' : ''}`}
-    >
-      <img
-        src={pokemon.image}
-        alt={alt}
-        className={getPokemonSpriteClassName(pokemon, `${baseClassName} pokemon-sprite-layer pokemon-sprite-base`)}
-      />
-      <img
-        src={animatedSprite}
-        alt=""
-        aria-hidden="true"
-        className={getPokemonSpriteClassName(pokemon, `${baseClassName} pokemon-sprite-layer pokemon-sprite-animated`)}
-      />
-    </span>
+    <img
+      src={pokemon.image}
+      alt={alt}
+      className={getPokemonSpriteClassName(
+        pokemon,
+        `${baseClassName}${isHovered ? ' pokemon-sprite-hovered' : ''}`
+      )}
+    />
   )
 }
 
@@ -2886,6 +2835,7 @@ function App() {
 
     return speciesIds.map((speciesId) => {
       const fallbackSprites = getGamePickerSpriteUrls(speciesId, showShinySprites)
+      const shouldDisableAnimatedSprite = Boolean(mascotConfig?.disableAnimatedSprite)
       const configuredStaticSprite = showShinySprites
         ? mascotConfig?.shinyStaticSpriteUrl || mascotConfig?.staticSpriteUrl || null
         : mascotConfig?.staticSpriteUrl || null
@@ -2901,7 +2851,7 @@ function App() {
         return {
           ...fallbackSprites,
           static: configuredStaticSprite || fallbackSprites.static,
-          animated: configuredAnimatedSprite || mascotAnimated || fallbackSprites.animated,
+          animated: shouldDisableAnimatedSprite ? null : configuredAnimatedSprite || mascotAnimated || fallbackSprites.animated,
           animatedScale: mascotConfig?.animatedScale || 1
         }
       }
@@ -2910,13 +2860,14 @@ function App() {
         return {
           ...fallbackSprites,
           static: configuredStaticSprite || fallbackSprites.static,
-          animated: configuredAnimatedSprite || fallbackSprites.animated,
+          animated: shouldDisableAnimatedSprite ? null : configuredAnimatedSprite || fallbackSprites.animated,
           animatedScale: mascotConfig?.animatedScale || 1
         }
       }
 
       return {
         ...fallbackSprites,
+        animated: shouldDisableAnimatedSprite ? null : fallbackSprites.animated,
         animatedScale: mascotConfig?.animatedScale || 1
       }
     })

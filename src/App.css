@@ -498,7 +498,8 @@
   flex-shrink: 0;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
-  --pokemon-hover-scale: 1.12;
+  --pokemon-hover-scale: 1.18;
+  transform-origin: center center;
   transform: scale(1);
   transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.12s ease;
 }
@@ -2147,7 +2148,8 @@ h1 {
   margin-bottom: 12px;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
-  --pokemon-hover-scale: 1.05;
+  --pokemon-hover-scale: 1.32;
+  transform-origin: center center;
   transform: scale(1);
   transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.12s ease;
 }
@@ -3656,7 +3658,7 @@ h1 {
   display: block;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
-  --pokemon-hover-scale: 1.12;
+  --pokemon-hover-scale: 1.32;
   transform-origin: center center;
   transform: scale(1);
   transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.12s ease;
@@ -3664,6 +3666,17 @@ h1 {
 
 .pokemon-image-offset-wigglytuff {
   transform: translateY(-6px);
+}
+
+.pokemon-hover-image.pokemon-sprite-hovered,
+.slot-pokemon-image.pokemon-sprite-hovered,
+.pokemon-image.pokemon-sprite-hovered {
+  transform: scale(var(--pokemon-hover-scale, 1.2));
+  transform-origin: center center;
+}
+
+.pokemon-image-offset-wigglytuff.pokemon-sprite-hovered {
+  transform: translateY(-6px) scale(var(--pokemon-hover-scale, 1.2));
 }
 
 .pokemon-sprite-frame {
