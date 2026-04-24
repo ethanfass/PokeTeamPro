@@ -190,8 +190,8 @@ const gamePickerMascotSpeciesIds = {
   moon: 792,
   'ultra-sun': 10155,
   'ultra-moon': 10156,
-  'let-s-go-pikachu': 25,
-  'let-s-go-eevee': 133,
+  'lets-go-pikachu': 25,
+  'lets-go-eevee': 133,
   sword: 888,
   shield: 889,
   'brilliant-diamond': 10245,
@@ -260,8 +260,8 @@ const gameVersionGroupMap = {
   moon: ['sun-moon'],
   'ultra-sun': ['ultra-sun-ultra-moon'],
   'ultra-moon': ['ultra-sun-ultra-moon'],
-  'let-s-go-pikachu': ['lets-go-pikachu-lets-go-eevee'],
-  'let-s-go-eevee': ['lets-go-pikachu-lets-go-eevee'],
+  'lets-go-pikachu': ['lets-go-pikachu-lets-go-eevee'],
+  'lets-go-eevee': ['lets-go-pikachu-lets-go-eevee'],
   sword: ['sword-shield'],
   shield: ['sword-shield'],
   'brilliant-diamond': ['brilliant-diamond-and-shining-pearl'],
@@ -436,8 +436,8 @@ const GAME_REGION_BY_KEY = {
   yellow: 'Kanto',
   'fire-red': 'Kanto',
   'leaf-green': 'Kanto',
-  'let-s-go-pikachu': 'Kanto',
-  'let-s-go-eevee': 'Kanto',
+  'lets-go-pikachu': 'Kanto',
+  'lets-go-eevee': 'Kanto',
   gold: 'Johto',
   silver: 'Johto',
   crystal: 'Johto',
@@ -979,6 +979,8 @@ gameAvailabilityRules.champions = {
 
 const gameKeyAliases = {
   heartgold: 'heart-gold',
+  'let-s-go-pikachu': 'lets-go-pikachu',
+  'let-s-go-eevee': 'lets-go-eevee',
   soulsilver: 'soul-silver'
 }
 
@@ -2280,7 +2282,7 @@ const isMegaPokemon = (pokemon) =>
   Boolean(pokemon?.apiName && /-mega($|-)/.test(pokemon.apiName))
 
 const getBlackWhiteSpeciesSpriteUrl = (speciesId, preferShiny = false) => {
-  if (!Number.isInteger(speciesId) || speciesId < 1 || speciesId > 649) {
+  if (!Number.isInteger(speciesId) || speciesId < 1) {
     return null
   }
 
@@ -2318,30 +2320,32 @@ const getGamePickerSpriteUrls = (speciesId, preferShiny = false) => {
   }
 }
 
-const getPokemonSpriteFromSprites = (sprites, preferShiny = false, speciesId = null) => {
+const getPokemonSpriteFromSprites = (sprites, preferShiny = false, pokemonId = null) => {
   if (!sprites) {
     return null
   }
 
   const blackWhiteSprites = sprites.versions?.['generation-v']?.['black-white']
-  const speciesBlackWhiteSprite = getBlackWhiteSpeciesSpriteUrl(speciesId, preferShiny)
-  const speciesBlackWhiteDefaultSprite = getBlackWhiteSpeciesSpriteUrl(speciesId, false)
+  const frontSprite = getFrontSpeciesSpriteUrl(pokemonId, preferShiny)
+  const frontDefaultSprite = getFrontSpeciesSpriteUrl(pokemonId, false)
   const officialArtwork = sprites.other?.['official-artwork']?.front_default
+  const officialShinyArtwork = sprites.other?.['official-artwork']?.front_shiny
 
   if (preferShiny) {
     return (
       blackWhiteSprites?.front_shiny ||
-      speciesBlackWhiteSprite ||
-      blackWhiteSprites?.front_default ||
-      speciesBlackWhiteDefaultSprite ||
       sprites.front_shiny ||
+      officialShinyArtwork ||
+      blackWhiteSprites?.front_default ||
       sprites.front_default ||
       officialArtwork ||
+      frontSprite ||
+      frontDefaultSprite ||
       null
     )
   }
 
-  return blackWhiteSprites?.front_default || speciesBlackWhiteDefaultSprite || sprites.front_default || officialArtwork || null
+  return blackWhiteSprites?.front_default || sprites.front_default || officialArtwork || frontDefaultSprite || null
 }
 
 const getPokemonAnimatedSpriteFromSprites = (sprites, preferShiny = false, speciesId = null) => {
@@ -2366,9 +2370,9 @@ const getPokemonAnimatedSpriteFromSprites = (sprites, preferShiny = false, speci
   return blackWhiteAnimatedSprites?.front_default || speciesAnimatedDefaultSprite || null
 }
 
-const getSpecialPokemonImage = (_pokemonName, sprites, speciesId) => getPokemonSpriteFromSprites(sprites, false, speciesId)
+const getSpecialPokemonImage = (_pokemonName, sprites, pokemonId) => getPokemonSpriteFromSprites(sprites, false, pokemonId)
 
-const getSpecialPokemonShinyImage = (_pokemonName, sprites, speciesId) => getPokemonSpriteFromSprites(sprites, true, speciesId)
+const getSpecialPokemonShinyImage = (_pokemonName, sprites, pokemonId) => getPokemonSpriteFromSprites(sprites, true, pokemonId)
 
 const getPokemonDisplayVariant = (pokemon, preferShiny = false) => {
   if (!pokemon) {
@@ -2678,14 +2682,14 @@ const buildBrowsePokemonEntry = async (pokemonIdentifier, specialEntry = null) =
       id: data.id,
       name: specialEntry.displayName,
       apiName: data.name,
-      image: legendsZaMegaSprite || getSpecialPokemonImage(specialEntry.pokemonName, data.sprites, speciesId),
-      normalImage: legendsZaMegaSprite || getSpecialPokemonImage(specialEntry.pokemonName, data.sprites, speciesId),
+      image: legendsZaMegaSprite || getSpecialPokemonImage(specialEntry.pokemonName, data.sprites, data.id),
+      normalImage: legendsZaMegaSprite || getSpecialPokemonImage(specialEntry.pokemonName, data.sprites, data.id),
       shinyImage:
         legendsZaMegaShinySprite ||
         legendsZaMegaSprite ||
-        getSpecialPokemonShinyImage(specialEntry.pokemonName, data.sprites, speciesId),
-      animatedNormalImage: legendsZaMegaSprite ? null : getPokemonAnimatedSpriteFromSprites(data.sprites, false, speciesId),
-      animatedShinyImage: legendsZaMegaSprite ? null : getPokemonAnimatedSpriteFromSprites(data.sprites, true, speciesId),
+        getSpecialPokemonShinyImage(specialEntry.pokemonName, data.sprites, data.id),
+      animatedNormalImage: legendsZaMegaSprite ? null : getPokemonAnimatedSpriteFromSprites(data.sprites, false, data.id),
+      animatedShinyImage: legendsZaMegaSprite ? null : getPokemonAnimatedSpriteFromSprites(data.sprites, true, data.id),
       types: data.types.map(t => t.type.name),
       stats: Object.fromEntries(data.stats.map(stat => [stat.stat.name, stat.base_stat])),
       speciesUrl: data.species.url,
@@ -2708,11 +2712,11 @@ const buildBrowsePokemonEntry = async (pokemonIdentifier, specialEntry = null) =
     id: data.id,
     name: data.name,
     apiName: data.name,
-    image: getPokemonSpriteFromSprites(data.sprites, false, speciesId),
-    normalImage: getPokemonSpriteFromSprites(data.sprites, false, speciesId),
-    shinyImage: getPokemonSpriteFromSprites(data.sprites, true, speciesId),
-    animatedNormalImage: getPokemonAnimatedSpriteFromSprites(data.sprites, false, speciesId),
-    animatedShinyImage: getPokemonAnimatedSpriteFromSprites(data.sprites, true, speciesId),
+    image: getPokemonSpriteFromSprites(data.sprites, false, data.id),
+    normalImage: getPokemonSpriteFromSprites(data.sprites, false, data.id),
+    shinyImage: getPokemonSpriteFromSprites(data.sprites, true, data.id),
+    animatedNormalImage: getPokemonAnimatedSpriteFromSprites(data.sprites, false, data.id),
+    animatedShinyImage: getPokemonAnimatedSpriteFromSprites(data.sprites, true, data.id),
     types: data.types.map(t => t.type.name),
     stats: Object.fromEntries(data.stats.map(stat => [stat.stat.name, stat.base_stat])),
     speciesUrl: data.species.url,
@@ -2880,6 +2884,7 @@ function App() {
       setIncludeZaMegas(false)
     }
 
+    clearCurrentTeam()
     setShowGamePicker(true)
     setMenuOpen(false)
   }
@@ -3722,6 +3727,22 @@ function App() {
     }
 
     return true
+  }
+
+  const clearCurrentTeam = () => {
+    const emptyTeam = Array(TEAM_SLOT_COUNT).fill(null)
+
+    teamHistoryPastRef.current = []
+    teamHistoryFutureRef.current = []
+    teamRef.current = emptyTeam
+
+    setTeamHistoryPast([])
+    setTeamHistoryFuture([])
+    setTeam(emptyTeam)
+    setEditingBuildSlotIndex(null)
+    setItemTargetSelection(null)
+    setMoveTargetSelection(null)
+    setShowTeamFullModal(false)
   }
 
   const handleUndoTeamChange = () => {
@@ -6797,7 +6818,7 @@ function App() {
                 </div>
                 <div className="game-picker-status">
                   <span>{loading ? 'Loading Pokemon data...' : 'Pokemon ready'}</span>
-                  <span>{itemsLoading ? 'Loading items...' : items.length > 0 ? 'Items ready' : 'Items load on demand'}</span>
+                  <span>{itemsLoading ? 'Loading items...' : items.length > 0 ? 'Items ready' : 'Items ready'}</span>
                   <span>{movesLoading ? 'Loading moves...' : moves.length > 0 ? 'Moves ready' : 'Moves load on demand'}</span>
                 </div>
               </div>

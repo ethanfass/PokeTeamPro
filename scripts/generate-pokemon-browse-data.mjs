@@ -39,26 +39,34 @@ const buildPokemonSpeciesBrowseData = (speciesData = {}) => {
   }
 }
 
-const fallbackSpriteUrl = (speciesId, preferShiny = false) =>
-  speciesId
-    ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${preferShiny ? 'shiny/' : ''}${speciesId}.png`
+const fallbackSpriteUrl = (pokemonId, preferShiny = false) =>
+  pokemonId
+    ? `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${preferShiny ? 'shiny/' : ''}${pokemonId}.png`
     : null
 
-const getPokemonSpriteFromSprites = (sprites, preferShiny = false, speciesId = null) => {
+const getPokemonSpriteFromSprites = (sprites, preferShiny = false, pokemonId = null) => {
+  const blackWhiteSprites = sprites?.versions?.['generation-v']?.['black-white']
+  const officialArtwork = sprites?.other?.['official-artwork']?.front_default
+  const officialShinyArtwork = sprites?.other?.['official-artwork']?.front_shiny
+
   if (preferShiny) {
     return (
-      sprites?.other?.['official-artwork']?.front_shiny ||
+      blackWhiteSprites?.front_shiny ||
       sprites?.front_shiny ||
-      sprites?.other?.['official-artwork']?.front_default ||
+      officialShinyArtwork ||
+      blackWhiteSprites?.front_default ||
       sprites?.front_default ||
-      fallbackSpriteUrl(speciesId, true)
+      officialArtwork ||
+      fallbackSpriteUrl(pokemonId, true) ||
+      fallbackSpriteUrl(pokemonId, false)
     )
   }
 
   return (
-    sprites?.other?.['official-artwork']?.front_default ||
+    blackWhiteSprites?.front_default ||
     sprites?.front_default ||
-    fallbackSpriteUrl(speciesId, false)
+    officialArtwork ||
+    fallbackSpriteUrl(pokemonId, false)
   )
 }
 
@@ -106,12 +114,12 @@ const buildBrowsePokemonEntry = async (pokemonIdentifier, options = {}) => {
       id: data.id,
       name: specialEntry.displayName,
       apiName: data.name,
-      image: legendsZaMegaSprite || getPokemonSpriteFromSprites(data.sprites, false, speciesId),
-      normalImage: legendsZaMegaSprite || getPokemonSpriteFromSprites(data.sprites, false, speciesId),
+      image: legendsZaMegaSprite || getPokemonSpriteFromSprites(data.sprites, false, data.id),
+      normalImage: legendsZaMegaSprite || getPokemonSpriteFromSprites(data.sprites, false, data.id),
       shinyImage:
         legendsZaMegaShinySprite ||
         legendsZaMegaSprite ||
-        getPokemonSpriteFromSprites(data.sprites, true, speciesId),
+        getPokemonSpriteFromSprites(data.sprites, true, data.id),
       animatedNormalImage: legendsZaMegaSprite ? null : getPokemonAnimatedSpriteFromSprites(data.sprites, false),
       animatedShinyImage: legendsZaMegaSprite ? null : getPokemonAnimatedSpriteFromSprites(data.sprites, true),
       types: data.types.map((type) => type.type.name),
@@ -136,9 +144,9 @@ const buildBrowsePokemonEntry = async (pokemonIdentifier, options = {}) => {
     id: data.id,
     name: data.name,
     apiName: data.name,
-    image: getPokemonSpriteFromSprites(data.sprites, false, speciesId),
-    normalImage: getPokemonSpriteFromSprites(data.sprites, false, speciesId),
-    shinyImage: getPokemonSpriteFromSprites(data.sprites, true, speciesId),
+    image: getPokemonSpriteFromSprites(data.sprites, false, data.id),
+    normalImage: getPokemonSpriteFromSprites(data.sprites, false, data.id),
+    shinyImage: getPokemonSpriteFromSprites(data.sprites, true, data.id),
     animatedNormalImage: getPokemonAnimatedSpriteFromSprites(data.sprites, false),
     animatedShinyImage: getPokemonAnimatedSpriteFromSprites(data.sprites, true),
     types: data.types.map((type) => type.type.name),
