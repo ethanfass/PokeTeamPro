@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { Fragment, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import './App.css'
 import bulbapediaAvailability from './data/bulbapediaAvailability.json'
 import dlcPokedexes from './data/dlcPokedexes.json'
@@ -7,6 +7,8 @@ import megaEntries from './data/megaEntries.json'
 import legendsZaAvailability from './data/legendsZaAvailability.json'
 import legendsZaMegaSprites from './data/legendsZaMegaSprites.json'
 import legendsZaMegaShinySprites from './data/legendsZaMegaShinySprites.json'
+import pokemonBrowseData from './data/pokemonBrowseData.json'
+import { pokemonGenerations } from './data/pokemonBrowseConfig'
 import { gymLeaderGameGroupByGameKey, gymLeaderGames, gymLeadersByGame } from './data/gymLeaders'
 import pokeballImage from '../assets/pokeball.png'
 
@@ -23,11 +25,17 @@ const TEAM_SHARE_COMPRESSED_PREFIX = 'PKAPP1:'
 const MAX_SAVED_TEAMS = 100
 const MAX_SAVED_TEAM_NAME_LENGTH = 48
 const MAX_TEAM_SHARE_TEXT_LENGTH = 50000
+const cachedPokemonByGen = pokemonBrowseData?.generations || {}
+const hasCachedPokemonBrowseData = Object.values(cachedPokemonByGen)
+  .some((group) => Array.isArray(group?.pokemon) && group.pokemon.length > 0)
+const generations = pokemonGenerations
 const EMPTY_MOVE_VALUE = '-'
 const TEAM_EXPORT_SCALE = 2
 const TEAM_EXPORT_SLOT_WIDTH = 248
 const TEAM_EXPORT_SLOT_HEIGHT = 526
 const TEAM_EXPORT_SLOT_GAP = 24
+const POKEMON_FETCH_BATCH_SIZE = 32
+const SPECIAL_POKEMON_FETCH_BATCH_SIZE = 16
 const BUILD_STAT_ROWS = [
   { key: 'hp', label: 'HP' },
   { key: 'attack', label: 'Atk' },
@@ -2642,13 +2650,94 @@ const sortPokemonEntries = (pokemonList) =>
     return a.name.localeCompare(b.name)
   })
 
+const fetchJson = async (url) => {
+  const response = await fetch(url)
+
+  if (!response.ok) {
+    throw new Error(`Request failed (${response.status}) for ${url}`)
+  }
+
+  return response.json()
+}
+
+const buildBrowsePokemonEntry = async (pokemonIdentifier, specialEntry = null) => {
+  const data = await fetchJson(`https://pokeapi.co/api/v2/pokemon/${pokemonIdentifier}`)
+  const speciesData = await fetchJson(data.species.url)
+  const speciesId = getSpeciesIdFromUrl(data.species.url) || specialEntry?.speciesId || data.id
+  const speciesBrowseData = buildPokemonSpeciesBrowseData(speciesData)
+
+  if (specialEntry) {
+    const legendsZaMegaSprite = legendsZaMegaPokemonNames.has(specialEntry.pokemonName)
+      ? legendsZaMegaSprites[specialEntry.pokemonName] || null
+      : null
+    const legendsZaMegaShinySprite = legendsZaMegaPokemonNames.has(specialEntry.pokemonName)
+      ? legendsZaMegaShinySprites[specialEntry.pokemonName] || null
+      : null
+
+    return {
+      id: data.id,
+      name: specialEntry.displayName,
+      apiName: data.name,
+      image: legendsZaMegaSprite || getSpecialPokemonImage(specialEntry.pokemonName, data.sprites, speciesId),
+      normalImage: legendsZaMegaSprite || getSpecialPokemonImage(specialEntry.pokemonName, data.sprites, speciesId),
+      shinyImage:
+        legendsZaMegaShinySprite ||
+        legendsZaMegaSprite ||
+        getSpecialPokemonShinyImage(specialEntry.pokemonName, data.sprites, speciesId),
+      animatedNormalImage: legendsZaMegaSprite ? null : getPokemonAnimatedSpriteFromSprites(data.sprites, false, speciesId),
+      animatedShinyImage: legendsZaMegaSprite ? null : getPokemonAnimatedSpriteFromSprites(data.sprites, true, speciesId),
+      types: data.types.map(t => t.type.name),
+      stats: Object.fromEntries(data.stats.map(stat => [stat.stat.name, stat.base_stat])),
+      speciesUrl: data.species.url,
+      speciesId,
+      eggGroupKeys: speciesBrowseData.eggGroupKeys,
+      eggGroups: speciesBrowseData.eggGroups,
+      growthRateKey: speciesBrowseData.growthRateKey,
+      growthRate: speciesBrowseData.growthRate,
+      isLegendary: speciesBrowseData.isLegendary,
+      isMythical: speciesBrowseData.isMythical,
+      abilities: data.abilities.map((ability) => ({
+        name: ability.ability.name,
+        isHidden: ability.is_hidden,
+        url: ability.ability.url
+      }))
+    }
+  }
+
+  return {
+    id: data.id,
+    name: data.name,
+    apiName: data.name,
+    image: getPokemonSpriteFromSprites(data.sprites, false, speciesId),
+    normalImage: getPokemonSpriteFromSprites(data.sprites, false, speciesId),
+    shinyImage: getPokemonSpriteFromSprites(data.sprites, true, speciesId),
+    animatedNormalImage: getPokemonAnimatedSpriteFromSprites(data.sprites, false, speciesId),
+    animatedShinyImage: getPokemonAnimatedSpriteFromSprites(data.sprites, true, speciesId),
+    types: data.types.map(t => t.type.name),
+    stats: Object.fromEntries(data.stats.map(stat => [stat.stat.name, stat.base_stat])),
+    speciesUrl: data.species.url,
+    speciesId,
+    eggGroupKeys: speciesBrowseData.eggGroupKeys,
+    eggGroups: speciesBrowseData.eggGroups,
+    growthRateKey: speciesBrowseData.growthRateKey,
+    growthRate: speciesBrowseData.growthRate,
+    isLegendary: speciesBrowseData.isLegendary,
+    isMythical: speciesBrowseData.isMythical,
+    abilities: data.abilities.map((ability) => ({
+      name: ability.ability.name,
+      isHidden: ability.is_hidden,
+      url: ability.ability.url
+    }))
+  }
+}
+
 function App() {
-  const [pokemonByGen, setPokemonByGen] = useState({})
+  const [pokemonByGen, setPokemonByGen] = useState(() => (hasCachedPokemonBrowseData ? cachedPokemonByGen : {}))
   const [pokemonInfoCache, setPokemonInfoCache] = useState({})
   const [team, setTeam] = useState(() => Array(TEAM_SLOT_COUNT).fill(null))
   const [teamHistoryPast, setTeamHistoryPast] = useState([])
   const [teamHistoryFuture, setTeamHistoryFuture] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(!hasCachedPokemonBrowseData)
   const [teamTypes, setTeamTypes] = useState({
     moveCoverage: {},
     pokemonTypeCoverage: {},
@@ -2747,18 +2836,6 @@ function App() {
 
   const typesList = ['normal', 'fighting', 'flying', 'poison', 'ground', 'rock', 'bug', 'ghost', 'steel', 'fire', 'water', 'grass', 'electric', 'psychic', 'ice', 'dragon', 'dark', 'fairy']
 
-  const generations = [
-    { name: 'Kanto', gen: 1, range: [1, 151] },
-    { name: 'Johto', gen: 2, range: [152, 251] },
-    { name: 'Hoenn', gen: 3, range: [252, 386] },
-    { name: 'Sinnoh', gen: 4, range: [387, 493] },
-    { name: 'Unova', gen: 5, range: [494, 649] },
-    { name: 'Kalos', gen: 6, range: [650, 721] },
-    { name: 'Alola', gen: 7, range: [722, 809] },
-    { name: 'Galar', gen: 8, range: [810, 898] },
-    { name: 'Paldea', gen: 9, range: [899, 1025] },
-  ]
-
   const browseSections = [
     { key: 'kanto', name: 'Kanto', gen: 1, sourceGen: 1 },
     { key: 'johto', name: 'Johto', gen: 2, sourceGen: 2 },
@@ -2810,20 +2887,29 @@ function App() {
   const shouldIncludeBrowsePokemon = (pokemon) =>
     includeZaMegas || !legendsZaMegaPokemonNames.has(pokemon?.apiName)
 
-  const allBrowsePokemon = sortPokemonEntries(
-    Array.from(
-      new Map(
-        Object.values(pokemonByGen)
-          .flatMap((group) => (group?.pokemon || []).map((pokemon) => [pokemon.apiName, pokemon]))
-      ).values()
-    ).filter(shouldIncludeBrowsePokemon)
+  const allBrowsePokemon = useMemo(
+    () => sortPokemonEntries(
+      Array.from(
+        new Map(
+          Object.values(pokemonByGen)
+            .flatMap((group) => (group?.pokemon || []).map((pokemon) => [pokemon.apiName, pokemon]))
+        ).values()
+      ).filter((pokemon) => includeZaMegas || !legendsZaMegaPokemonNames.has(pokemon?.apiName))
+    ),
+    [pokemonByGen, includeZaMegas]
   )
-  const allKnownPokemonByApiName = Object.fromEntries(
-    Object.values(pokemonByGen)
-      .flatMap((group) => group?.pokemon || [])
-      .map((pokemon) => [pokemon.apiName, pokemon])
+  const allKnownPokemonByApiName = useMemo(
+    () => Object.fromEntries(
+      Object.values(pokemonByGen)
+        .flatMap((group) => group?.pokemon || [])
+        .map((pokemon) => [pokemon.apiName, pokemon])
+    ),
+    [pokemonByGen]
   )
-  const browsePokemonByApiName = Object.fromEntries(allBrowsePokemon.map((pokemon) => [pokemon.apiName, pokemon]))
+  const browsePokemonByApiName = useMemo(
+    () => Object.fromEntries(allBrowsePokemon.map((pokemon) => [pokemon.apiName, pokemon])),
+    [allBrowsePokemon]
+  )
   const getGamePickerSprites = (gameKey) => {
     const mascotConfig = gamePickerMascotSpriteConfigs[gameKey] || null
     const configuredMascotPokemon = mascotConfig?.apiName ? browsePokemonByApiName[mascotConfig.apiName] || null : null
@@ -2876,6 +2962,12 @@ function App() {
   const activeDesignTemplate = darkUiMode ? 'classic' : selectedDesignTemplate
 
   useEffect(() => {
+    if (hasCachedPokemonBrowseData) {
+      return undefined
+    }
+
+    let cancelled = false
+
     const fetchPokemon = async () => {
       const grouped = {}
       const uniqueSpecialPokemon = Array.from(
@@ -2890,116 +2982,92 @@ function App() {
         ).values()
       )
 
-      for (const gen of generations) {
-        grouped[gen.gen] = {
-          name: gen.name,
-          pokemon: []
+      try {
+        for (const gen of generations) {
+          grouped[gen.gen] = {
+            name: gen.name,
+            pokemon: []
+          }
+
+          const [start, end] = gen.range
+          const pokemonIds = Array.from({ length: end - start + 1 }, (_, index) => start + index)
+
+          for (let index = 0; index < pokemonIds.length; index += POKEMON_FETCH_BATCH_SIZE) {
+            const batch = pokemonIds.slice(index, index + POKEMON_FETCH_BATCH_SIZE)
+            const batchPokemon = await Promise.all(
+              batch.map(async (pokemonId) => {
+                try {
+                  return await buildBrowsePokemonEntry(pokemonId)
+                } catch (error) {
+                  console.error(`Error fetching Pokemon ${pokemonId}:`, error)
+                  return null
+                }
+              })
+            )
+
+            if (cancelled) {
+              return
+            }
+
+            grouped[gen.gen].pokemon.push(...batchPokemon.filter(Boolean))
+          }
         }
 
-        const [start, end] = gen.range
-        for (let i = start; i <= end; i++) {
-          try {
-            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
-            const data = await response.json()
-            const speciesResponse = await fetch(data.species.url)
-            const speciesData = await speciesResponse.json()
-            const speciesId = getSpeciesIdFromUrl(data.species.url) || data.id
-            const speciesBrowseData = buildPokemonSpeciesBrowseData(speciesData)
-            grouped[gen.gen].pokemon.push({
-              id: data.id,
-              name: data.name,
-              apiName: data.name,
-              image: getPokemonSpriteFromSprites(data.sprites, false, speciesId),
-              normalImage: getPokemonSpriteFromSprites(data.sprites, false, speciesId),
-              shinyImage: getPokemonSpriteFromSprites(data.sprites, true, speciesId),
-              animatedNormalImage: getPokemonAnimatedSpriteFromSprites(data.sprites, false, speciesId),
-              animatedShinyImage: getPokemonAnimatedSpriteFromSprites(data.sprites, true, speciesId),
-              types: data.types.map(t => t.type.name),
-              stats: Object.fromEntries(data.stats.map(stat => [stat.stat.name, stat.base_stat])),
-              speciesUrl: data.species.url,
-              speciesId,
-              eggGroupKeys: speciesBrowseData.eggGroupKeys,
-              eggGroups: speciesBrowseData.eggGroups,
-              growthRateKey: speciesBrowseData.growthRateKey,
-              growthRate: speciesBrowseData.growthRate,
-              isLegendary: speciesBrowseData.isLegendary,
-              isMythical: speciesBrowseData.isMythical,
-              abilities: data.abilities.map((ability) => ({
-                name: ability.ability.name,
-                isHidden: ability.is_hidden,
-                url: ability.ability.url
-              }))
+        for (let index = 0; index < uniqueSpecialPokemon.length; index += SPECIAL_POKEMON_FETCH_BATCH_SIZE) {
+          const batch = uniqueSpecialPokemon.slice(index, index + SPECIAL_POKEMON_FETCH_BATCH_SIZE)
+          const batchPokemon = await Promise.all(
+            batch.map(async (specialEntry) => {
+              try {
+                return [
+                  specialEntry.generation,
+                  await buildBrowsePokemonEntry(specialEntry.pokemonName, specialEntry)
+                ]
+              } catch (error) {
+                console.error(`Error fetching special Pokemon ${specialEntry.pokemonName}:`, error)
+                return null
+              }
             })
-          } catch (error) {
-            console.error(`Error fetching Pokemon ${i}:`, error)
+          )
+
+          if (cancelled) {
+            return
           }
+
+          batchPokemon.forEach((entry) => {
+            if (!entry) {
+              return
+            }
+
+            const [generation, pokemon] = entry
+            if (grouped[generation]) {
+              grouped[generation].pokemon.push(pokemon)
+            }
+          })
+        }
+
+        Object.values(grouped).forEach((group) => {
+          group.pokemon = sortPokemonEntries(group.pokemon)
+        })
+
+        if (!cancelled) {
+          setPokemonByGen(grouped)
+        }
+      } finally {
+        if (!cancelled) {
+          setLoading(false)
         }
       }
-
-      for (const specialEntry of uniqueSpecialPokemon) {
-        try {
-          const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${specialEntry.pokemonName}`)
-          const data = await response.json()
-          const speciesResponse = await fetch(data.species.url)
-          const speciesData = await speciesResponse.json()
-          const speciesId = getSpeciesIdFromUrl(data.species.url) || specialEntry.speciesId || data.id
-          const speciesBrowseData = buildPokemonSpeciesBrowseData(speciesData)
-          const legendsZaMegaSprite = legendsZaMegaPokemonNames.has(specialEntry.pokemonName)
-            ? legendsZaMegaSprites[specialEntry.pokemonName] || null
-            : null
-          const legendsZaMegaShinySprite = legendsZaMegaPokemonNames.has(specialEntry.pokemonName)
-            ? legendsZaMegaShinySprites[specialEntry.pokemonName] || null
-            : null
-          const specialPokemonData = {
-            id: data.id,
-            name: specialEntry.displayName,
-            apiName: data.name,
-            image: legendsZaMegaSprite || getSpecialPokemonImage(specialEntry.pokemonName, data.sprites, speciesId),
-            normalImage: legendsZaMegaSprite || getSpecialPokemonImage(specialEntry.pokemonName, data.sprites, speciesId),
-            shinyImage:
-              legendsZaMegaShinySprite ||
-              legendsZaMegaSprite ||
-              getSpecialPokemonShinyImage(specialEntry.pokemonName, data.sprites, speciesId),
-            animatedNormalImage: legendsZaMegaSprite ? null : getPokemonAnimatedSpriteFromSprites(data.sprites, false, speciesId),
-            animatedShinyImage: legendsZaMegaSprite ? null : getPokemonAnimatedSpriteFromSprites(data.sprites, true, speciesId),
-            types: data.types.map(t => t.type.name),
-            stats: Object.fromEntries(data.stats.map(stat => [stat.stat.name, stat.base_stat])),
-            speciesUrl: data.species.url,
-            speciesId,
-            eggGroupKeys: speciesBrowseData.eggGroupKeys,
-            eggGroups: speciesBrowseData.eggGroups,
-            growthRateKey: speciesBrowseData.growthRateKey,
-            growthRate: speciesBrowseData.growthRate,
-            isLegendary: speciesBrowseData.isLegendary,
-            isMythical: speciesBrowseData.isMythical,
-            abilities: data.abilities.map((ability) => ({
-              name: ability.ability.name,
-              isHidden: ability.is_hidden,
-              url: ability.ability.url
-            }))
-          }
-
-          if (grouped[specialEntry.generation]) {
-            grouped[specialEntry.generation].pokemon.push(specialPokemonData)
-          }
-        } catch (error) {
-          console.error(`Error fetching special Pokemon ${specialEntry.pokemonName}:`, error)
-        }
-      }
-
-      Object.values(grouped).forEach((group) => {
-        group.pokemon = sortPokemonEntries(group.pokemon)
-      })
-
-      setPokemonByGen(grouped)
-      setLoading(false)
     }
 
     fetchPokemon()
+
+    return () => {
+      cancelled = true
+    }
   }, [])
 
   useEffect(() => {
-    if (items.length > 0) {
+    if (!showItemDatabase || items.length > 0) {
       return
     }
 
@@ -3085,10 +3153,12 @@ function App() {
     return () => {
       cancelled = true
     }
-  }, [items.length])
+  }, [showItemDatabase, items.length])
 
   useEffect(() => {
-    if (moves.length > 0) {
+    const shouldLoadMoves = showMoveDatabase || showGymLeaders || showEliteFour || showComparison
+
+    if (!shouldLoadMoves || moves.length > 0) {
       return
     }
 
@@ -3162,7 +3232,7 @@ function App() {
     return () => {
       cancelled = true
     }
-  }, [moves.length])
+  }, [showMoveDatabase, showGymLeaders, showEliteFour, showComparison, moves.length])
 
   useEffect(() => {
     try {
@@ -6534,7 +6604,7 @@ function App() {
         {menuOpen && (
           <div className="feature-menu">
             <div className="feature-menu-title">Features</div>
-            <div className="feature-menu-section">
+            <div className="feature-menu-section feature-menu-section-appearance">
               <div className="feature-menu-group-label">Appearance</div>
               <select
                 className="feature-select"
@@ -6560,7 +6630,7 @@ function App() {
             </div>
             {!showGamePicker && (
               <>
-                <div className="feature-menu-section">
+                <div className="feature-menu-section feature-menu-section-team-builder">
                   <div className="feature-menu-group-label">Team Builder</div>
                   <div className="feature-menu-toggle-list">
                     <label className="feature-toggle">
@@ -6598,7 +6668,7 @@ function App() {
                   </div>
                 </div>
 
-                <div className="feature-menu-section">
+                <div className="feature-menu-section feature-menu-section-databases">
                   <div className="feature-menu-group-label">Databases</div>
                   <div className="feature-menu-toggle-list">
                     <label className="feature-toggle">
@@ -6620,7 +6690,7 @@ function App() {
                   </div>
                 </div>
 
-                <div className="feature-menu-section">
+                <div className="feature-menu-section feature-menu-section-battle-prep">
                   <div className="feature-menu-group-label">Battle Prep</div>
                   <div className="feature-menu-toggle-list">
                     <label className="feature-toggle">
@@ -6642,7 +6712,7 @@ function App() {
                   </div>
                 </div>
 
-                <div className="feature-menu-section">
+                <div className="feature-menu-section feature-menu-section-pokedex">
                   <div className="feature-menu-group-label">Pokedex</div>
                   <div className="feature-menu-toggle-list">
                     <label className="feature-toggle">
@@ -6727,8 +6797,8 @@ function App() {
                 </div>
                 <div className="game-picker-status">
                   <span>{loading ? 'Loading Pokemon data...' : 'Pokemon ready'}</span>
-                  <span>{itemsLoading ? 'Loading items...' : items.length > 0 ? 'Items ready' : 'Waiting on items...'}</span>
-                  <span>{movesLoading ? 'Loading moves...' : moves.length > 0 ? 'Moves ready' : 'Waiting on moves...'}</span>
+                  <span>{itemsLoading ? 'Loading items...' : items.length > 0 ? 'Items ready' : 'Items load on demand'}</span>
+                  <span>{movesLoading ? 'Loading moves...' : moves.length > 0 ? 'Moves ready' : 'Moves load on demand'}</span>
                 </div>
               </div>
 

@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "npm run generate:pokemon",
     "build": "vite build",
+    "generate:pokemon": "node scripts/generate-pokemon-browse-data.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
