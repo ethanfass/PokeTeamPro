@@ -461,6 +461,18 @@ const getPokemonCardStyle = (pokemon, useTypeColoredCards = true) => {
   }
 }
 
+const getSlotTypeStyle = (pokemon) => {
+  const pokemonTypes = Array.isArray(pokemon?.types) ? pokemon.types : []
+  const [primaryStart] = getPokemonCardTypeStops(pokemonTypes[0])
+  const [secondaryStart] = getPokemonCardTypeStops(pokemonTypes[1])
+  const referenceColor = pokemonTypes.length > 1 ? secondaryStart : primaryStart
+  return {
+    '--slot-type-1-color': primaryStart,
+    '--slot-type-2-color': referenceColor,
+    '--slot-hover-shadow': `0 10px 20px ${getColorWithAlpha(referenceColor, 0.18)}`
+  }
+}
+
 // Type effectiveness chart
 const typeEffectiveness = {
   normal: { weakTo: ['fighting'], strong: [] },
@@ -4390,8 +4402,6 @@ function App() {
       assignPokemonToComparisonSlot(comparisonTargetSlot, pokemon)
       return
     }
-
-    removeFromTeam(slotIndex)
   }
 
   const removeFromTeam = (slotIndex) => {
@@ -6542,8 +6552,6 @@ function App() {
   const hoverGames = hoveredPokemonCard?.pokemon
     ? getPokemonTrackedGames(hoveredPokemonCard.pokemon)
     : []
-  const hoveredPokemonBuildSummary = hoveredPokemonCard?.pokemon ? getPokemonBuildSummary(hoveredPokemonCard.pokemon) : null
-  const hoveredPokemonBuildAbility = hoveredPokemonCard?.pokemon ? getSelectedAbilityForPokemon(hoveredPokemonCard.pokemon) : null
   const isPokemonCurrentlyHovered = (pokemon) =>
     Boolean(
       pokemon &&
@@ -6975,10 +6983,10 @@ function App() {
             )}
             <h1>
               <span className="page-title-main">
-                PartyDex
+                PokeTeamPro
               </span>
               <br />
-              <span className="page-subtitle">Premium{' '}Pokemon{' '}Team{' '}Builder</span>
+              <span className="page-subtitle">Pokemon{' '}Team{' '}Builder</span>
             </h1>
           </header>
 
@@ -7234,12 +7242,22 @@ function App() {
                     <div
                       key={index}
                       className={`slot ${pokemon ? 'filled' : ''} ${pokemon ? getPokemonHighlightClass(pokemon) : ''} ${itemTargetSelection && pokemon ? 'item-target' : ''} ${pokemon ? getMoveTargetHighlightClass(pokemon) : ''}`}
+                      style={pokemon ? getSlotTypeStyle(pokemon) : undefined}
                       onClick={() => handleTeamSlotClick(pokemon, index)}
                       onMouseEnter={(event) => pokemon && handlePokemonHoverStart(pokemon, event)}
                       onMouseLeave={handlePokemonHoverEnd}
                     >
                       {pokemon ? (
                         <>
+                          <button
+                            type="button"
+                            className="slot-remove-button"
+                            onClick={(event) => {
+                              event.stopPropagation()
+                              removeFromTeam(index)
+                            }}
+                            title={`Remove ${formatDisplayName(pokemon.name)}`}
+                          >×</button>
                           {renderPokemonSprite(pokemon, {
                             baseClassName: 'slot-pokemon-image',
                             stackClassName: 'slot-pokemon-image-stack',
@@ -9054,32 +9072,6 @@ function App() {
                 ) : (
                   <div className="pokemon-hover-loading">Loading abilities...</div>
                 )}
-              </div>
-
-              <div className="pokemon-hover-section">
-                <div className="pokemon-hover-section-title">Current Build</div>
-                <div className="pokemon-build-preview-card">
-                  <div className="pokemon-build-preview-header">
-                    <div className="pokemon-build-preview-nature">
-                      {hoveredPokemonBuildSummary?.nature.label || 'Hardy'} Nature
-                    </div>
-                  </div>
-
-                  <div className="pokemon-build-preview-grid">
-                    <div className="pokemon-profile-card">
-                      <div className="pokemon-profile-label">Ability</div>
-                      <div className="pokemon-profile-value">
-                        {hoveredPokemonBuildAbility?.displayName || 'Loading...'}
-                      </div>
-                    </div>
-                    <div className="pokemon-profile-card">
-                      <div className="pokemon-profile-label">EVs</div>
-                      <div className="pokemon-profile-value">
-                        {hoveredPokemonBuildSummary?.evSummary || 'No EVs'}
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
 
               {renderPokemonEncounterSummary(hoverProfileDetails)}
