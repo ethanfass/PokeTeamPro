@@ -197,6 +197,54 @@
   --theme-card-hover-shadow: 0 14px 26px rgba(75, 143, 79, 0.14);
 }
 
+.app-shell.theme-colorful {
+  --theme-accent: #3a95c6;
+  --theme-accent-soft: rgba(58, 149, 198, 0.16);
+  --theme-accent-strong: rgba(58, 149, 198, 0.28);
+  --theme-shell-background:
+    radial-gradient(circle at 12% 12%, rgba(247, 131, 82, 0.3), transparent 30%),
+    radial-gradient(circle at 86% 12%, rgba(81, 171, 245, 0.3), transparent 30%),
+    radial-gradient(circle at 50% 100%, rgba(118, 197, 111, 0.3), transparent 36%),
+    linear-gradient(180deg, #fffaf5 0%, #f3fbff 48%, #eefaf0 100%);
+  --theme-shell-text: #2e3e4a;
+  --theme-heading: #22304a;
+  --theme-display-heading: #222c40;
+  --theme-muted: #607683;
+  --theme-subtle: #738a8f;
+  --theme-panel-background: rgba(255, 255, 255, 0.95);
+  --theme-panel-border: rgba(87, 151, 176, 0.22);
+  --theme-panel-shadow: 0 28px 70px rgba(60, 112, 138, 0.18);
+  --theme-menu-background: rgba(255, 255, 255, 0.98);
+  --theme-menu-border: rgba(88, 145, 163, 0.24);
+  --theme-menu-shadow: 0 22px 48px rgba(60, 109, 126, 0.2);
+  --theme-menu-toggle-background: rgba(255, 255, 255, 0.95);
+  --theme-menu-toggle-border: rgba(86, 143, 162, 0.24);
+  --theme-menu-toggle-shadow: 0 18px 40px rgba(64, 120, 138, 0.18);
+  --theme-control-background: linear-gradient(180deg, #ffffff 0%, #eef7ff 100%);
+  --theme-control-border: rgba(80, 147, 178, 0.28);
+  --theme-control-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.92), 0 10px 22px rgba(81, 171, 245, 0.12);
+  --theme-control-hover-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.92),
+    0 12px 24px rgba(233, 96, 59, 0.08),
+    0 12px 24px rgba(81, 171, 245, 0.08),
+    0 12px 24px rgba(118, 197, 111, 0.08);
+  --theme-title-shadow: 0 12px 26px rgba(62, 124, 108, 0.2);
+  --theme-slot-background: linear-gradient(180deg, #f3fbff 0%, #e8f7ec 100%);
+  --theme-slot-fill-background: linear-gradient(180deg, #ffffff 0%, #f4fbf6 100%);
+  --theme-slot-border: #9fb8bf;
+  --theme-slot-hover-border: #4aaf7a;
+  --theme-slot-hover-shadow: 0 14px 30px rgba(118, 197, 111, 0.22);
+  --theme-gold-card-background: linear-gradient(135deg, #f59a62 0%, #5faef1 50%, #7ac86f 100%);
+  --theme-gold-card-border: #4b9fa8;
+  --theme-gold-card-shadow: 0 12px 24px rgba(85, 155, 144, 0.24);
+  --theme-gold-card-hover-shadow: 0 16px 32px rgba(85, 155, 144, 0.32);
+  --theme-card-background: linear-gradient(180deg, #ffffff 0%, #eef8ff 100%);
+  --theme-card-border: #d6e8ef;
+  --theme-card-shadow: 0 12px 24px rgba(66, 126, 144, 0.12);
+  --theme-card-hover-border: #78b7cf;
+  --theme-card-hover-shadow: 0 16px 30px rgba(70, 149, 183, 0.2);
+}
+
 .top-controls {
   position: fixed;
   top: 20px;
@@ -329,6 +377,10 @@
 .feature-menu-toggle-list {
   display: grid;
   gap: 8px;
+}
+
+.feature-menu-section-appearance .feature-menu-toggle-list {
+  margin-top: 10px;
 }
 
 .feature-menu .feature-toggle {
@@ -1765,6 +1817,56 @@ h1 {
   min-height: 1.1rem;
 }
 
+.region-color-kanto {
+  --region-accent-color: #d94b5e;
+  color: var(--region-accent-color) !important;
+}
+
+.region-color-johto {
+  --region-accent-color: #c69a2f;
+  color: var(--region-accent-color) !important;
+}
+
+.region-color-hoenn {
+  --region-accent-color: #e4772d;
+  color: var(--region-accent-color) !important;
+}
+
+.region-color-sinnoh {
+  --region-accent-color: #5f78dc;
+  color: var(--region-accent-color) !important;
+}
+
+.region-color-unova {
+  --region-accent-color: #4f5b70;
+  color: var(--region-accent-color) !important;
+}
+
+.region-color-kalos {
+  --region-accent-color: #2d9f7f;
+  color: var(--region-accent-color) !important;
+}
+
+.region-color-alola {
+  --region-accent-color: #d06a39;
+  color: var(--region-accent-color) !important;
+}
+
+.region-color-galar {
+  --region-accent-color: #9d4fd1;
+  color: var(--region-accent-color) !important;
+}
+
+.region-color-hisui {
+  --region-accent-color: #8c6637;
+  color: var(--region-accent-color) !important;
+}
+
+.region-color-paldea {
+  --region-accent-color: #674ac7;
+  color: var(--region-accent-color) !important;
+}
+
 .team-action-buttons {
   position: absolute;
   top: 18px;
@@ -2076,6 +2178,58 @@ h1 {
 .team-build-number-input {
   padding: 10px 12px;
   text-align: center;
+}
+
+.app-shell.theme-colorful .save-team-modal {
+  border-color: rgba(86, 150, 174, 0.3);
+  background:
+    radial-gradient(circle at top left, rgba(243, 134, 82, 0.34), transparent 38%),
+    radial-gradient(circle at top right, rgba(114, 194, 249, 0.34), transparent 34%),
+    radial-gradient(circle at bottom, rgba(132, 206, 120, 0.34), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.99) 0%, rgba(240, 250, 244, 0.98) 100%);
+  box-shadow: 0 30px 64px rgba(72, 121, 100, 0.22);
+}
+
+.app-shell.theme-colorful .save-team-modal-title {
+  color: #2f5669;
+}
+
+.app-shell.theme-colorful .save-team-modal-helper,
+.app-shell.theme-colorful .save-team-label,
+.app-shell.theme-colorful .team-build-summary-label,
+.app-shell.theme-colorful .team-build-card-helper,
+.app-shell.theme-colorful .team-build-stat-label {
+  color: #607d85;
+}
+
+.app-shell.theme-colorful .save-team-input {
+  border-color: rgba(89, 151, 176, 0.3);
+  background: linear-gradient(180deg, #ffffff 0%, #edf9ff 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.92), 0 10px 22px rgba(84, 157, 191, 0.14);
+}
+
+.app-shell.theme-colorful .save-team-input:focus {
+  border-color: #5aa6c6;
+  box-shadow: 0 0 0 3px rgba(90, 166, 198, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+.app-shell.theme-colorful .team-build-summary-chip,
+.app-shell.theme-colorful .team-build-card {
+  border-color: rgba(90, 153, 176, 0.22);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.99) 0%, rgba(240, 251, 244, 0.98) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.88), 0 10px 20px rgba(70, 147, 126, 0.08);
+}
+
+.app-shell.theme-colorful .team-build-card-title,
+.app-shell.theme-colorful .team-build-summary-chip {
+  color: #346157;
+}
+
+.app-shell.theme-colorful .save-team-modal-button-primary {
+  background: linear-gradient(135deg, #ffd4b9 0%, #cfeeff 50%, #d7f4cc 100%);
+  border-color: rgba(90, 155, 143, 0.34);
+  color: #366272;
+  box-shadow: 0 12px 22px rgba(90, 155, 143, 0.2);
 }
 
 .team-title,
@@ -3563,7 +3717,7 @@ h1 {
 .generation-region.active {
   z-index: 40;
   transform: translateY(-4px);
-  color: #2e9b45;
+  color: var(--region-accent-color, #2e9b45);
   text-shadow: 0 10px 18px rgba(46, 155, 69, 0.16);
   filter: saturate(1.08);
 }
@@ -4920,7 +5074,7 @@ h1 {
 
 .app-shell.dark-ui .generation-region:hover,
 .app-shell.dark-ui .generation-region.active {
-  color: #7fe4c4;
+  color: var(--region-accent-color, #7fe4c4);
   text-shadow: 0 10px 20px rgba(127, 228, 196, 0.18);
 }
 
@@ -6055,7 +6209,7 @@ h1 {
 
   .game-picker-card {
     --game-picker-sprite-size: 64px;
-    --game-picker-hover-scale: 1.12;
+    --game-picker-hover-scale: 1;
     --game-picker-duo-overlap: -12px;
   }
 

@@ -77,6 +77,11 @@ const TEAM_NATURES = [
 const TEAM_NATURE_LOOKUP = Object.fromEntries(TEAM_NATURES.map((nature) => [nature.key, nature]))
 const DESIGN_TEMPLATES = [
   {
+    key: 'colorful',
+    label: 'Colorful',
+    note: 'Bold gradients and saturated accents across the page and builder editor.'
+  },
+  {
     key: 'classic',
     label: 'Classic',
     note: 'The current airy Pokedex look.'
@@ -205,57 +210,61 @@ const gamePickerMascotSpeciesIds = {
 const singleFormGamePickerKeys = new Set(['black-2', 'white-2', 'ultra-sun', 'ultra-moon'])
 
 const gamePickerMascotSpriteConfigs = {
-  all: { animatedScale: 1 },
-  champions: { animatedScale: 1},
-  red: { animatedScale: 1 },
-  blue: { animatedScale: 1 },
-  yellow: { animatedScale: 1 },
-  platinum: { animatedScale: 1.4 },
-  gold: { animatedScale: 1.38 },
-  silver: { animatedScale: 1.46 },
-  crystal: { animatedScale: 1 },
-  ruby: { animatedScale: 1 },
-  sapphire: { animatedScale: 1 },
-  emerald: { animatedScale: 1 },
-  'fire-red': { animatedScale: 1 },
-  'leaf-green': { animatedScale: 1 },
-  diamond: { animatedScale: 1 },
-  pearl: { animatedScale: 1 },
-  'heart-gold': { animatedScale: 1.38 },
-  'soul-silver': { animatedScale: 1.46 },
-  black: { animatedScale: 1.36 },
-  white: { animatedScale: 1.36 },
-  x: { animatedScale: 1 },
-  y: { animatedScale: 1 },
+  all: { animatedScale: 1, hoverScale: 1.1 },
+  champions: { animatedScale: 1, hoverScale: 1.3 },
+  red: { animatedScale: 1, hoverScale: 1.35 },
+  blue: { animatedScale: 1, hoverScale: 1.3 },
+  yellow: { animatedScale: 1, hoverScale: 1.3 },
+  platinum: { animatedScale: 1, hoverScale: 1.4 },
+  gold: { animatedScale: 1, hoverScale: 1.5 },
+  silver: { animatedScale: 1, hoverScale: 1.5 },
+  crystal: { animatedScale: 1, hoverScale: 1.3 },
+  ruby: { animatedScale: 1, hoverScale: 1.3 },
+  sapphire: { animatedScale: 1, hoverScale: 1.4 },
+  emerald: { animatedScale: 1, hoverScale: 1.5 },
+  'fire-red': { animatedScale: 1, hoverScale: 1.35 },
+  'leaf-green': { animatedScale: 1, hoverScale: 1.3 },
+  diamond: { animatedScale: 1, hoverScale: 1.3 },
+  pearl: { animatedScale: 1, hoverScale: 1.3 },
+  'heart-gold': { animatedScale: 1, hoverScale: 1.5 },
+  'soul-silver': { animatedScale: 1, hoverScale: 1.5 },
+  black: { animatedScale: 1, hoverScale: 1.4 },
+  white: { animatedScale: 1, hoverScale: 1.4 },
+  x: { animatedScale: 1, hoverScale: 1.3 },
+  y: { animatedScale: 1, hoverScale: 1.3 },
   'omega-ruby': {
     animatedScale: 1,
+    hoverScale: 1.3,
     staticSpriteUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10078.png',
     shinyStaticSpriteUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10078.png',
     disableAnimatedSprite: true
   },
   'alpha-sapphire': {
     animatedScale: 1,
+    hoverScale: 1.3,
     staticSpriteUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10077.png',
     shinyStaticSpriteUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10077.png',
     disableAnimatedSprite: true
   },
-  'black-2': { apiName: 'black-kyurem', animatedScale: 1.36 },
-  'white-2': { apiName: 'white-kyurem', animatedScale: 1.36 },
-  sun: { animatedScale: 1 },
-  moon: { animatedScale: 1 },
-  'ultra-sun': { animatedScale: 1 },
-  'ultra-moon': { animatedScale: 1 },
-  'lets-go-pikachu': { animatedScale: 1 },
-  'lets-go-eevee': { animatedScale: 1 },
-  sword: { animatedScale: 1 },
-  shield: { animatedScale: 1 },
-  'brilliant-diamond': { animatedScale: 1 },
-  'shining-pearl': { animatedScale: 1 },
-  'legends-arceus': { animatedScale: 1 },
-  scarlet: { animatedScale: 1 },
-  violet: { animatedScale: 1 },
-  'legends-z-a': { animatedScale: 1 }
+  'black-2': { apiName: 'black-kyurem', animatedScale: 1, hoverScale: 1.3 },
+  'white-2': { apiName: 'white-kyurem', animatedScale: 1, hoverScale: 1.3 },
+  sun: { animatedScale: 1, hoverScale: 1.3 },
+  moon: { animatedScale: 1, hoverScale: 1.3 },
+  'ultra-sun': { animatedScale: 1, hoverScale: 1.3 },
+  'ultra-moon': { animatedScale: 1, hoverScale: 1.3 },
+  'lets-go-pikachu': { animatedScale: 1, hoverScale: 1.3 },
+  'lets-go-eevee': { animatedScale: 1, hoverScale: 1.3 },
+  sword: { animatedScale: 1, hoverScale: 1.3 },
+  shield: { animatedScale: 1, hoverScale: 1.3 },
+  'brilliant-diamond': { animatedScale: 1, hoverScale: 1.3 },
+  'shining-pearl': { animatedScale: 1, hoverScale: 1.3 },
+  'legends-arceus': { animatedScale: 1, hoverScale: 1.325 },
+  scarlet: { animatedScale: 1, hoverScale: 1.3 },
+  violet: { animatedScale: 1, hoverScale: 1.3 },
+  'legends-z-a': { animatedScale: 1, hoverScale: 1.3 }
 }
+
+const DEFAULT_GAME_PICKER_HOVER_SCALE = 1.25
 
   const gymLeaderGameLookup = Object.fromEntries(gymLeaderGames.map((game) => [game.key, game]))
   const eliteFourGameLookup = Object.fromEntries(eliteFourGames.map((game) => [game.key, game]))
@@ -421,7 +430,11 @@ const getPokemonCardBackground = (types = []) => {
   ].join(', ')
 }
 
-const getPokemonCardStyle = (pokemon) => {
+const getPokemonCardStyle = (pokemon, useTypeColoredCards = true) => {
+  if (!useTypeColoredCards) {
+    return { cursor: 'pointer' }
+  }
+
   const pokemonTypes = Array.isArray(pokemon?.types) ? pokemon.types : []
   const [primaryStart] = getPokemonCardTypeStops(pokemonTypes[0])
   const [secondaryStart] = getPokemonCardTypeStops(pokemonTypes[1])
@@ -1145,6 +1158,7 @@ const formatDisplayName = (value) =>
     .join(' ')
 
 const normalizeDisplayName = (value = '') => value.toLowerCase().replace(/[^a-z0-9]+/g, '')
+const getRegionColorClassName = (regionName = '') => `region-color-${normalizeDisplayName(regionName)}`
 
 const formatEncounterLevelRange = (minimumLevel = null, maximumLevel = null) => {
   const hasMinimumLevel = Number.isInteger(minimumLevel)
@@ -2920,7 +2934,8 @@ function App() {
   const [enemyPresetGameKey, setEnemyPresetGameKey] = useState(gymLeaderGames[0]?.key || '')
   const [playerPresetTrainerKey, setPlayerPresetTrainerKey] = useState('')
   const [enemyPresetTrainerKey, setEnemyPresetTrainerKey] = useState('')
-  const [selectedDesignTemplate, setSelectedDesignTemplate] = useState('classic')
+  const [selectedDesignTemplate, setSelectedDesignTemplate] = useState('colorful')
+  const [showTypeColoredCards, setShowTypeColoredCards] = useState(true)
   const [showShinySprites, setShowShinySprites] = useState(false)
   const [includeZaMegas, setIncludeZaMegas] = useState(false)
   const [sortByGeneration, setSortByGeneration] = useState(false)
@@ -3092,7 +3107,8 @@ function App() {
           ...fallbackSprites,
           static: configuredStaticSprite || fallbackSprites.static,
           animated: shouldDisableAnimatedSprite ? null : configuredAnimatedSprite || mascotAnimated || fallbackSprites.animated,
-          animatedScale: mascotConfig?.animatedScale || 1
+          animatedScale: mascotConfig?.animatedScale || 1,
+          hoverScale: mascotConfig?.hoverScale || DEFAULT_GAME_PICKER_HOVER_SCALE
         }
       }
 
@@ -3101,14 +3117,16 @@ function App() {
           ...fallbackSprites,
           static: configuredStaticSprite || fallbackSprites.static,
           animated: shouldDisableAnimatedSprite ? null : configuredAnimatedSprite || fallbackSprites.animated,
-          animatedScale: mascotConfig?.animatedScale || 1
+          animatedScale: mascotConfig?.animatedScale || 1,
+          hoverScale: mascotConfig?.hoverScale || DEFAULT_GAME_PICKER_HOVER_SCALE
         }
       }
 
       return {
         ...fallbackSprites,
         animated: shouldDisableAnimatedSprite ? null : fallbackSprites.animated,
-        animatedScale: mascotConfig?.animatedScale || 1
+        animatedScale: mascotConfig?.animatedScale || 1,
+        hoverScale: mascotConfig?.hoverScale || DEFAULT_GAME_PICKER_HOVER_SCALE
       }
     })
   }
@@ -6791,6 +6809,14 @@ function App() {
                 <label className="feature-toggle">
                   <input
                     type="checkbox"
+                    checked={showTypeColoredCards}
+                    onChange={(event) => setShowTypeColoredCards(event.target.checked)}
+                  />
+                  <span>Type Colored Cards</span>
+                </label>
+                <label className="feature-toggle">
+                  <input
+                    type="checkbox"
                     checked={showShinySprites}
                     onChange={(event) => setShowShinySprites(event.target.checked)}
                   />
@@ -6951,7 +6977,7 @@ function App() {
                 PartyDex
               </span>
               <br />
-              <span className="page-subtitle">(Pokemon{' '}Team{' '}Builder)</span>
+              <span className="page-subtitle">Premium{' '}Pokemon{' '}Team{' '}Builder</span>
             </h1>
           </header>
 
@@ -6989,7 +7015,10 @@ function App() {
                           <div
                             key={`all-sprite-${spriteIndex}`}
                             className="game-picker-card-sprite-stack"
-                            style={{ '--game-picker-sprite-scale': gamePickerSprite.animatedScale || 1 }}
+                            style={{
+                              '--game-picker-sprite-scale': gamePickerSprite.animatedScale || 1,
+                              '--game-picker-hover-scale': gamePickerSprite.hoverScale || DEFAULT_GAME_PICKER_HOVER_SCALE
+                            }}
                           >
                             <img
                               src={gamePickerSprite.static}
@@ -7008,7 +7037,10 @@ function App() {
                             src={gamePickerSprite.static}
                             alt=""
                             className="game-picker-card-sprite"
-                            style={{ '--game-picker-sprite-scale': gamePickerSprite.animatedScale || 1 }}
+                            style={{
+                              '--game-picker-sprite-scale': gamePickerSprite.animatedScale || 1,
+                              '--game-picker-hover-scale': gamePickerSprite.hoverScale || DEFAULT_GAME_PICKER_HOVER_SCALE
+                            }}
                           />
                         )
                       ))}
@@ -7036,7 +7068,10 @@ function App() {
                           src={gamePickerSprite.static}
                           alt=""
                           className="game-picker-card-sprite"
-                          style={{ '--game-picker-sprite-scale': gamePickerSprite.animatedScale || 1 }}
+                          style={{
+                            '--game-picker-sprite-scale': gamePickerSprite.animatedScale || 1,
+                            '--game-picker-hover-scale': gamePickerSprite.hoverScale || DEFAULT_GAME_PICKER_HOVER_SCALE
+                          }}
                         />
                       ))}
                     </div>
@@ -7050,6 +7085,7 @@ function App() {
                       return null
                     }
 
+                    const regionLabel = game.region || GAME_REGION_BY_KEY[game.key] || `Gen ${game.gen}`
                     const gamePickerSprites = getGamePickerSprites(game.key)
 
                     return (
@@ -7077,7 +7113,10 @@ function App() {
                                 <div
                                   key={`${game.key}-sprite-${spriteIndex}`}
                                   className="game-picker-card-sprite-stack"
-                                  style={{ '--game-picker-sprite-scale': gamePickerSprite.animatedScale || 1 }}
+                                  style={{
+                                    '--game-picker-sprite-scale': gamePickerSprite.animatedScale || 1,
+                                    '--game-picker-hover-scale': gamePickerSprite.hoverScale || DEFAULT_GAME_PICKER_HOVER_SCALE
+                                  }}
                                 >
                                   <img
                                     src={gamePickerSprite.static}
@@ -7096,14 +7135,17 @@ function App() {
                                   src={gamePickerSprite.static}
                                   alt=""
                                   className="game-picker-card-sprite"
-                                  style={{ '--game-picker-sprite-scale': gamePickerSprite.animatedScale || 1 }}
+                                  style={{
+                                    '--game-picker-sprite-scale': gamePickerSprite.animatedScale || 1,
+                                    '--game-picker-hover-scale': gamePickerSprite.hoverScale || DEFAULT_GAME_PICKER_HOVER_SCALE
+                                  }}
                                 />
                               )
                             ))}
                           </div>
                         </div>
-                        <span className="game-picker-card-copy">
-                          {game.region || GAME_REGION_BY_KEY[game.key] || `Gen ${game.gen}`}
+                        <span className={`game-picker-card-copy ${getRegionColorClassName(regionLabel)}`}>
+                          {regionLabel}
                         </span>
                       </button>
                     )
@@ -7478,7 +7520,7 @@ function App() {
                             key={`champions-${poke.id}-${poke.name}`}
                             className={`pokemon-card ${isInTeam(poke.id) ? 'in-team' : ''}`}
                             onClick={() => togglePokemonSelection(displayedPokemon)}
-                            style={getPokemonCardStyle(displayedPokemon)}
+                            style={getPokemonCardStyle(displayedPokemon, showTypeColoredCards)}
                             onMouseEnter={(event) => handlePokemonHoverStart(displayedPokemon, event)}
                             onMouseLeave={handlePokemonHoverEnd}
                           >
@@ -7503,7 +7545,7 @@ function App() {
                       <div className="generation-header">
                         <h2 className="generation-title">
                           <span
-                            className={`generation-region ${hoveredRegion === section.key ? 'active' : ''}`}
+                            className={`generation-region ${getRegionColorClassName(section.name)} ${hoveredRegion === section.key ? 'active' : ''}`}
                             onMouseEnter={() => setHoveredRegion(section.key)}
                             onMouseLeave={() => setHoveredRegion((current) => (current === section.key ? null : current))}
                           >
@@ -7563,7 +7605,7 @@ function App() {
                                   key={`${generationSection.key}-${poke.id}-${poke.name}`}
                                   className={`pokemon-card ${isInTeam(poke.id) ? 'in-team' : ''}`}
                                   onClick={() => togglePokemonSelection(displayedPokemon)}
-                                  style={getPokemonCardStyle(displayedPokemon)}
+                                  style={getPokemonCardStyle(displayedPokemon, showTypeColoredCards)}
                                   onMouseEnter={(event) => handlePokemonHoverStart(displayedPokemon, event)}
                                   onMouseLeave={handlePokemonHoverEnd}
                                 >
@@ -7603,7 +7645,7 @@ function App() {
                                 key={`${section.key}-${gen.gen}-${poke.id}-${poke.name}`}
                                 className={`pokemon-card ${isInTeam(poke.id) ? 'in-team' : ''}`}
                                 onClick={() => togglePokemonSelection(displayedPokemon)}
-                                style={getPokemonCardStyle(displayedPokemon)}
+                                style={getPokemonCardStyle(displayedPokemon, showTypeColoredCards)}
                                 onMouseEnter={(event) => handlePokemonHoverStart(displayedPokemon, event)}
                                 onMouseLeave={handlePokemonHoverEnd}
                               >
