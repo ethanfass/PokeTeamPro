@@ -3016,6 +3016,7 @@ function App() {
     { key: 'hisui', name: 'Hisui', gen: 8, sourceGen: 8 },
     { key: 'paldea', name: 'Paldea', gen: 9, sourceGen: 9 }
   ]
+  const alwaysVisibleBrowseSectionKeys = new Set(['galar', 'hisui', 'paldea'])
   const leadingGameSections = [
     {
       key: 'champions',
@@ -5968,7 +5969,7 @@ function App() {
       ...section,
       generationSections: pokemonByGen[section.sourceGen] ? getGenerationPokemonSections(section) : []
     }))
-    .filter((section) => section.generationSections.length > 0)
+    .filter((section) => section.generationSections.length > 0 || alwaysVisibleBrowseSectionKeys.has(section.key))
   const championsBrowsePokemon = applyBrowseFilters(allBrowsePokemon.filter(isPokemonInChampionsRoster))
     .sort((a, b) => {
       const orderDifference = getChampionsPokemonOrderIndex(a) - getChampionsPokemonOrderIndex(b)
