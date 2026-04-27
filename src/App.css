@@ -1607,7 +1607,7 @@ h1 {
   image-rendering: pixelated;
   image-rendering: crisp-edges;
   filter: drop-shadow(0 8px 14px rgba(36, 50, 74, 0.14));
-  transform: scale(1);
+  transform: scale(var(--game-picker-sprite-scale, 1));
   transform-origin: bottom right;
   transition: transform 0.18s ease;
 }
@@ -1619,7 +1619,7 @@ h1 {
 
 .game-picker-card-sprite-animated {
   opacity: 0;
-  transform: scale(var(--game-picker-animated-scale, 1));
+  transform: scale(var(--game-picker-sprite-scale, 1));
   transition: opacity 0.18s ease, transform 0.18s ease;
 }
 
@@ -1643,7 +1643,7 @@ h1 {
 
 .game-picker-card:hover .game-picker-card-sprite-static,
 .game-picker-card:hover img.game-picker-card-sprite:not(.game-picker-card-sprite-animated) {
-  transform: scale(var(--game-picker-hover-scale));
+  transform: scale(calc(var(--game-picker-sprite-scale, 1) * var(--game-picker-hover-scale)));
 }
 
 .game-picker-card:hover .game-picker-card-sprite-static {
@@ -1652,7 +1652,7 @@ h1 {
 
 .game-picker-card:hover .game-picker-card-sprite-animated {
   opacity: 1;
-  transform: scale(calc(var(--game-picker-animated-scale, 1) * var(--game-picker-hover-scale)));
+  transform: scale(calc(var(--game-picker-sprite-scale, 1) * var(--game-picker-hover-scale)));
 }
 
 .game-picker-card:hover {
@@ -3556,7 +3556,7 @@ h1 {
   z-index: 30;
   display: inline-block;
   cursor: default;
-  transition: transform 0.28s ease, color 0.38s ease, text-shadow 0.38s ease, filter 0.38s ease;
+  transition: transform 0.28s ease, color 0.28s ease, text-shadow 0.28s ease, filter 0.28s ease;
 }
 
 .generation-region:hover,
@@ -3576,7 +3576,7 @@ h1 {
   cursor: default;
   font-size: 1em;
   letter-spacing: -0.03em;
-  transition: transform 0.28s ease, color 0.38s ease, text-shadow 0.38s ease, filter 0.38s ease;
+  transition: transform 0.28s ease, color 0.28s ease, text-shadow 0.28s ease, filter 0.28s ease;
 }
 
 .generation-meta:hover,
@@ -3688,21 +3688,52 @@ h1 {
   justify-content: flex-start;
   height: 186px;
   padding: 10px 8px 12px;
-  border: 2px solid var(--theme-gold-card-border);
+  border: 3px solid var(--type-1-color, var(--pokemon-card-border, var(--theme-gold-card-border)));
   border-radius: 16px;
-  background: var(--theme-gold-card-background);
+  background: var(--pokemon-card-bg, var(--theme-gold-card-background));
   text-align: center;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
-  box-shadow: var(--theme-gold-card-shadow);
+  box-shadow: var(--pokemon-card-shadow, var(--theme-gold-card-shadow));
   overflow: visible;
   isolation: isolate;
 }
 
+.pokemon-card::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: linear-gradient(118deg, rgba(255, 255, 255, 0.52) 0%, rgba(255, 255, 255, 0.18) 20%, rgba(255, 255, 255, 0.04) 42%, rgba(255, 255, 255, 0) 62%);
+  opacity: var(--pokemon-card-gloss-opacity, 0.5);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pokemon-card::after {
+  content: none;
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 3px;
+  background: none;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.pokemon-card > * {
+  position: relative;
+  z-index: 1;
+}
+
 .pokemon-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--theme-gold-card-hover-shadow);
-  filter: saturate(1.05);
+  box-shadow: var(--pokemon-card-hover-shadow, var(--theme-gold-card-hover-shadow));
+  filter: saturate(1.08) brightness(1.02);
   z-index: 4;
 }
 
@@ -3772,7 +3803,8 @@ h1 {
   min-height: 2.5em;
   font-size: 0.72rem;
   font-weight: 700;
-  color: var(--theme-heading);
+  color: var(--pokemon-card-name-color, var(--theme-heading));
+  text-shadow: var(--pokemon-card-text-shadow, none);
   text-transform: capitalize;
   text-align: center;
   line-height: 1.2;
@@ -3782,7 +3814,8 @@ h1 {
 .pokemon-id {
   margin-top: 6px;
   font-size: 0.78rem;
-  color: var(--theme-muted);
+  color: var(--pokemon-card-id-color, var(--theme-muted));
+  text-shadow: var(--pokemon-card-text-shadow, none);
 }
 
 .type-analyzer,
@@ -5622,7 +5655,11 @@ h1 {
   background: linear-gradient(180deg, rgba(28, 39, 57, 0.96) 0%, rgba(21, 30, 44, 0.96) 100%);
 }
 
-.app-shell.dark-ui .pokemon-card,
+.app-shell.dark-ui .pokemon-card {
+  background: var(--pokemon-card-bg, linear-gradient(180deg, #1a2432 0%, #131c29 100%));
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+}
+
 .app-shell.dark-ui .move-card,
 .app-shell.dark-ui .item-card {
   border-color: rgba(124, 146, 184, 0.16);
@@ -5630,10 +5667,13 @@ h1 {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
 }
 
-.app-shell.dark-ui .pokemon-card:hover,
 .app-shell.dark-ui .item-card:hover {
   border-color: rgba(127, 164, 255, 0.5);
   box-shadow: 0 10px 20px rgba(73, 116, 199, 0.12);
+}
+
+.app-shell.dark-ui .pokemon-card:hover {
+  box-shadow: var(--pokemon-card-hover-shadow, 0 10px 20px rgba(73, 116, 199, 0.12));
 }
 
 .app-shell.dark-ui .move-card:hover {

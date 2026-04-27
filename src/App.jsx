@@ -205,25 +205,56 @@ const gamePickerMascotSpeciesIds = {
 const singleFormGamePickerKeys = new Set(['black-2', 'white-2', 'ultra-sun', 'ultra-moon'])
 
 const gamePickerMascotSpriteConfigs = {
+  all: { animatedScale: 1 },
+  champions: { animatedScale: 1},
+  red: { animatedScale: 1 },
+  blue: { animatedScale: 1 },
+  yellow: { animatedScale: 1 },
   platinum: { animatedScale: 1.4 },
   gold: { animatedScale: 1.38 },
   silver: { animatedScale: 1.46 },
+  crystal: { animatedScale: 1 },
+  ruby: { animatedScale: 1 },
+  sapphire: { animatedScale: 1 },
+  emerald: { animatedScale: 1 },
+  'fire-red': { animatedScale: 1 },
+  'leaf-green': { animatedScale: 1 },
+  diamond: { animatedScale: 1 },
+  pearl: { animatedScale: 1 },
   'heart-gold': { animatedScale: 1.38 },
   'soul-silver': { animatedScale: 1.46 },
   black: { animatedScale: 1.36 },
   white: { animatedScale: 1.36 },
+  x: { animatedScale: 1 },
+  y: { animatedScale: 1 },
   'omega-ruby': {
+    animatedScale: 1,
     staticSpriteUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10078.png',
     shinyStaticSpriteUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10078.png',
     disableAnimatedSprite: true
   },
   'alpha-sapphire': {
+    animatedScale: 1,
     staticSpriteUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10077.png',
     shinyStaticSpriteUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10077.png',
     disableAnimatedSprite: true
   },
   'black-2': { apiName: 'black-kyurem', animatedScale: 1.36 },
-  'white-2': { apiName: 'white-kyurem', animatedScale: 1.36 }
+  'white-2': { apiName: 'white-kyurem', animatedScale: 1.36 },
+  sun: { animatedScale: 1 },
+  moon: { animatedScale: 1 },
+  'ultra-sun': { animatedScale: 1 },
+  'ultra-moon': { animatedScale: 1 },
+  'lets-go-pikachu': { animatedScale: 1 },
+  'lets-go-eevee': { animatedScale: 1 },
+  sword: { animatedScale: 1 },
+  shield: { animatedScale: 1 },
+  'brilliant-diamond': { animatedScale: 1 },
+  'shining-pearl': { animatedScale: 1 },
+  'legends-arceus': { animatedScale: 1 },
+  scarlet: { animatedScale: 1 },
+  violet: { animatedScale: 1 },
+  'legends-z-a': { animatedScale: 1 }
 }
 
   const gymLeaderGameLookup = Object.fromEntries(gymLeaderGames.map((game) => [game.key, game]))
@@ -299,6 +330,124 @@ const versionGroupSortIndex = Object.fromEntries(
   versionGroupOrder.map((versionGroup, index) => [versionGroup, index])
 )
 
+const pokemonTypeCardGradientStops = {
+  normal: ['#A8A878', '#C6B887'],
+  fighting: ['#C14039', '#D85253'],
+  flying: ['#A890F0', '#C2A8FF'],
+  poison: ['#A040A0', '#B85BB0'],
+  ground: ['#E0C068', '#F0D878'],
+  rock: ['#B8A038', '#D4B857'],
+  bug: ['#A8B820', '#C8D835'],
+  ghost: ['#705898', '#8877A8'],
+  steel: ['#B8B8D0', '#D0D0E8'],
+  fire: ['#F08030', '#FF9845'],
+  water: ['#6890F0', '#87CEEB'],
+  grass: ['#78C850', '#98FB98'],
+  electric: ['#F8D030', '#FFED4E'],
+  psychic: ['#F85888', '#FF99AA'],
+  ice: ['#98D8D8', '#B8E8E8'],
+  dragon: ['#7038F8', '#9068FF'],
+  dark: ['#705848', '#8B7355'],
+  fairy: ['#EE99AC', '#FFB8DD'],
+  stellar: ['#6f86ff', '#9fe7ff'],
+  unknown: ['#6c7589', '#9aa5bc']
+}
+
+const pokemonCardFallbackGradient = ['#ffe39c', '#ffd062']
+
+const parseHexColor = (hexColor = '') => {
+  const normalizedHex = hexColor.replace('#', '')
+
+  if (normalizedHex.length !== 6) {
+    return null
+  }
+
+  const channelValue = (start) => Number.parseInt(normalizedHex.slice(start, start + 2), 16)
+  const red = channelValue(0)
+  const green = channelValue(2)
+  const blue = channelValue(4)
+
+  if ([red, green, blue].some((value) => Number.isNaN(value))) {
+    return null
+  }
+
+  return { red, green, blue }
+}
+
+const getRelativeLuminance = (hexColor) => {
+  const rgb = parseHexColor(hexColor)
+
+  if (!rgb) {
+    return 1
+  }
+
+  const toLinear = (channel) => {
+    const normalized = channel / 255
+    return normalized <= 0.03928 ? normalized / 12.92 : ((normalized + 0.055) / 1.055) ** 2.4
+  }
+
+  return 0.2126 * toLinear(rgb.red) + 0.7152 * toLinear(rgb.green) + 0.0722 * toLinear(rgb.blue)
+}
+
+const getColorWithAlpha = (hexColor, alpha) => {
+  const rgb = parseHexColor(hexColor)
+
+  if (!rgb) {
+    return `rgba(36, 50, 74, ${alpha})`
+  }
+
+  return `rgba(${rgb.red}, ${rgb.green}, ${rgb.blue}, ${alpha})`
+}
+
+const getPokemonCardTypeStops = (type) => pokemonTypeCardGradientStops[type] || pokemonCardFallbackGradient
+
+const getPokemonCardBackground = (types = []) => {
+  const [primaryType, secondaryType] = Array.isArray(types) ? types : []
+  const [primaryStart, primaryEnd] = getPokemonCardTypeStops(primaryType)
+
+  if (!secondaryType) {
+    return [
+      'radial-gradient(circle at 18% 10%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.14) 34%, rgba(255, 255, 255, 0) 60%)',
+      'linear-gradient(160deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 42%)',
+      `linear-gradient(135deg, ${primaryStart} 0%, ${primaryEnd} 100%)`
+    ].join(', ')
+  }
+
+  const [secondaryStart, secondaryEnd] = getPokemonCardTypeStops(secondaryType)
+  return [
+    'radial-gradient(circle at 18% 10%, rgba(255, 255, 255, 0.38) 0%, rgba(255, 255, 255, 0.12) 34%, rgba(255, 255, 255, 0) 60%)',
+    'linear-gradient(160deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 44%)',
+    `linear-gradient(125deg, ${primaryStart} 0%, ${primaryEnd} 25%, ${secondaryStart} 75%, ${secondaryEnd} 100%)`
+  ].join(', ')
+}
+
+const getPokemonCardStyle = (pokemon) => {
+  const pokemonTypes = Array.isArray(pokemon?.types) ? pokemon.types : []
+  const [primaryStart] = getPokemonCardTypeStops(pokemonTypes[0])
+  const [secondaryStart] = getPokemonCardTypeStops(pokemonTypes[1])
+  const referenceColor = pokemonTypes.length > 1 ? secondaryStart : primaryStart
+  const hasDualTypes = pokemonTypes.length > 1
+  const secondaryBorderColor = hasDualTypes ? secondaryStart : primaryStart
+  const averageLuminance = (getRelativeLuminance(primaryStart) + getRelativeLuminance(referenceColor)) / 2
+  const useDarkText = averageLuminance > 0.375
+  const primaryShadow = getColorWithAlpha(primaryStart, 0.22)
+  const referenceShadow = getColorWithAlpha(referenceColor, 0.3)
+
+  return {
+    cursor: 'pointer',
+    '--pokemon-card-bg': getPokemonCardBackground(pokemonTypes),
+    '--pokemon-card-border': primaryStart,
+    '--type-1-color': primaryStart,
+    '--type-2-color': secondaryBorderColor,
+    '--pokemon-card-shadow': `0 12px 24px ${primaryShadow}, inset 0 1px 0 rgba(255, 255, 255, 0.5)`,
+    '--pokemon-card-hover-shadow': `0 18px 32px ${referenceShadow}, inset 0 1px 0 rgba(255, 255, 255, 0.6)`,
+    '--pokemon-card-gloss-opacity': useDarkText ? 0.4 : 0.62,
+    '--pokemon-card-name-color': useDarkText ? '#22304a' : '#f4f8ff',
+    '--pokemon-card-id-color': useDarkText ? '#3b4e6d' : '#d5e2ff',
+    '--pokemon-card-text-shadow': useDarkText ? 'none' : '0 1px 2px rgba(0, 0, 0, 0.42)'
+  }
+}
+
 // Type effectiveness chart
 const typeEffectiveness = {
   normal: { weakTo: ['fighting'], strong: [] },
@@ -371,8 +520,8 @@ const generationGameDetails = {
       { name: 'Diamond', color: '#5c8ce8' },
       { name: 'Pearl', color: '#d78fad' },
       { name: 'Platinum', color: '#8c95a7' },
-      { name: 'HeartGold', color: '#c78f29' },
-      { name: 'SoulSilver', color: '#8a98ab' }
+      { name: 'Heart Gold', color: '#c78f29' },
+      { name: 'Soul Silver', color: '#8a98ab' }
     ]
   },
   5: {
@@ -6840,7 +6989,7 @@ function App() {
                           <div
                             key={`all-sprite-${spriteIndex}`}
                             className="game-picker-card-sprite-stack"
-                            style={{ '--game-picker-animated-scale': gamePickerSprite.animatedScale || 1 }}
+                            style={{ '--game-picker-sprite-scale': gamePickerSprite.animatedScale || 1 }}
                           >
                             <img
                               src={gamePickerSprite.static}
@@ -6859,6 +7008,7 @@ function App() {
                             src={gamePickerSprite.static}
                             alt=""
                             className="game-picker-card-sprite"
+                            style={{ '--game-picker-sprite-scale': gamePickerSprite.animatedScale || 1 }}
                           />
                         )
                       ))}
@@ -6886,6 +7036,7 @@ function App() {
                           src={gamePickerSprite.static}
                           alt=""
                           className="game-picker-card-sprite"
+                          style={{ '--game-picker-sprite-scale': gamePickerSprite.animatedScale || 1 }}
                         />
                       ))}
                     </div>
@@ -6926,7 +7077,7 @@ function App() {
                                 <div
                                   key={`${game.key}-sprite-${spriteIndex}`}
                                   className="game-picker-card-sprite-stack"
-                                  style={{ '--game-picker-animated-scale': gamePickerSprite.animatedScale || 1 }}
+                                  style={{ '--game-picker-sprite-scale': gamePickerSprite.animatedScale || 1 }}
                                 >
                                   <img
                                     src={gamePickerSprite.static}
@@ -6945,6 +7096,7 @@ function App() {
                                   src={gamePickerSprite.static}
                                   alt=""
                                   className="game-picker-card-sprite"
+                                  style={{ '--game-picker-sprite-scale': gamePickerSprite.animatedScale || 1 }}
                                 />
                               )
                             ))}
@@ -7326,7 +7478,7 @@ function App() {
                             key={`champions-${poke.id}-${poke.name}`}
                             className={`pokemon-card ${isInTeam(poke.id) ? 'in-team' : ''}`}
                             onClick={() => togglePokemonSelection(displayedPokemon)}
-                            style={{ cursor: 'pointer' }}
+                            style={getPokemonCardStyle(displayedPokemon)}
                             onMouseEnter={(event) => handlePokemonHoverStart(displayedPokemon, event)}
                             onMouseLeave={handlePokemonHoverEnd}
                           >
@@ -7411,7 +7563,7 @@ function App() {
                                   key={`${generationSection.key}-${poke.id}-${poke.name}`}
                                   className={`pokemon-card ${isInTeam(poke.id) ? 'in-team' : ''}`}
                                   onClick={() => togglePokemonSelection(displayedPokemon)}
-                                  style={{ cursor: 'pointer' }}
+                                  style={getPokemonCardStyle(displayedPokemon)}
                                   onMouseEnter={(event) => handlePokemonHoverStart(displayedPokemon, event)}
                                   onMouseLeave={handlePokemonHoverEnd}
                                 >
@@ -7451,7 +7603,7 @@ function App() {
                                 key={`${section.key}-${gen.gen}-${poke.id}-${poke.name}`}
                                 className={`pokemon-card ${isInTeam(poke.id) ? 'in-team' : ''}`}
                                 onClick={() => togglePokemonSelection(displayedPokemon)}
-                                style={{ cursor: 'pointer' }}
+                                style={getPokemonCardStyle(displayedPokemon)}
                                 onMouseEnter={(event) => handlePokemonHoverStart(displayedPokemon, event)}
                                 onMouseLeave={handlePokemonHoverEnd}
                               >
