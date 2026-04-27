@@ -2934,7 +2934,7 @@ function App() {
   const [enemyPresetGameKey, setEnemyPresetGameKey] = useState(gymLeaderGames[0]?.key || '')
   const [playerPresetTrainerKey, setPlayerPresetTrainerKey] = useState('')
   const [enemyPresetTrainerKey, setEnemyPresetTrainerKey] = useState('')
-  const [selectedDesignTemplate, setSelectedDesignTemplate] = useState('colorful')
+  const [selectedDesignTemplate, setSelectedDesignTemplate] = useState('classic')
   const [showTypeColoredCards, setShowTypeColoredCards] = useState(true)
   const [showShinySprites, setShowShinySprites] = useState(false)
   const [includeZaMegas, setIncludeZaMegas] = useState(false)
