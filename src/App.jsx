@@ -9155,12 +9155,13 @@ function App() {
                 )}
               </div>
 
-              {renderPokemonEncounterSummary(hoverProfileDetails)}
 
             </div>
 
             <div className="pokemon-hover-column pokemon-hover-column-secondary">
               {renderPokemonLevelUpLearnset(hoveredPokemonCard.pokemon, hoverLearnsetDetails)}
+
+              {renderPokemonEncounterSummary(hoverProfileDetails)}
 
               {hoveredPokemonCard.pokemon.heldItem && (
                 <div className="pokemon-hover-section">
