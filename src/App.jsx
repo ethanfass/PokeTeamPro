@@ -11,6 +11,7 @@ import pokemonBrowseData from './data/pokemonBrowseData.json'
 import { pokemonGenerations } from './data/pokemonBrowseConfig'
 import { gymLeaderGameGroupByGameKey, gymLeaderGames, gymLeadersByGame } from './data/gymLeaders'
 import pokeballImage from '../assets/pokeball.png'
+import selectmusicSrc from './sfx/selectmusic.wav'
 
 const TEAM_SLOT_COUNT = 6
 const TEAM_MOVE_SLOT_COUNT = 4
@@ -3005,8 +3006,12 @@ function App() {
   const [hoveredAbility, setHoveredAbility] = useState(null)
   const [hoveredLearnsetMove, setHoveredLearnsetMove] = useState(null)
   const [comparisonHoveredAbilities, setComparisonHoveredAbilities] = useState([null, null])
+  const [musicVolume, setMusicVolume] = useState(0)
+  const musicAudioRef = useRef(null)
+  const musicRestartTimerRef = useRef(null)
   const menuRef = useRef(null)
   const hoverCardCloseTimeoutRef = useRef(null)
+  const hoverMenuTimerRef = useRef(null)
   const hoverCardRef = useRef(null)
   const teamSectionRef = useRef(null)
   const teamRef = useRef(team)
@@ -3513,20 +3518,12 @@ function App() {
   }, [menuOpen])
 
   useEffect(() => {
-    const handleKeyDown = (event) => {
-      if (event.key === 'Shift') {
-        setShiftPressed(true)
-      }
-    }
-
-    const handleKeyUp = (event) => {
-      if (event.key === 'Shift') {
-        setShiftPressed(false)
-      }
-    }
-
     const handleWindowBlur = () => {
       setShiftPressed(false)
+      if (hoverMenuTimerRef.current) {
+        clearTimeout(hoverMenuTimerRef.current)
+        hoverMenuTimerRef.current = null
+      }
       setHoveredRegion(null)
       setHoveredGeneration(null)
       setHoveredPokemonCard(null)
@@ -3535,16 +3532,53 @@ function App() {
       setHoveredLearnsetMove(null)
     }
 
-    window.addEventListener('keydown', handleKeyDown)
-    window.addEventListener('keyup', handleKeyUp)
     window.addEventListener('blur', handleWindowBlur)
 
     return () => {
-      window.removeEventListener('keydown', handleKeyDown)
-      window.removeEventListener('keyup', handleKeyUp)
       window.removeEventListener('blur', handleWindowBlur)
     }
   }, [])
+
+  useEffect(() => {
+    const audio = new Audio(selectmusicSrc)
+    audio.volume = musicVolume
+    musicAudioRef.current = audio
+
+    const handleEnded = () => {
+      musicRestartTimerRef.current = setTimeout(() => {
+        audio.currentTime = 0
+        audio.play().catch(() => {})
+      }, 3000)
+    }
+
+    audio.addEventListener('ended', handleEnded)
+
+    if (musicVolume > 0) {
+      audio.play().catch(() => {})
+    }
+
+    return () => {
+      audio.removeEventListener('ended', handleEnded)
+      audio.pause()
+      if (musicRestartTimerRef.current) clearTimeout(musicRestartTimerRef.current)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!musicAudioRef.current) return
+    musicAudioRef.current.volume = musicVolume
+    if (musicVolume > 0) {
+      if (musicAudioRef.current.paused) {
+        musicAudioRef.current.play().catch(() => {})
+      }
+    } else {
+      musicAudioRef.current.pause()
+      if (musicRestartTimerRef.current) {
+        clearTimeout(musicRestartTimerRef.current)
+        musicRestartTimerRef.current = null
+      }
+    }
+  }, [musicVolume])
 
   useEffect(() => {
     const handleHistoryKeyDown = (event) => {
@@ -6448,6 +6482,29 @@ function App() {
     return pokemonIsWeakToType(pokemon, hoveredAnalyzer.type)
   }
 
+  const startHoverMenuDelay = () => {
+    if (hoverMenuTimerRef.current) clearTimeout(hoverMenuTimerRef.current)
+    hoverMenuTimerRef.current = setTimeout(() => {
+      setShiftPressed(true)
+      hoverMenuTimerRef.current = null
+    }, 500)
+  }
+
+  const scheduleHoverMenuCancel = () => {
+    if (hoverMenuTimerRef.current) clearTimeout(hoverMenuTimerRef.current)
+    hoverMenuTimerRef.current = setTimeout(() => {
+      setShiftPressed(false)
+      hoverMenuTimerRef.current = null
+    }, 150)
+  }
+
+  const keepHoverMenuOpen = () => {
+    if (hoverMenuTimerRef.current) {
+      clearTimeout(hoverMenuTimerRef.current)
+      hoverMenuTimerRef.current = null
+    }
+  }
+
   const cancelHoverCardClose = () => {
     if (hoverCardCloseTimeoutRef.current) {
       clearTimeout(hoverCardCloseTimeoutRef.current)
@@ -6467,6 +6524,7 @@ function App() {
 
   const handlePokemonHoverStart = (pokemon, event) => {
     cancelHoverCardClose()
+    startHoverMenuDelay()
     const rect = event.currentTarget.getBoundingClientRect()
     setHoveredItemCard(null)
     setHoveredMoveCard(null)
@@ -6482,11 +6540,13 @@ function App() {
   }
 
   const handlePokemonHoverEnd = () => {
+    scheduleHoverMenuCancel()
     scheduleHoverCardClose()
   }
 
   const handleItemHoverStart = (item, event) => {
     cancelHoverCardClose()
+    startHoverMenuDelay()
     const rect = event.currentTarget.getBoundingClientRect()
     setHoveredPokemonCard(null)
     setHoveredMoveCard(null)
@@ -6502,11 +6562,13 @@ function App() {
   }
 
   const handleItemHoverEnd = () => {
+    scheduleHoverMenuCancel()
     scheduleHoverCardClose()
   }
 
   const handleMoveHoverStart = (move, event) => {
     cancelHoverCardClose()
+    startHoverMenuDelay()
     const rect = event.currentTarget.getBoundingClientRect()
     setHoveredPokemonCard(null)
     setHoveredItemCard(null)
@@ -6522,6 +6584,7 @@ function App() {
   }
 
   const handleMoveHoverEnd = () => {
+    scheduleHoverMenuCancel()
     scheduleHoverCardClose()
   }
 
@@ -6534,9 +6597,9 @@ function App() {
         left: `${Math.max(
           16,
           Math.min(
-            activeHoverCard.rect.right + 8 + hoverCardSize.width <= window.innerWidth - 16
-              ? activeHoverCard.rect.right + 8
-              : activeHoverCard.rect.left - hoverCardSize.width - 8,
+            activeHoverCard.rect.right + 3 + hoverCardSize.width <= window.innerWidth - 16
+              ? activeHoverCard.rect.right + 3
+              : activeHoverCard.rect.left - hoverCardSize.width - 3,
             window.innerWidth - hoverCardSize.width - 16
           )
         )}px`
@@ -6960,6 +7023,24 @@ function App() {
                 </div>
               </>
             )}
+            <div className="feature-menu-section feature-menu-section-sound">
+              <div className="feature-menu-group-label">Sound</div>
+              <div className="feature-sound-controls">
+                <label className="feature-volume-row">
+                  <span className="feature-volume-label">Music</span>
+                  <input
+                    type="range"
+                    className="feature-volume-slider"
+                    min={0}
+                    max={1}
+                    step={0.01}
+                    value={musicVolume}
+                    onChange={(event) => setMusicVolume(Number(event.target.value))}
+                  />
+                  <span className="feature-volume-value">{Math.round(musicVolume * 100)}</span>
+                </label>
+              </div>
+            </div>
           </div>
         )}
       </div>
@@ -7565,8 +7646,8 @@ function App() {
                         <h2 className="generation-title">
                           <span
                             className={`generation-region ${getRegionColorClassName(section.name)} ${hoveredRegion === section.key ? 'active' : ''}`}
-                            onMouseEnter={() => setHoveredRegion(section.key)}
-                            onMouseLeave={() => setHoveredRegion((current) => (current === section.key ? null : current))}
+                            onMouseEnter={() => { setHoveredRegion(section.key); startHoverMenuDelay() }}
+                            onMouseLeave={() => { setHoveredRegion((current) => (current === section.key ? null : current)); scheduleHoverMenuCancel() }}
                           >
                             {section.name}
                             {shiftPressed && hoveredRegion === section.key && (
@@ -7589,8 +7670,8 @@ function App() {
                           <span className="generation-separator">-</span>{' '}
                           <span
                             className={`generation-meta ${hoveredGeneration === section.key ? 'active' : ''}`}
-                            onMouseEnter={() => setHoveredGeneration(section.key)}
-                            onMouseLeave={() => setHoveredGeneration(current => (current === section.key ? null : current))}
+                            onMouseEnter={() => { setHoveredGeneration(section.key); startHoverMenuDelay() }}
+                            onMouseLeave={() => { setHoveredGeneration(current => (current === section.key ? null : current)); scheduleHoverMenuCancel() }}
                           >
                             Gen {section.gen}
                             {shiftPressed && hoveredGeneration === section.key && (
@@ -8955,8 +9036,8 @@ function App() {
           className="pokemon-hover-card"
           ref={hoverCardRef}
           style={hoverCardStyle}
-          onMouseEnter={cancelHoverCardClose}
-          onMouseLeave={scheduleHoverCardClose}
+          onMouseEnter={() => { cancelHoverCardClose(); keepHoverMenuOpen() }}
+          onMouseLeave={() => { scheduleHoverCardClose(); scheduleHoverMenuCancel() }}
         >
           <div className="pokemon-hover-header">
             {renderPokemonSprite(hoveredPokemonCard.pokemon, {
@@ -9132,8 +9213,8 @@ function App() {
           className="pokemon-hover-card item-hover-card"
           ref={hoverCardRef}
           style={hoverCardStyle}
-          onMouseEnter={cancelHoverCardClose}
-          onMouseLeave={scheduleHoverCardClose}
+          onMouseEnter={() => { cancelHoverCardClose(); keepHoverMenuOpen() }}
+          onMouseLeave={() => { scheduleHoverCardClose(); scheduleHoverMenuCancel() }}
         >
           <div className="pokemon-hover-header">
             <img
@@ -9165,8 +9246,8 @@ function App() {
           className="pokemon-hover-card move-hover-card"
           ref={hoverCardRef}
           style={hoverCardStyle}
-          onMouseEnter={cancelHoverCardClose}
-          onMouseLeave={scheduleHoverCardClose}
+          onMouseEnter={() => { cancelHoverCardClose(); keepHoverMenuOpen() }}
+          onMouseLeave={() => { scheduleHoverCardClose(); scheduleHoverMenuCancel() }}
         >
           <div className="pokemon-hover-header">
             <div className="pokemon-hover-heading move-hover-heading">
