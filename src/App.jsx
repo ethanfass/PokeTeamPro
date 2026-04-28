@@ -12,6 +12,7 @@ import { pokemonGenerations } from './data/pokemonBrowseConfig'
 import { gymLeaderGameGroupByGameKey, gymLeaderGames, gymLeadersByGame } from './data/gymLeaders'
 import pokeballImage from '../assets/pokeball.png'
 import selectmusicSrc from './sfx/selectmusic.wav'
+import pokeclickSrc from './sfx/pokeclick.wav'
 
 const TEAM_SLOT_COUNT = 6
 const TEAM_MOVE_SLOT_COUNT = 4
@@ -78,14 +79,14 @@ const TEAM_NATURES = [
 const TEAM_NATURE_LOOKUP = Object.fromEntries(TEAM_NATURES.map((nature) => [nature.key, nature]))
 const DESIGN_TEMPLATES = [
   {
-    key: 'colorful',
-    label: 'Colorful',
-    note: 'Bold gradients and saturated accents across the page and builder editor.'
-  },
-  {
     key: 'classic',
     label: 'Classic',
     note: 'The current airy Pokedex look.'
+  },
+  {
+    key: 'colorful',
+    label: 'Colorful',
+    note: 'Bold gradients and saturated accents across the page and builder editor.'
   },
   {
     key: 'sunset',
@@ -3007,6 +3008,8 @@ function App() {
   const [hoveredLearnsetMove, setHoveredLearnsetMove] = useState(null)
   const [comparisonHoveredAbilities, setComparisonHoveredAbilities] = useState([null, null])
   const [musicVolume, setMusicVolume] = useState(0)
+  const [clickVolume, setClickVolume] = useState(0)
+  const clickVolumeRef = useRef(0)
   const musicAudioRef = useRef(null)
   const musicRestartTimerRef = useRef(null)
   const menuRef = useRef(null)
@@ -3579,6 +3582,24 @@ function App() {
       }
     }
   }, [musicVolume])
+
+  useEffect(() => {
+    clickVolumeRef.current = clickVolume
+  }, [clickVolume])
+
+  useEffect(() => {
+    const handleDocumentClick = () => {
+      const vol = clickVolumeRef.current
+      if (vol === 0) return
+      try {
+        const audio = new Audio(pokeclickSrc)
+        audio.volume = vol
+        audio.play()
+      } catch (_) {}
+    }
+    document.addEventListener('click', handleDocumentClick)
+    return () => document.removeEventListener('click', handleDocumentClick)
+  }, [])
 
   useEffect(() => {
     const handleHistoryKeyDown = (event) => {
@@ -7038,6 +7059,19 @@ function App() {
                     onChange={(event) => setMusicVolume(Number(event.target.value))}
                   />
                   <span className="feature-volume-value">{Math.round(musicVolume * 100)}</span>
+                </label>
+                <label className="feature-volume-row">
+                  <span className="feature-volume-label">Click</span>
+                  <input
+                    type="range"
+                    className="feature-volume-slider"
+                    min={0}
+                    max={1}
+                    step={0.01}
+                    value={clickVolume}
+                    onChange={(event) => setClickVolume(Number(event.target.value))}
+                  />
+                  <span className="feature-volume-value">{Math.round(clickVolume * 100)}</span>
                 </label>
               </div>
             </div>
