@@ -9189,6 +9189,28 @@ function App() {
                 )}
               </div>
 
+              <div className="pokemon-hover-section">
+                <div className="pokemon-hover-section-title">Games</div>
+                <div className="pokemon-hover-games">
+                  {hoverGames.length > 0 ? (
+                    <ul className="pokemon-hover-games-list">
+                      {hoverGames.map((game) => (
+                        <li
+                          key={`${hoveredPokemonCard.pokemon.name}-${game.key}`}
+                          className={`pokemon-hover-game-item gen-${game.systemClass}`}
+                        >
+                          <span className="pokemon-hover-game-name" style={{ color: game.color }}>
+                            {game.name}
+                          </span>
+                          {game.dlcSection ? <span className="pokemon-hover-game-tag">{game.dlcSection}</span> : null}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <div className="pokemon-hover-loading">No tracked game availability yet.</div>
+                  )}
+                </div>
+              </div>
 
             </div>
 
@@ -9215,29 +9237,6 @@ function App() {
                   </div>
                 </div>
               )}
-
-              <div className="pokemon-hover-section">
-                <div className="pokemon-hover-section-title">Games</div>
-                <div className="pokemon-hover-games">
-                  {hoverGames.length > 0 ? (
-                    <ul className="pokemon-hover-games-list">
-                      {hoverGames.map((game) => (
-                        <li
-                          key={`${hoveredPokemonCard.pokemon.name}-${game.key}`}
-                          className={`pokemon-hover-game-item gen-${game.systemClass}`}
-                        >
-                          <span className="pokemon-hover-game-name" style={{ color: game.color }}>
-                            {game.name}
-                          </span>
-                          {game.dlcSection ? <span className="pokemon-hover-game-tag">{game.dlcSection}</span> : null}
-                        </li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <div className="pokemon-hover-loading">No tracked game availability yet.</div>
-                  )}
-                </div>
-              </div>
             </div>
           </div>
         </div>
