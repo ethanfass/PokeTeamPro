@@ -1,0 +1,959 @@
+.app-shell.dark-ui {
+  color-scheme: dark;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(116, 159, 255, 0.18), transparent 24%),
+    radial-gradient(circle at 86% 10%, rgba(89, 207, 255, 0.1), transparent 22%),
+    radial-gradient(circle at 50% 100%, rgba(83, 115, 173, 0.16), transparent 34%),
+    linear-gradient(180deg, #101722 0%, #0b111a 52%, #080d14 100%);
+  color: #d8e0ec;
+}
+
+.app-shell.dark-ui .menu-toggle,
+.app-shell.dark-ui .feature-menu,
+.app-shell.dark-ui .pokemon-hover-card,
+.app-shell.dark-ui .team-section,
+.app-shell.dark-ui .game-picker-section,
+.app-shell.dark-ui .pokemon-grid,
+.app-shell.dark-ui .saved-teams-section,
+.app-shell.dark-ui .item-database-section,
+.app-shell.dark-ui .move-database-section,
+.app-shell.dark-ui .gym-leaders-panel,
+.app-shell.dark-ui .elite-four-panel,
+.app-shell.dark-ui .type-analyzer,
+.app-shell.dark-ui .suggested-additions-panel,
+.app-shell.dark-ui .comparison-panel {
+  border-color: rgba(124, 146, 184, 0.18);
+  background:
+    radial-gradient(circle at top, rgba(127, 164, 255, 0.06), transparent 42%),
+    linear-gradient(180deg, rgba(20, 29, 42, 0.96) 0%, rgba(13, 20, 31, 0.96) 100%);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
+}
+
+.app-shell.dark-ui .generation-section {
+  border-color: rgba(124, 146, 184, 0.16);
+  background:
+    radial-gradient(circle at top, rgba(127, 164, 255, 0.08), transparent 40%),
+    linear-gradient(180deg, rgba(18, 27, 40, 0.98) 0%, rgba(11, 18, 29, 0.98) 100%);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.26);
+}
+
+.app-shell.dark-ui .generation-header {
+  border-bottom-color: rgba(127, 164, 255, 0.76);
+}
+
+.app-shell.dark-ui .generation-region {
+  color: #9dbdff;
+}
+
+.app-shell.dark-ui .generation-region:hover,
+.app-shell.dark-ui .generation-region.active {
+  color: #2e9b45 !important;
+  text-shadow: 0 10px 20px rgba(46, 155, 69, 0.18);
+}
+
+.app-shell.dark-ui h1,
+.app-shell.dark-ui .team-title,
+.app-shell.dark-ui .pokemon-title,
+.app-shell.dark-ui .saved-teams-title,
+.app-shell.dark-ui .item-database-title,
+.app-shell.dark-ui .move-database-title,
+.app-shell.dark-ui .comparison-title,
+.app-shell.dark-ui .analyzer-title,
+.app-shell.dark-ui .generation-title,
+.app-shell.dark-ui .slot-name,
+.app-shell.dark-ui .pokemon-name,
+.app-shell.dark-ui .item-card-name,
+.app-shell.dark-ui .pokemon-hover-name,
+.app-shell.dark-ui .comparison-target-name,
+.app-shell.dark-ui .comparison-empty-title {
+  color: #eef3fb;
+}
+
+.app-shell.dark-ui .menu-toggle span,
+.app-shell.dark-ui .feature-toggle,
+.app-shell.dark-ui .feature-menu-title,
+.app-shell.dark-ui .feature-menu-group-label,
+.app-shell.dark-ui .game-picker-kicker,
+.app-shell.dark-ui .feature-template-note,
+.app-shell.dark-ui .team-count,
+.app-shell.dark-ui .pokemon-helper,
+.app-shell.dark-ui .pokemon-helper-active,
+.app-shell.dark-ui .browse-filters-helper,
+.app-shell.dark-ui .browse-filters-count,
+.app-shell.dark-ui .browse-filter-label,
+.app-shell.dark-ui .browse-empty-state,
+.app-shell.dark-ui .saved-teams-helper,
+.app-shell.dark-ui .saved-teams-storage-note,
+.app-shell.dark-ui .saved-teams-empty-state,
+.app-shell.dark-ui .saved-team-meta,
+.app-shell.dark-ui .saved-team-date,
+.app-shell.dark-ui .saved-team-preview-empty,
+.app-shell.dark-ui .item-database-helper,
+.app-shell.dark-ui .move-database-helper,
+.app-shell.dark-ui .item-database-count,
+.app-shell.dark-ui .empty-slot-text,
+.app-shell.dark-ui .pokemon-id,
+.app-shell.dark-ui .generation-subsection-title,
+.app-shell.dark-ui .game-dlc-region-title,
+.app-shell.dark-ui .analyzer-header,
+.app-shell.dark-ui .comparison-helper,
+.app-shell.dark-ui .comparison-target-label,
+.app-shell.dark-ui .comparison-empty-copy,
+.app-shell.dark-ui .pokemon-hover-section-title,
+.app-shell.dark-ui .pokemon-hover-loading,
+.app-shell.dark-ui .pokemon-profile-label,
+.app-shell.dark-ui .pokemon-hover-evolution-requirement,
+.app-shell.dark-ui .pokemon-hover-evolution-connector span,
+.app-shell.dark-ui .pokemon-hover-game-tag,
+.app-shell.dark-ui .pokemon-encounter-helper,
+.app-shell.dark-ui .pokemon-encounter-more,
+.app-shell.dark-ui .analyzer-coverage-option,
+.app-shell.dark-ui .analyzer-coverage-helper,
+.app-shell.dark-ui .type-bar-label-inline,
+.app-shell.dark-ui .item-hover-badge,
+.app-shell.dark-ui .item-hover-description,
+.app-shell.dark-ui .move-hover-description,
+.app-shell.dark-ui .move-hover-stat-label,
+.app-shell.dark-ui .slot-held-item-name,
+.app-shell.dark-ui .pokemon-learnset-helper,
+.app-shell.dark-ui .pokemon-learnset-tooltip-level,
+.app-shell.dark-ui .saved-team-preview-name,
+.app-shell.dark-ui .item-hover-inline-name,
+.app-shell.dark-ui .analyzer-summary-label,
+.app-shell.dark-ui .analyzer-summary-copy,
+.app-shell.dark-ui .type-bar-count {
+  color: #aeb9cb;
+}
+
+.app-shell.dark-ui .analyzer-summary-card,
+.app-shell.dark-ui .analyzer-warning-card {
+  border-color: rgba(124, 146, 184, 0.16);
+  background: linear-gradient(180deg, rgba(28, 39, 57, 0.96) 0%, rgba(21, 30, 44, 0.96) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.app-shell.dark-ui .feature-menu-section {
+  border-color: rgba(var(--feature-section-accent-rgb), 0.24);
+  background:
+    radial-gradient(circle at top right, rgba(var(--feature-section-accent-rgb), 0.2), transparent 42%),
+    linear-gradient(180deg, rgba(28, 39, 57, 0.96) 0%, rgba(18, 26, 39, 0.96) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    0 16px 28px rgba(8, 14, 26, 0.22);
+}
+
+.app-shell.dark-ui .feature-menu-section .feature-menu-group-label {
+  color: var(--feature-section-accent);
+}
+
+.app-shell.dark-ui .feature-menu .feature-toggle {
+  border-color: rgba(var(--feature-section-accent-rgb), 0.24);
+  background: linear-gradient(180deg, rgba(31, 44, 63, 0.94) 0%, rgba(var(--feature-section-accent-rgb), 0.12) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    0 10px 18px rgba(8, 14, 26, 0.18);
+}
+
+.app-shell.dark-ui .feature-menu .feature-toggle:hover {
+  border-color: rgba(var(--feature-section-accent-rgb), 0.42);
+  box-shadow:
+    0 12px 22px rgba(8, 14, 26, 0.24),
+    0 0 0 1px rgba(var(--feature-section-accent-rgb), 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.app-shell.dark-ui .feature-menu-section .feature-select {
+  border-color: rgba(var(--feature-section-accent-rgb), 0.28);
+  background:
+    linear-gradient(45deg, transparent 50%, var(--feature-section-accent) 50%) calc(100% - 18px) calc(50% - 2px) / 7px 7px no-repeat,
+    linear-gradient(135deg, var(--feature-section-accent) 50%, transparent 50%) calc(100% - 13px) calc(50% - 2px) / 7px 7px no-repeat,
+    linear-gradient(180deg, rgba(30, 42, 60, 0.96) 0%, rgba(var(--feature-section-accent-rgb), 0.14) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    0 10px 18px rgba(8, 14, 26, 0.18);
+}
+
+.app-shell.dark-ui .feature-menu-section .feature-select:hover {
+  border-color: rgba(var(--feature-section-accent-rgb), 0.38);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    0 12px 22px rgba(8, 14, 26, 0.22);
+}
+
+.app-shell.dark-ui .feature-menu-section .feature-select:focus {
+  border-color: var(--feature-section-accent);
+  box-shadow:
+    0 0 0 3px rgba(var(--feature-section-accent-rgb), 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03),
+    0 10px 18px rgba(8, 14, 26, 0.2);
+}
+
+.app-shell.dark-ui .analyzer-coverage-option {
+  border-color: rgba(124, 146, 184, 0.18);
+  background: linear-gradient(180deg, rgba(30, 42, 60, 0.96) 0%, rgba(22, 31, 45, 0.96) 100%);
+}
+
+.app-shell.dark-ui .analyzer-coverage-option:hover {
+  border-color: rgba(126, 169, 255, 0.28);
+  color: #eef3fb;
+}
+
+.app-shell.dark-ui .analyzer-coverage-option.active {
+  border-color: rgba(126, 169, 255, 0.36);
+  background: linear-gradient(180deg, rgba(44, 66, 104, 0.98) 0%, rgba(32, 51, 84, 0.96) 100%);
+  color: #8db0ff;
+  box-shadow: 0 12px 22px rgba(8, 14, 26, 0.28);
+}
+
+.app-shell.dark-ui .analyzer-summary-value {
+  color: #eef3fb;
+}
+
+.app-shell.dark-ui .analyzer-summary-meter {
+  background: rgba(60, 76, 104, 0.82);
+}
+
+.app-shell.dark-ui .analyzer-warning-card {
+  color: #ffd39a;
+  border-color: rgba(234, 178, 47, 0.18);
+  background: linear-gradient(180deg, rgba(73, 53, 25, 0.95) 0%, rgba(54, 39, 18, 0.95) 100%);
+}
+
+.app-shell.dark-ui .analyzer-warning-card-success {
+  color: #9ae0a8;
+  border-color: rgba(89, 193, 116, 0.2);
+  background: linear-gradient(180deg, rgba(26, 57, 34, 0.95) 0%, rgba(20, 44, 27, 0.95) 100%);
+}
+
+.app-shell.dark-ui .analyzer-suggestion-card {
+  border-color: rgba(124, 146, 184, 0.16);
+  background: linear-gradient(180deg, rgba(28, 39, 57, 0.96) 0%, rgba(21, 30, 44, 0.96) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.app-shell.dark-ui .analyzer-suggestion-card:hover {
+  border-color: rgba(126, 169, 255, 0.28);
+  box-shadow: 0 12px 24px rgba(8, 14, 26, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.app-shell.dark-ui .analyzer-suggestion-name {
+  color: #eef3fb;
+}
+
+.app-shell.dark-ui .analyzer-suggestion-bst,
+.app-shell.dark-ui .analyzer-suggestion-action,
+.app-shell.dark-ui .analyzer-suggestion-reason-label {
+  color: #aeb9cb;
+}
+
+.app-shell.dark-ui .type-bar-count.weakness-count {
+  color: #ff9f9f;
+}
+
+.app-shell.dark-ui .team-save-button {
+  border-color: rgba(124, 146, 184, 0.22);
+  background: linear-gradient(180deg, #1a2432 0%, #121b28 100%);
+  color: #8db0ff;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
+}
+
+.app-shell.dark-ui .team-save-button:hover:not(:disabled) {
+  border-color: rgba(127, 164, 255, 0.36);
+  color: #b6ceff;
+}
+
+.app-shell.dark-ui .team-save-button:disabled {
+  opacity: 0.45;
+}
+
+.app-shell.dark-ui .item-hover-badge.move-category-physical {
+  background: rgba(220, 76, 76, 0.18);
+  border-color: rgba(255, 122, 122, 0.28);
+  color: #ff8f8f;
+}
+
+.app-shell.dark-ui .item-hover-badge.move-category-special {
+  background: rgba(62, 115, 237, 0.18);
+  border-color: rgba(118, 159, 255, 0.28);
+  color: #8db4ff;
+}
+
+.app-shell.dark-ui .item-hover-badge.move-category-status,
+.app-shell.dark-ui .item-hover-badge.move-category-unknown {
+  background: rgba(79, 133, 239, 0.12);
+  border-color: rgba(124, 146, 184, 0.18);
+  color: #aeb9cb;
+}
+
+.app-shell.dark-ui .feature-select,
+.app-shell.dark-ui .item-search-input,
+.app-shell.dark-ui .move-filter-select {
+  border-color: rgba(124, 146, 184, 0.24);
+  background:
+    linear-gradient(45deg, transparent 50%, #7da0ff 50%) calc(100% - 18px) calc(50% - 2px) / 7px 7px no-repeat,
+    linear-gradient(135deg, #7da0ff 50%, transparent 50%) calc(100% - 13px) calc(50% - 2px) / 7px 7px no-repeat,
+    linear-gradient(180deg, #192232 0%, #121b28 100%);
+  color: #e7edf7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 8px 18px rgba(0, 0, 0, 0.16);
+}
+
+.app-shell.dark-ui .feature-select option,
+.app-shell.dark-ui .move-filter-select option {
+  color: #e7edf7;
+  background: #16202d;
+}
+
+.app-shell.dark-ui .slot {
+  border-color: #51627d;
+  background: linear-gradient(180deg, #1a2432 0%, #131b27 100%);
+}
+
+.app-shell.dark-ui .slot.filled {
+  border-color: transparent;
+  background:
+    linear-gradient(180deg, #1b2638 0%, #152131 100%) padding-box,
+    linear-gradient(117deg, var(--slot-type-1-color, #7fa4ff) 50%, var(--slot-type-2-color, var(--slot-type-1-color, #7fa4ff)) 50%) border-box;
+}
+
+.app-shell.dark-ui .slot.item-target {
+  border-color: #7fa4ff;
+  box-shadow: 0 0 0 3px rgba(127, 164, 255, 0.18), 0 14px 28px rgba(127, 164, 255, 0.14);
+}
+
+.app-shell.dark-ui .slot.move-target {
+  border-color: #7fa4ff;
+  box-shadow: 0 0 0 3px rgba(127, 164, 255, 0.12), 0 14px 28px rgba(127, 164, 255, 0.1);
+}
+
+.app-shell.dark-ui .slot.move-target-legal {
+  border-color: #59c174;
+  box-shadow: 0 0 0 3px rgba(89, 193, 116, 0.14), 0 14px 28px rgba(89, 193, 116, 0.12);
+}
+
+.app-shell.dark-ui .slot.move-target-illegal {
+  border-color: #e56d6d;
+  box-shadow: 0 0 0 3px rgba(229, 109, 109, 0.12), 0 14px 28px rgba(229, 109, 109, 0.1);
+}
+
+.app-shell.dark-ui .slot-held-item,
+.app-shell.dark-ui .slot-ability-button,
+.app-shell.dark-ui .slot-build-button,
+.app-shell.dark-ui .slot-move-chip,
+.app-shell.dark-ui .pokemon-profile-card,
+.app-shell.dark-ui .pokemon-build-preview-card,
+.app-shell.dark-ui .item-hover-inline,
+.app-shell.dark-ui .item-hover-description,
+.app-shell.dark-ui .move-hover-description,
+.app-shell.dark-ui .move-hover-stat-card,
+.app-shell.dark-ui .comparison-build-chip,
+.app-shell.dark-ui .team-build-summary-chip,
+.app-shell.dark-ui .team-build-card,
+.app-shell.dark-ui .saved-team-card,
+.app-shell.dark-ui .saved-team-preview-slot,
+.app-shell.dark-ui .saved-teams-empty-state,
+.app-shell.dark-ui .browse-filters-panel,
+.app-shell.dark-ui .browse-empty-state,
+.app-shell.dark-ui .pokemon-hover-ability-tooltip,
+.app-shell.dark-ui .pokemon-hover-evolution-item,
+.app-shell.dark-ui .pokemon-encounter-group,
+.app-shell.dark-ui .pokemon-encounter-location-card,
+.app-shell.dark-ui .pokemon-hover-games-list .generation-game-item,
+.app-shell.dark-ui .comparison-empty-state {
+  border-color: rgba(124, 146, 184, 0.16);
+  background: linear-gradient(180deg, rgba(28, 39, 57, 0.96) 0%, rgba(21, 30, 44, 0.96) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.app-shell.dark-ui .slot-move-chip.empty {
+  border-style: dashed;
+  color: #8796ab;
+}
+
+.app-shell.dark-ui .saved-teams-storage-note {
+  border-color: rgba(124, 146, 184, 0.16);
+  background: rgba(28, 39, 57, 0.72);
+}
+
+.app-shell.dark-ui .slot-build-title,
+.app-shell.dark-ui .pokemon-build-preview-nature {
+  color: #8fb1ff;
+}
+
+.app-shell.dark-ui .slot-build-summary,
+.app-shell.dark-ui .comparison-build-chip,
+.app-shell.dark-ui .team-build-summary-chip,
+.app-shell.dark-ui .team-build-card-title,
+.app-shell.dark-ui .team-build-card-helper,
+.app-shell.dark-ui .team-build-stat-label {
+  color: #c6d2e5;
+}
+
+.app-shell.dark-ui .comparison-build-chip-label,
+.app-shell.dark-ui .team-build-summary-label {
+  color: #8e9eb7;
+}
+
+.app-shell.dark-ui .slot-ability-name {
+  color: #d7e3f7;
+}
+
+.app-shell.dark-ui .slot-ability-tag {
+  background: rgba(234, 132, 47, 0.22);
+  color: #ffd0a3;
+}
+
+.app-shell.dark-ui .saved-team-preview-move {
+  border-color: rgba(127, 164, 255, 0.18);
+  background: linear-gradient(180deg, rgba(34, 46, 68, 0.98) 0%, rgba(24, 34, 50, 0.98) 100%);
+  color: #c5d6f6;
+}
+
+.app-shell.dark-ui .saved-team-preview-move-more {
+  color: #aeb9cb;
+}
+
+.app-shell.dark-ui .move-type-text-normal {
+  color: #c7d1e0;
+}
+
+.app-shell.dark-ui .move-type-text-fighting {
+  color: #ff9c85;
+}
+
+.app-shell.dark-ui .move-type-text-flying {
+  color: #b3c2ff;
+}
+
+.app-shell.dark-ui .move-type-text-poison {
+  color: #d5a7f4;
+}
+
+.app-shell.dark-ui .move-type-text-ground {
+  color: #e9c37e;
+}
+
+.app-shell.dark-ui .move-type-text-rock {
+  color: #d8bf83;
+}
+
+.app-shell.dark-ui .move-type-text-bug {
+  color: #bfe270;
+}
+
+.app-shell.dark-ui .move-type-text-ghost {
+  color: #c2b2ff;
+}
+
+.app-shell.dark-ui .move-type-text-steel {
+  color: #b1cadf;
+}
+
+.app-shell.dark-ui .move-type-text-fire {
+  color: #ffad7c;
+}
+
+.app-shell.dark-ui .move-type-text-water {
+  color: #84b6ff;
+}
+
+.app-shell.dark-ui .move-type-text-grass {
+  color: #92e08d;
+}
+
+.app-shell.dark-ui .move-type-text-electric {
+  color: #f4d56c;
+}
+
+.app-shell.dark-ui .move-type-text-psychic {
+  color: #ff9cc3;
+}
+
+.app-shell.dark-ui .move-type-text-ice {
+  color: #97ebff;
+}
+
+.app-shell.dark-ui .move-type-text-dragon {
+  color: #a89cff;
+}
+
+.app-shell.dark-ui .move-type-text-dark {
+  color: #d6c2b6;
+}
+
+.app-shell.dark-ui .move-type-text-fairy {
+  color: #ffb6d3;
+}
+
+.app-shell.dark-ui .move-type-text-stellar {
+  color: #a6c2ff;
+}
+
+.app-shell.dark-ui .move-type-text-unknown {
+  color: #b1bccd;
+}
+
+.app-shell.dark-ui .pokemon-hover-evolution-item.current {
+  border-color: rgba(127, 164, 255, 0.34);
+  box-shadow: 0 10px 20px rgba(73, 116, 199, 0.14);
+}
+
+.app-shell.dark-ui .pokemon-hover-evolution-item.current .pokemon-hover-evolution-name,
+.app-shell.dark-ui .team-count span,
+.app-shell.dark-ui .pokemon-card.in-team .pokemon-name {
+  color: #8db0ff;
+}
+
+.app-shell.dark-ui .saved-team-name {
+  color: #eef3fb;
+}
+
+.app-shell.dark-ui .home-button {
+  border-color: rgba(124, 146, 184, 0.18);
+  background: rgba(19, 27, 39, 0.94);
+  color: #e7edf7;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+}
+
+.app-shell.dark-ui .game-picker-title {
+  color: #eef3fb;
+}
+
+.app-shell.dark-ui .game-picker-card-title {
+  color: #f2f7ff !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.42);
+}
+
+.app-shell.dark-ui .game-picker-copy,
+.app-shell.dark-ui .game-picker-card-copy,
+.app-shell.dark-ui .game-picker-card-label {
+  color: #c0ccde;
+}
+
+.app-shell.dark-ui .game-picker-status span,
+.app-shell.dark-ui .game-picker-card {
+  border-color: rgba(124, 146, 184, 0.16);
+  background: linear-gradient(180deg, rgba(28, 39, 57, 0.96) 0%, rgba(21, 30, 44, 0.96) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.app-shell.dark-ui .game-picker-status span {
+  color: #dce7f7;
+}
+
+.app-shell.dark-ui .game-picker-card-all {
+  background:
+    radial-gradient(circle at top right, rgba(234, 178, 47, 0.18), transparent 40%),
+    linear-gradient(180deg, rgba(28, 39, 57, 0.96) 0%, rgba(21, 30, 44, 0.96) 100%);
+}
+
+.app-shell.dark-ui .game-picker-card-champions {
+  background:
+    radial-gradient(circle at top right, rgba(255, 124, 47, 0.22), transparent 40%),
+    linear-gradient(180deg, rgba(36, 34, 30, 0.96) 0%, rgba(28, 24, 20, 0.96) 100%);
+}
+
+.app-shell.dark-ui .game-picker-card-pixel {
+  background:
+    radial-gradient(circle at top right, rgba(126, 169, 255, 0.2), transparent 38%),
+    linear-gradient(180deg, rgba(28, 39, 57, 0.96) 0%, rgba(20, 30, 48, 0.96) 100%);
+}
+
+.app-shell.dark-ui .game-picker-card-3d {
+  background:
+    radial-gradient(circle at top right, rgba(95, 211, 139, 0.18), transparent 38%),
+    linear-gradient(180deg, rgba(25, 43, 43, 0.96) 0%, rgba(17, 32, 34, 0.96) 100%);
+}
+
+.app-shell.dark-ui .game-picker-card-gen-1 {
+  background:
+    radial-gradient(circle at top right, rgba(255, 95, 97, 0.26), transparent 40%),
+    linear-gradient(180deg, rgba(45, 29, 37, 0.96) 0%, rgba(29, 22, 31, 0.96) 100%);
+}
+
+.app-shell.dark-ui .game-picker-card-gen-2 {
+  background:
+    radial-gradient(circle at top right, rgba(243, 202, 78, 0.24), transparent 40%),
+    linear-gradient(180deg, rgba(43, 37, 27, 0.96) 0%, rgba(30, 27, 22, 0.96) 100%);
+}
+
+.app-shell.dark-ui .game-picker-card-gen-3 {
+  background:
+    radial-gradient(circle at top right, rgba(88, 210, 134, 0.24), transparent 40%),
+    linear-gradient(180deg, rgba(25, 43, 35, 0.96) 0%, rgba(18, 31, 28, 0.96) 100%);
+}
+
+.app-shell.dark-ui .game-picker-card-gen-4 {
+  background:
+    radial-gradient(circle at top right, rgba(113, 158, 255, 0.26), transparent 40%),
+    linear-gradient(180deg, rgba(28, 38, 61, 0.96) 0%, rgba(20, 28, 47, 0.96) 100%);
+}
+
+.app-shell.dark-ui .game-picker-card-gen-5 {
+  background:
+    radial-gradient(circle at top right, rgba(188, 198, 224, 0.2), transparent 40%),
+    linear-gradient(180deg, rgba(34, 39, 50, 0.96) 0%, rgba(20, 25, 34, 0.96) 100%);
+}
+
+.app-shell.dark-ui .game-picker-card-gen-6 {
+  background:
+    radial-gradient(circle at top right, rgba(104, 218, 230, 0.24), transparent 40%),
+    linear-gradient(180deg, rgba(23, 43, 50, 0.96) 0%, rgba(15, 31, 39, 0.96) 100%);
+}
+
+.app-shell.dark-ui .game-picker-card-gen-7 {
+  background:
+    radial-gradient(circle at top right, rgba(255, 170, 79, 0.26), transparent 40%),
+    linear-gradient(180deg, rgba(47, 35, 27, 0.96) 0%, rgba(32, 26, 21, 0.96) 100%);
+}
+
+.app-shell.dark-ui .game-picker-card-gen-8 {
+  background:
+    radial-gradient(circle at top right, rgba(176, 128, 255, 0.24), transparent 40%),
+    linear-gradient(180deg, rgba(36, 31, 55, 0.96) 0%, rgba(26, 22, 42, 0.96) 100%);
+}
+
+.app-shell.dark-ui .game-picker-card-gen-9 {
+  background:
+    radial-gradient(circle at top right, rgba(108, 215, 135, 0.24), transparent 40%),
+    linear-gradient(180deg, rgba(25, 45, 35, 0.96) 0%, rgba(18, 32, 27, 0.96) 100%);
+}
+
+.app-shell.dark-ui .pokemon-profile-value,
+.app-shell.dark-ui .pokemon-profile-chip,
+.app-shell.dark-ui .pokemon-encounter-game,
+.app-shell.dark-ui .pokemon-encounter-location-name,
+.app-shell.dark-ui .browse-filters-title,
+.app-shell.dark-ui .browse-filter-range-value,
+.app-shell.dark-ui .browse-filter-chip {
+  color: #d6dfec;
+}
+
+.app-shell.dark-ui .pokemon-encounter-level {
+  color: #9db9ff;
+}
+
+.app-shell.dark-ui .browse-filters-reset,
+.app-shell.dark-ui .browse-filter-chip {
+  border-color: rgba(124, 146, 184, 0.18);
+  background: linear-gradient(180deg, rgba(28, 39, 57, 0.96) 0%, rgba(21, 30, 44, 0.96) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.app-shell.dark-ui .browse-filters-toggle {
+  border-color: rgba(124, 146, 184, 0.18);
+  background: linear-gradient(180deg, rgba(28, 39, 57, 0.96) 0%, rgba(21, 30, 44, 0.96) 100%);
+  color: #d6dfec;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.app-shell.dark-ui .browse-filters-toggle:hover {
+  box-shadow: 0 10px 20px rgba(73, 116, 199, 0.12);
+}
+
+.app-shell.dark-ui .browse-filters-toggle[aria-expanded='true'] {
+  border-color: rgba(127, 164, 255, 0.42);
+  box-shadow: 0 0 0 3px rgba(127, 164, 255, 0.16), 0 10px 20px rgba(73, 116, 199, 0.12);
+}
+
+.app-shell.dark-ui .pokemon-profile-chip {
+  border-color: rgba(124, 146, 184, 0.18);
+  background: linear-gradient(180deg, #1b2638 0%, #152131 100%);
+}
+
+.app-shell.dark-ui .gym-leader-card,
+.app-shell.dark-ui .gym-leader-meta-card,
+.app-shell.dark-ui .gym-team-member-card,
+.app-shell.dark-ui .gym-team-member-move {
+  border-color: rgba(124, 146, 184, 0.18);
+  background: linear-gradient(180deg, rgba(28, 39, 57, 0.96) 0%, rgba(21, 30, 44, 0.96) 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.app-shell.dark-ui .gym-leaders-title,
+.app-shell.dark-ui .gym-leader-name,
+.app-shell.dark-ui .gym-team-member-name {
+  color: #eef3fb;
+}
+
+.app-shell.dark-ui .gym-leaders-helper,
+.app-shell.dark-ui .gym-leader-kicker,
+.app-shell.dark-ui .gym-leader-meta-label,
+.app-shell.dark-ui .gym-team-member-level {
+  color: #aeb9cb;
+}
+
+.app-shell.dark-ui .gym-leader-gym-name,
+.app-shell.dark-ui .gym-leader-meta-value,
+.app-shell.dark-ui .gym-team-member-move {
+  color: #d6dfec;
+}
+
+.app-shell.dark-ui .gym-team-member-sprite-fallback {
+  background: rgba(127, 164, 255, 0.16);
+  color: #eef3fb;
+}
+
+.app-shell.dark-ui .saved-team-preview-slot.filled {
+  border-color: rgba(127, 164, 255, 0.24);
+  background: linear-gradient(180deg, #1b2638 0%, #152131 100%);
+}
+
+.app-shell.dark-ui .saved-team-action-primary {
+  background: linear-gradient(180deg, rgba(47, 99, 216, 0.28) 0%, rgba(31, 79, 214, 0.22) 100%);
+  border-color: rgba(127, 164, 255, 0.24);
+  color: #a8c4ff;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.16);
+}
+
+.app-shell.dark-ui .saved-team-action-secondary {
+  background: linear-gradient(180deg, #1b2638 0%, #152131 100%);
+  border-color: rgba(124, 146, 184, 0.18);
+  color: #c3cfdf;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.16);
+}
+
+.app-shell.dark-ui .saved-team-action-danger {
+  background: linear-gradient(180deg, rgba(198, 58, 58, 0.26) 0%, rgba(145, 28, 28, 0.24) 100%);
+  border-color: rgba(255, 122, 122, 0.2);
+  color: #ff9a9a;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.16);
+}
+
+.app-shell.dark-ui .save-team-modal {
+  border-color: rgba(124, 146, 184, 0.18);
+  background:
+    radial-gradient(circle at top left, rgba(63, 84, 122, 0.32), transparent 40%),
+    linear-gradient(180deg, rgba(17, 24, 36, 0.99) 0%, rgba(22, 31, 46, 0.98) 100%);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.34);
+}
+
+.app-shell.dark-ui .save-team-modal-title {
+  color: #eef3fb;
+}
+
+.app-shell.dark-ui .save-team-modal-helper,
+.app-shell.dark-ui .save-team-label,
+.app-shell.dark-ui .save-team-warning,
+.app-shell.dark-ui .saved-team-preview-item-name {
+  color: #aeb9cb;
+}
+
+.app-shell.dark-ui .save-team-input {
+  border-color: rgba(124, 146, 184, 0.24);
+  background: linear-gradient(180deg, #192232 0%, #121b28 100%);
+  color: #eef3fb;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 10px 20px rgba(0, 0, 0, 0.16);
+}
+
+.app-shell.dark-ui .save-team-input::placeholder {
+  color: #72839d;
+}
+
+.app-shell.dark-ui .save-team-warning {
+  border-color: rgba(234, 132, 47, 0.2);
+  background: linear-gradient(180deg, rgba(85, 60, 18, 0.42) 0%, rgba(64, 46, 17, 0.34) 100%);
+}
+
+.app-shell.dark-ui .save-team-warning-danger {
+  border-color: rgba(214, 109, 109, 0.2);
+  background: linear-gradient(180deg, rgba(92, 30, 30, 0.44) 0%, rgba(68, 22, 22, 0.36) 100%);
+  color: #ffb0b0;
+}
+
+.app-shell.dark-ui .save-team-note {
+  border-color: rgba(127, 164, 255, 0.2);
+  background: linear-gradient(180deg, rgba(34, 53, 92, 0.52) 0%, rgba(26, 40, 70, 0.44) 100%);
+  color: #b6cbff;
+}
+
+.app-shell.dark-ui .save-team-modal-button-secondary {
+  background: linear-gradient(180deg, #1b2638 0%, #152131 100%);
+  border-color: rgba(124, 146, 184, 0.18);
+  color: #c3cfdf;
+}
+
+.app-shell.dark-ui .save-team-modal-button-danger {
+  background: linear-gradient(180deg, rgba(150, 52, 52, 0.32) 0%, rgba(120, 38, 38, 0.28) 100%);
+  border-color: rgba(214, 109, 109, 0.24);
+  color: #ffb0b0;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.18);
+}
+
+.app-shell.dark-ui .saved-team-preview-item {
+  border-color: rgba(124, 146, 184, 0.18);
+  background: linear-gradient(180deg, rgba(28, 39, 57, 0.96) 0%, rgba(21, 30, 44, 0.96) 100%);
+}
+
+.app-shell.dark-ui .pokemon-card {
+  background-color: #1a2432;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+}
+
+.app-shell.dark-ui .move-card,
+.app-shell.dark-ui .item-card {
+  border-color: rgba(124, 146, 184, 0.16);
+  background: linear-gradient(180deg, #1a2432 0%, #131c29 100%);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+}
+
+.app-shell.dark-ui .item-card:hover {
+  border-color: rgba(127, 164, 255, 0.5);
+  box-shadow: 0 10px 20px rgba(73, 116, 199, 0.12);
+}
+
+.app-shell.dark-ui .pokemon-card:hover {
+  box-shadow: var(--pokemon-card-hover-shadow, 0 10px 20px rgba(73, 116, 199, 0.12));
+}
+
+.app-shell.dark-ui .move-card:hover {
+  border-color: rgba(127, 164, 255, 0.5);
+  box-shadow: 0 10px 20px rgba(73, 116, 199, 0.12);
+}
+
+.app-shell.dark-ui .item-card.armed {
+  border-color: rgba(127, 164, 255, 0.7);
+  box-shadow: 0 0 0 3px rgba(127, 164, 255, 0.16), 0 10px 20px rgba(73, 116, 199, 0.16);
+}
+
+.app-shell.dark-ui .move-card.armed {
+  border-color: rgba(127, 164, 255, 0.7);
+  box-shadow: 0 0 0 3px rgba(127, 164, 255, 0.16), 0 10px 20px rgba(73, 116, 199, 0.16);
+}
+
+.app-shell.dark-ui .comparison-target {
+  background: linear-gradient(180deg, #1a2432 0%, #131c29 100%);
+  color: #e7edf7;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+}
+
+.app-shell.dark-ui .team-matchup-side-card,
+.app-shell.dark-ui .team-matchup-summary-card,
+.app-shell.dark-ui .team-matchup-table-shell,
+.app-shell.dark-ui .team-matchup-custom-slot {
+  border-color: rgba(124, 146, 184, 0.2);
+  background: linear-gradient(180deg, rgba(28, 39, 57, 0.96) 0%, rgba(21, 30, 44, 0.96) 100%);
+}
+
+.app-shell.dark-ui .team-matchup-side-title,
+.app-shell.dark-ui .team-matchup-summary-title,
+.app-shell.dark-ui .team-matchup-matrix-title,
+.app-shell.dark-ui .team-matchup-cell-value,
+.app-shell.dark-ui .team-matchup-custom-count,
+.app-shell.dark-ui .team-matchup-custom-name,
+.app-shell.dark-ui .team-matchup-table thead th,
+.app-shell.dark-ui .team-matchup-table tbody th {
+  color: #d6dfec;
+}
+
+.app-shell.dark-ui .team-matchup-label,
+.app-shell.dark-ui .team-matchup-source-note,
+.app-shell.dark-ui .team-matchup-custom-helper,
+.app-shell.dark-ui .team-matchup-custom-empty,
+.app-shell.dark-ui .team-matchup-summary-copy {
+  color: #9fb0c8;
+}
+
+.app-shell.dark-ui .team-matchup-custom-button,
+.app-shell.dark-ui .team-matchup-custom-move {
+  border-color: rgba(124, 146, 184, 0.18);
+  background: linear-gradient(180deg, rgba(31, 43, 61, 0.96) 0%, rgba(24, 35, 52, 0.96) 100%);
+  color: #8fb1ff;
+}
+
+.app-shell.dark-ui .team-matchup-custom-remove {
+  border-color: rgba(255, 134, 134, 0.22);
+  background: rgba(87, 34, 38, 0.88);
+  color: #ffb1b1;
+}
+
+.app-shell.dark-ui .team-matchup-table thead th,
+.app-shell.dark-ui .team-matchup-table tbody th {
+  background: linear-gradient(180deg, #182334 0%, #131d2b 100%);
+}
+
+.app-shell.dark-ui .team-matchup-cell {
+  background: rgba(19, 28, 41, 0.9);
+}
+
+.app-shell.dark-ui .team-matchup-cell.favorable {
+  background: rgba(46, 138, 76, 0.2);
+}
+
+.app-shell.dark-ui .team-matchup-cell.neutral {
+  background: rgba(47, 99, 216, 0.2);
+}
+
+.app-shell.dark-ui .team-matchup-cell.resisted {
+  background: rgba(165, 90, 22, 0.24);
+}
+
+.app-shell.dark-ui .team-matchup-cell.immune {
+  background: rgba(101, 79, 168, 0.24);
+}
+
+.app-shell.dark-ui .team-matchup-cell.unknown {
+  background: rgba(50, 65, 90, 0.26);
+}
+
+.app-shell.dark-ui .move-card-name,
+.app-shell.dark-ui .move-card-pp,
+.app-shell.dark-ui .move-hover-stat-value,
+.app-shell.dark-ui .pokemon-learnset-tooltip-name,
+.app-shell.dark-ui .slot-move-chip-name {
+  color: #d6dfec;
+}
+
+.app-shell.dark-ui .move-card-pp {
+  background: rgba(111, 154, 255, 0.16);
+}
+
+.app-shell.dark-ui .comparison-target-blue {
+  border-color: rgba(111, 154, 255, 0.34);
+  background: linear-gradient(180deg, #162338 0%, #132033 100%);
+}
+
+.app-shell.dark-ui .comparison-target-red {
+  border-color: rgba(214, 107, 107, 0.34);
+  background: linear-gradient(180deg, #311d26 0%, #24171d 100%);
+}
+
+.app-shell.dark-ui .comparison-card.compare-blue,
+.app-shell.dark-ui .comparison-card.compare-red {
+  background: linear-gradient(180deg, rgba(20, 29, 43, 0.98) 0%, rgba(15, 22, 33, 0.98) 100%);
+}
+
+.app-shell.dark-ui .comparison-card.compare-blue {
+  border-color: rgba(111, 154, 255, 0.28);
+}
+
+.app-shell.dark-ui .comparison-card.compare-red {
+  border-color: rgba(214, 107, 107, 0.3);
+}
+
+.app-shell.dark-ui .comparison-card.compare-blue .comparison-stat-winner {
+  background: rgba(111, 154, 255, 0.16);
+}
+
+.app-shell.dark-ui .comparison-card.compare-red .comparison-stat-winner {
+  background: rgba(214, 107, 107, 0.16);
+}
+
+.app-shell.dark-ui .comparison-card.compare-blue .comparison-stat-winner .pokemon-hover-stat-label,
+.app-shell.dark-ui .comparison-card.compare-blue .comparison-stat-winner .pokemon-hover-stat-value,
+.app-shell.dark-ui .comparison-card.compare-blue .comparison-stat-flag {
+  color: #9fc0ff;
+}
+
+.app-shell.dark-ui .comparison-card.compare-red .comparison-stat-winner .pokemon-hover-stat-label,
+.app-shell.dark-ui .comparison-card.compare-red .comparison-stat-winner .pokemon-hover-stat-value,
+.app-shell.dark-ui .comparison-card.compare-red .comparison-stat-flag {
+  color: #ffb1b1;
+}
+
+.app-shell.dark-ui .comparison-card.compare-blue .comparison-stat-flag {
+  background: rgba(111, 154, 255, 0.18);
+}
+
+.app-shell.dark-ui .comparison-card.compare-red .comparison-stat-flag {
+  background: rgba(214, 107, 107, 0.18);
+}
