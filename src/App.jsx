@@ -3911,7 +3911,7 @@ function App() {
             )}
             <h1>
               <span className="page-title-main">
-                PokeTeamPro
+                PokéTeamPro
               </span>
               <br />
               <span className="page-subtitle">Pokemon{' '}Team{' '}Builder</span>
