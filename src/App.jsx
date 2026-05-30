@@ -124,6 +124,48 @@ import {
   versionGroupSortIndex
 } from './appSupport.jsx'
 
+const DATABASE_CACHE_VERSION = 1
+const ITEM_DATABASE_STORAGE_KEY = 'pokeapp-item-database-v1'
+const MOVE_DATABASE_STORAGE_KEY = 'pokeapp-move-database-v1'
+
+const readDatabaseCache = (storageKey, fallback) => {
+  if (typeof window === 'undefined') {
+    return fallback
+  }
+
+  try {
+    const parsed = JSON.parse(window.localStorage.getItem(storageKey) || 'null')
+
+    if (parsed?.version === DATABASE_CACHE_VERSION) {
+      return parsed.payload || fallback
+    }
+  } catch (error) {
+    console.error(`Error reading ${storageKey}:`, error)
+  }
+
+  return fallback
+}
+
+const writeDatabaseCache = (storageKey, payload) => {
+  if (typeof window === 'undefined') {
+    return
+  }
+
+  try {
+    window.localStorage.setItem(storageKey, JSON.stringify({
+      version: DATABASE_CACHE_VERSION,
+      savedAt: Date.now(),
+      payload
+    }))
+  } catch (error) {
+    console.error(`Error writing ${storageKey}:`, error)
+  }
+}
+
+const waitForNextTask = () => new Promise((resolve) => {
+  window.setTimeout(resolve, 0)
+})
+
 function App() {
   const [pokemonByGen, setPokemonByGen] = useState({})
   const [pokemonInfoCache, setPokemonInfoCache] = useState({})
@@ -148,6 +190,7 @@ function App() {
   const [showGymLeaders, setShowGymLeaders] = useState(false)
   const [showEliteFour, setShowEliteFour] = useState(false)
   const [showSavedTeams, setShowSavedTeams] = useState(false)
+  const [showHomepage, setShowHomepage] = useState(true)
   const [analyzerCoverageSource, setAnalyzerCoverageSource] = useState('moves')
   const [teamMatchupCoverageSource, setTeamMatchupCoverageSource] = useState('moves')
   const [playerMatchupSource, setPlayerMatchupSource] = useState('builder')
@@ -199,12 +242,14 @@ function App() {
   const [selectedMoveType, setSelectedMoveType] = useState('all')
   const [selectedMoveCategory, setSelectedMoveCategory] = useState('all')
   const [selectedMoveSort, setSelectedMoveSort] = useState('alpha-asc')
-  const [items, setItems] = useState([])
-  const [moves, setMoves] = useState([])
+  const [items, setItems] = useState(() => readDatabaseCache(ITEM_DATABASE_STORAGE_KEY, { items: [] }).items || [])
+  const [moves, setMoves] = useState(() => readDatabaseCache(MOVE_DATABASE_STORAGE_KEY, []))
   const [itemsLoading, setItemsLoading] = useState(false)
   const [movesLoading, setMovesLoading] = useState(false)
-  const [itemInfoCache, setItemInfoCache] = useState({})
+  const [itemInfoCache, setItemInfoCache] = useState(() => readDatabaseCache(ITEM_DATABASE_STORAGE_KEY, { itemInfoCache: {} }).itemInfoCache || {})
   const [moveInfoCache, setMoveInfoCache] = useState({})
+  const [itemLoadProgress, setItemLoadProgress] = useState({ loaded: 0, total: 0 })
+  const [moveLoadProgress, setMoveLoadProgress] = useState({ loaded: 0, total: 0 })
   const [itemTargetSelection, setItemTargetSelection] = useState(null)
   const [moveTargetSelection, setMoveTargetSelection] = useState(null)
   const [comparisonSlots, setComparisonSlots] = useState([null, null])
@@ -233,6 +278,8 @@ function App() {
   const teamHistoryPastRef = useRef(teamHistoryPast)
   const teamHistoryFutureRef = useRef(teamHistoryFuture)
   const [hoverCardSize, setHoverCardSize] = useState({ width: 340, height: 520 })
+  const itemDatabaseStartedRef = useRef(items.length > 0)
+  const moveDatabaseStartedRef = useRef(moves.length > 0)
 
   const typesList = ['normal', 'fighting', 'flying', 'poison', 'ground', 'rock', 'bug', 'ghost', 'steel', 'fire', 'water', 'grass', 'electric', 'psychic', 'ice', 'dragon', 'dark', 'fairy']
 
@@ -264,7 +311,14 @@ function App() {
       ]
     }
   ]
+  const openGamePicker = () => {
+    setShowHomepage(false)
+    setShowGamePicker(true)
+    setMenuOpen(false)
+  }
+
   const selectGameView = (gameKey) => {
+    setShowHomepage(false)
     setSelectedGame(gameKey)
     setShowGamePicker(false)
     setMenuOpen(false)
@@ -281,8 +335,8 @@ function App() {
       setIncludeZaMegas(false)
     }
 
-    clearCurrentTeam()
-    setShowGamePicker(true)
+    setShowHomepage(true)
+    setShowGamePicker(false)
     setMenuOpen(false)
   }
 
@@ -490,11 +544,12 @@ function App() {
   }, [])
 
   useEffect(() => {
-    if (!showItemDatabase || items.length > 0) {
+    if (!showItemDatabase || itemDatabaseStartedRef.current) {
       return
     }
 
     let cancelled = false
+    itemDatabaseStartedRef.current = true
     setItemsLoading(true)
 
     const fetchItems = async () => {
@@ -509,7 +564,14 @@ function App() {
         const results = data.results || []
         const nextItems = []
         const nextItemInfoCache = {}
-        const batchSize = 24
+        const batchSize = 8
+        const publishProgress = (processedCount) => {
+          setItemLoadProgress({ loaded: processedCount, total: results.length })
+          setItems([...nextItems].sort((a, b) => a.name.localeCompare(b.name)))
+          setItemInfoCache({ ...nextItemInfoCache })
+        }
+
+        setItemLoadProgress({ loaded: 0, total: results.length })
 
         for (let index = 0; index < results.length; index += batchSize) {
           const batch = results.slice(index, index + batchSize)
@@ -557,13 +619,23 @@ function App() {
             nextItems.push(entry.item)
             nextItemInfoCache[entry.item.apiName] = entry.info
           })
+
+          if (index === 0 || index % 64 === 0 || index + batchSize >= results.length) {
+            publishProgress(Math.min(index + batchSize, results.length))
+            await waitForNextTask()
+          }
         }
 
         nextItems.sort((a, b) => a.name.localeCompare(b.name))
         setItems(nextItems)
         setItemInfoCache(nextItemInfoCache)
+        writeDatabaseCache(ITEM_DATABASE_STORAGE_KEY, {
+          items: nextItems,
+          itemInfoCache: nextItemInfoCache
+        })
       } catch (error) {
         console.error('Error fetching items:', error)
+        itemDatabaseStartedRef.current = false
       } finally {
         if (!cancelled) {
           setItemsLoading(false)
@@ -576,16 +648,17 @@ function App() {
     return () => {
       cancelled = true
     }
-  }, [showItemDatabase, items.length])
+  }, [showItemDatabase])
 
   useEffect(() => {
     const shouldLoadMoves = showMoveDatabase || showGymLeaders || showEliteFour || showComparison
 
-    if (!shouldLoadMoves || moves.length > 0) {
+    if (!shouldLoadMoves || moveDatabaseStartedRef.current) {
       return
     }
 
     let cancelled = false
+    moveDatabaseStartedRef.current = true
     setMovesLoading(true)
 
     const fetchMoves = async () => {
@@ -599,7 +672,13 @@ function App() {
 
         const results = data.results || []
         const nextMoves = []
-        const batchSize = 36
+        const batchSize = 10
+        const publishProgress = (processedCount) => {
+          setMoveLoadProgress({ loaded: processedCount, total: results.length })
+          setMoves([...nextMoves].sort((a, b) => a.name.localeCompare(b.name)))
+        }
+
+        setMoveLoadProgress({ loaded: 0, total: results.length })
 
         for (let index = 0; index < results.length; index += batchSize) {
           const batch = results.slice(index, index + batchSize)
@@ -637,12 +716,19 @@ function App() {
               nextMoves.push(move)
             }
           })
+
+          if (index === 0 || index % 80 === 0 || index + batchSize >= results.length) {
+            publishProgress(Math.min(index + batchSize, results.length))
+            await waitForNextTask()
+          }
         }
 
         nextMoves.sort((a, b) => a.name.localeCompare(b.name))
         setMoves(nextMoves)
+        writeDatabaseCache(MOVE_DATABASE_STORAGE_KEY, nextMoves)
       } catch (error) {
         console.error('Error fetching moves:', error)
+        moveDatabaseStartedRef.current = false
       } finally {
         if (!cancelled) {
           setMovesLoading(false)
@@ -655,7 +741,7 @@ function App() {
     return () => {
       cancelled = true
     }
-  }, [showMoveDatabase, showGymLeaders, showEliteFour, showComparison, moves.length])
+  }, [showMoveDatabase, showGymLeaders, showEliteFour, showComparison])
 
   useEffect(() => {
     try {
@@ -1187,22 +1273,6 @@ function App() {
     }
 
     return true
-  }
-
-  const clearCurrentTeam = () => {
-    const emptyTeam = Array(TEAM_SLOT_COUNT).fill(null)
-
-    teamHistoryPastRef.current = []
-    teamHistoryFutureRef.current = []
-    teamRef.current = emptyTeam
-
-    setTeamHistoryPast([])
-    setTeamHistoryFuture([])
-    setTeam(emptyTeam)
-    setEditingBuildSlotIndex(null)
-    setItemTargetSelection(null)
-    setMoveTargetSelection(null)
-    setShowTeamFullModal(false)
   }
 
   const handleUndoTeamChange = () => {
@@ -2220,7 +2290,7 @@ function App() {
   const customMatchupActiveTeam = customMatchupTeam.filter(Boolean)
   const canUndoTeamChange = teamHistoryPast.length > 0
   const canRedoTeamChange = teamHistoryFuture.length > 0
-  const hasFeaturePanel = !showGamePicker && (
+  const hasFeaturePanel = !showHomepage && !showGamePicker && (
     showAnalyzer ||
     showSuggestedAdditions ||
     showComparison ||
@@ -3068,8 +3138,15 @@ function App() {
       })
   })()
   const moveDatabaseEmptyStateText = 'No moves match that search.'
+  const itemDatabaseLoadingLabel = itemLoadProgress.total > 0
+    ? `Loading items... ${itemLoadProgress.loaded}/${itemLoadProgress.total} checked`
+    : 'Loading items...'
   const moveDatabaseCountLabel = movesLoading
-    ? 'Loading moves...'
+    ? (
+        moveLoadProgress.total > 0
+          ? `Loading moves... ${moveLoadProgress.loaded}/${moveLoadProgress.total}`
+          : 'Loading moves...'
+      )
     : `${displayedMoves.length} moves`
   const teamTypeSet = new Set(activeTeam.flatMap((pokemon) => pokemon?.types || []))
   const teamWeaknessFilterTypes = weaknessTypes.filter(({ count }) => count > 0).map(({ type }) => type)
@@ -3848,6 +3925,215 @@ function App() {
       hoveredPokemonCard?.pokemon &&
       getPokemonCacheKey(pokemon) === getPokemonCacheKey(hoveredPokemonCard.pokemon)
     )
+  const homeMascotSprites = ['all', 'red', 'blue', 'gold']
+    .flatMap((gameKey) => getGamePickerSprites(gameKey).slice(0, 1))
+    .slice(0, 4)
+  const homeStatCards = [
+    { label: 'Pokemon', value: loading ? 'Loading' : allBrowsePokemon.length.toLocaleString(), accent: 'blue' },
+    { label: 'Games', value: gamesList.length.toLocaleString(), accent: 'green' },
+    { label: 'Team Slots', value: TEAM_SLOT_COUNT, accent: 'gold' },
+    { label: 'Tools', value: '10', accent: 'red' }
+  ]
+  const homeFeatureCards = [
+    {
+      title: 'Team Builder',
+      copy: 'Build six-slot teams by game, tune EVs, set abilities, assign items, and export the finished lineup.',
+      accent: 'blue',
+      previewKind: 'team'
+    },
+    {
+      title: 'Pokedex Browser',
+      copy: 'Browse Pokemon by generation or by the selected game, then filter by typing, BST, egg group, and team fit.',
+      accent: 'green',
+      previewKind: 'browser'
+    },
+    {
+      title: 'Type Analyzer',
+      copy: 'Spot team weaknesses, resistances, immunities, offensive coverage gaps, and which Pokemon create them.',
+      accent: 'gold',
+      previewKind: 'analyzer'
+    },
+    {
+      title: 'Suggested Additions',
+      copy: 'Find Pokemon that patch your team weaknesses, add new typings, and bring useful offensive coverage.',
+      accent: 'red',
+      previewKind: 'suggestions'
+    },
+    {
+      title: 'Team Comparer',
+      copy: 'Compare your current team against presets or a custom matchup team with forward and reverse pressure tables.',
+      accent: 'blue',
+      previewKind: 'comparison'
+    },
+    {
+      title: 'Move Database',
+      copy: 'Search every move by name, type, class, or power, then assign legal moves directly to team slots.',
+      accent: 'green',
+      previewKind: 'moves'
+    },
+    {
+      title: 'Item Database',
+      copy: 'Browse battle-relevant held items, read effects, and give them to Pokemon from the same workspace.',
+      accent: 'gold',
+      previewKind: 'items'
+    },
+    {
+      title: 'Gym Leaders',
+      copy: 'Preview gym leader teams by game, including levels, types, moves, locations, and specialty badges.',
+      accent: 'red',
+      previewKind: 'gyms'
+    },
+    {
+      title: 'Elite Four',
+      copy: 'Scout Elite Four and champion-style rosters with team cards that connect into the same move data.',
+      accent: 'blue',
+      previewKind: 'elite'
+    },
+    {
+      title: 'Saved Teams',
+      copy: 'Save lineups in the browser, reload them later, export a share code, import one, or render an image.',
+      accent: 'green',
+      previewKind: 'saved'
+    }
+  ]
+  const renderHomeFeaturePreview = (previewKind) => {
+    if (previewKind === 'team') {
+      return (
+        <div className="home-preview-team">
+          {[0, 1, 2, 3, 4, 5].map((slotIndex) => (
+            <div key={`home-team-preview-${slotIndex}`} className={`home-preview-team-slot ${slotIndex < 4 ? 'filled' : ''}`}>
+              {slotIndex < 4 ? <span className="home-preview-sprite-dot"></span> : null}
+            </div>
+          ))}
+        </div>
+      )
+    }
+
+    if (previewKind === 'browser') {
+      return (
+        <div className="home-preview-browser">
+          <div className="home-preview-filter-row">
+            <span>Type</span>
+            <span>BST 500+</span>
+          </div>
+          <div className="home-preview-card-grid">
+            {['fire', 'water', 'grass', 'electric'].map((type) => (
+              <span key={`home-browser-${type}`} className={`home-preview-pokemon-card type-${type}`}></span>
+            ))}
+          </div>
+        </div>
+      )
+    }
+
+    if (previewKind === 'analyzer') {
+      return (
+        <div className="home-preview-bars">
+          {[
+            ['Water', 82, 'water'],
+            ['Electric', 58, 'electric'],
+            ['Ice', 44, 'ice']
+          ].map(([label, width, type]) => (
+            <div key={`home-bar-${label}`} className="home-preview-bar-row">
+              <span>{label}</span>
+              <div className="home-preview-bar-track">
+                <div className={`home-preview-bar-fill type-${type}`} style={{ width: `${width}%` }}></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )
+    }
+
+    if (previewKind === 'suggestions') {
+      return (
+        <div className="home-preview-suggestions">
+          {['Patch Water', 'Adds Ground', 'BST 540'].map((label) => (
+            <div key={`home-suggestion-${label}`} className="home-preview-suggestion-row">
+              <span className="home-preview-suggestion-avatar"></span>
+              <span>{label}</span>
+            </div>
+          ))}
+        </div>
+      )
+    }
+
+    if (previewKind === 'comparison') {
+      return (
+        <div className="home-preview-matchup">
+          {[0, 1, 2].map((row) => (
+            <div key={`home-matchup-row-${row}`} className="home-preview-matchup-row">
+              {[0, 1, 2, 3].map((cell) => (
+                <span
+                  key={`home-matchup-${row}-${cell}`}
+                  className={`home-preview-matchup-cell home-preview-matchup-cell-${(row + cell) % 4}`}
+                ></span>
+              ))}
+            </div>
+          ))}
+        </div>
+      )
+    }
+
+    if (previewKind === 'moves') {
+      return (
+        <div className="home-preview-list">
+          {[
+            ['Thunderbolt', 'electric'],
+            ['Flamethrower', 'fire'],
+            ['Surf', 'water']
+          ].map(([move, type]) => (
+            <div key={`home-move-${move}`} className="home-preview-list-row">
+              <span>{move}</span>
+              <span className={`type-badge type-${type}`}>{formatDisplayName(type)}</span>
+            </div>
+          ))}
+        </div>
+      )
+    }
+
+    if (previewKind === 'items') {
+      return (
+        <div className="home-preview-items">
+          {['Leftovers', 'Life Orb', 'Choice'].map((item) => (
+            <div key={`home-item-${item}`} className="home-preview-item">
+              <span className="home-preview-item-icon"></span>
+              <span>{item}</span>
+            </div>
+          ))}
+        </div>
+      )
+    }
+
+    if (previewKind === 'gyms' || previewKind === 'elite') {
+      return (
+        <div className="home-preview-trainer">
+          <div className="home-preview-trainer-header">
+            <span>{previewKind === 'elite' ? 'Elite Four' : 'Gym #4'}</span>
+            <span className="type-badge type-ghost">Ghost</span>
+          </div>
+          <div className="home-preview-trainer-team">
+            {[0, 1, 2, 3].map((memberIndex) => (
+              <span key={`home-trainer-${previewKind}-${memberIndex}`} className="home-preview-trainer-member"></span>
+            ))}
+          </div>
+        </div>
+      )
+    }
+
+    return (
+      <div className="home-preview-saved">
+        <div className="home-preview-saved-row">
+          <span>Rain Team</span>
+          <span>6/6</span>
+        </div>
+        <div className="home-preview-saved-actions">
+          <span>Load</span>
+          <span>Export</span>
+          <span>Image</span>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className={`app-shell theme-${activeDesignTemplate} ${darkUiMode ? 'dark-ui' : ''}`}>
@@ -3881,7 +4167,7 @@ function App() {
         showAnalyzer={showAnalyzer}
         showComparison={showComparison}
         showEliteFour={showEliteFour}
-        showGamePicker={showGamePicker}
+        showGamePicker={showHomepage || showGamePicker}
         showGymLeaders={showGymLeaders}
         showItemDatabase={showItemDatabase}
         showMoveDatabase={showMoveDatabase}
@@ -3895,7 +4181,7 @@ function App() {
       <div className={`app-wrapper ${hasFeaturePanel ? 'with-side-panel' : 'centered-layout'}`}>
         <div className="app-container">
           <header className="page-header">
-            {!showGamePicker && (
+            {!showHomepage && !showGamePicker && (
               <button
                 type="button"
                 className="home-button"
@@ -3918,7 +4204,91 @@ function App() {
             </h1>
           </header>
 
-          {showGamePicker ? (
+          {showHomepage ? (
+            <section className="home-page-section">
+              <div className="home-hero">
+                <div className="home-hero-copy">
+                  <div className="home-kicker">Pokemon team lab</div>
+                  <h2 className="home-title">Build sharper teams for every game</h2>
+                  <p className="home-copy">
+                    PokeTeamPro brings the builder, Pokedex browser, battle prep, move search, item search, saved teams,
+                    and matchup analysis into one workspace.
+                  </p>
+                  <div className="home-actions">
+                    <button type="button" className="home-action home-action-primary" onClick={openGamePicker}>
+                      Choose Game
+                    </button>
+                  </div>
+                </div>
+                <div className="home-hero-showcase" aria-hidden="true">
+                  <div className="home-team-preview">
+                    {homeMascotSprites.map((gamePickerSprite, spriteIndex) => (
+                      <div key={`home-mascot-${spriteIndex}`} className="home-team-slot">
+                        <img
+                          src={gamePickerSprite.animated || gamePickerSprite.static}
+                          alt=""
+                          className="home-team-sprite"
+                        />
+                      </div>
+                    ))}
+                    <div className="home-team-slot home-team-slot-empty"></div>
+                    <div className="home-team-slot home-team-slot-empty"></div>
+                  </div>
+                  <div className="home-mini-panel">
+                    <span className="home-mini-panel-label">Coverage</span>
+                    <div className="home-type-row">
+                      {['fire', 'water', 'electric', 'grass', 'dragon', 'fairy'].map((type) => (
+                        <span key={`home-type-${type}`} className={`type-badge type-${type}`}>
+                          {formatDisplayName(type)}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="home-stat-grid">
+                {homeStatCards.map((stat) => (
+                  <div key={stat.label} className={`home-stat-card home-accent-${stat.accent}`}>
+                    <div className="home-stat-value">{stat.value}</div>
+                    <div className="home-stat-label">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="home-feature-section-header">
+                <div>
+                  <div className="home-kicker">Feature showcase</div>
+                  <h3 className="home-feature-section-title">Everything you can open from the builder</h3>
+                </div>
+              </div>
+
+              <div className="home-feature-grid">
+                {homeFeatureCards.map((feature) => (
+                  <article
+                    key={feature.title}
+                    className={`home-feature-card home-accent-${feature.accent}`}
+                  >
+                    <div className="home-feature-visual" aria-hidden="true">
+                      {renderHomeFeaturePreview(feature.previewKind)}
+                    </div>
+                    <div className="home-feature-title">{feature.title}</div>
+                    <p className="home-feature-copy">{feature.copy}</p>
+                  </article>
+                ))}
+              </div>
+
+              <div className="home-entry-strip">
+                <div>
+                  <div className="home-entry-title">Ready for the builder?</div>
+                  <div className="home-entry-copy">Pick a game first, then the team builder opens with that game's Pokemon.</div>
+                </div>
+                <button type="button" className="home-action home-action-primary" onClick={openGamePicker}>
+                  Start Building
+                </button>
+              </div>
+            </section>
+          ) : showGamePicker ? (
             <section className="game-picker-section">
               <div className="game-picker-header">
                 <div>
@@ -5393,15 +5763,11 @@ function App() {
                     onChange={(event) => setItemSearch(event.target.value)}
                   />
                   <div className="item-database-count">
-                    {itemsLoading ? 'Loading items...' : `${filteredItems.length} items`}
+                    {itemsLoading ? itemDatabaseLoadingLabel : `${filteredItems.length} items`}
                   </div>
                 </div>
 
-                {itemsLoading ? (
-                  <LoadingIndicator label="Loading items..." />
-                ) : filteredItems.length === 0 ? (
-                  <div className="loading">No items match that search.</div>
-                ) : (
+                {filteredItems.length > 0 ? (
                   <div className="item-grid">
                     {filteredItems.map((item) => (
                       <div
@@ -5424,6 +5790,10 @@ function App() {
                       </div>
                     ))}
                   </div>
+                ) : itemsLoading ? (
+                  <LoadingIndicator label={itemDatabaseLoadingLabel} />
+                ) : (
+                  <div className="loading">No items match that search.</div>
                 )}
               </aside>
             )}
@@ -5490,11 +5860,7 @@ function App() {
                   </div>
                 </div>
 
-                {movesLoading ? (
-                  <LoadingIndicator label="Loading moves..." />
-                ) : displayedMoves.length === 0 ? (
-                  <div className="loading">{moveDatabaseEmptyStateText}</div>
-                ) : (
+                {displayedMoves.length > 0 ? (
                   <div className="move-grid">
                     {displayedMoves.map((move) => (
                       <div
@@ -5519,6 +5885,10 @@ function App() {
                       </div>
                     ))}
                   </div>
+                ) : movesLoading ? (
+                  <LoadingIndicator label={moveDatabaseCountLabel} />
+                ) : (
+                  <div className="loading">{moveDatabaseEmptyStateText}</div>
                 )}
               </aside>
             )}

@@ -90,6 +90,7 @@
 
   .team-section,
   .pokemon-grid,
+  .home-page-section,
   .game-picker-section,
   .saved-teams-section,
   .item-database-section,
@@ -120,6 +121,20 @@
   }
 
   .game-picker-header {
+    flex-direction: column;
+  }
+
+  .home-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .home-stat-grid,
+  .home-feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-feature-section-header {
+    align-items: flex-start;
     flex-direction: column;
   }
 
@@ -198,6 +213,35 @@
 
   .game-picker-section {
     padding: 20px;
+  }
+
+  .home-page-section {
+    padding: 20px;
+  }
+
+  .home-title {
+    font-size: clamp(2.1rem, 11vw, 3rem);
+  }
+
+  .home-actions,
+  .home-entry-strip,
+  .home-feature-section-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .home-action {
+    width: 100%;
+  }
+
+  .home-stat-grid,
+  .home-feature-grid,
+  .home-team-preview {
+    grid-template-columns: 1fr;
+  }
+
+  .home-team-preview {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .game-picker-grid {

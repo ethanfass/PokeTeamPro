@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-24T23:12:28.811Z",
+  "generatedAt": "2026-05-30T01:23:13.137Z",
   "generations": {
     "1": {
       "name": "Kanto",
@@ -38218,8 +38218,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10091.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10091.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10091.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10091.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10091.gif",
           "types": [
             "dark",
             "normal"
@@ -38269,8 +38269,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10092.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10092.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10092.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10092.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10092.gif",
           "types": [
             "dark",
             "normal"
@@ -38320,8 +38320,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10100.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10100.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10100.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10100.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10100.gif",
           "types": [
             "electric",
             "psychic"
@@ -38363,8 +38363,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10101.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10101.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10101.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10101.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10101.gif",
           "types": [
             "ice",
             "steel"
@@ -38409,8 +38409,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10102.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10102.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10102.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10102.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10102.gif",
           "types": [
             "ice",
             "steel"
@@ -38455,8 +38455,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10103.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10103.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10103.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10103.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10103.gif",
           "types": [
             "ice"
           ],
@@ -38500,8 +38500,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10104.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10104.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10104.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10104.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10104.gif",
           "types": [
             "ice",
             "fairy"
@@ -38597,8 +38597,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10106.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10106.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10106.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10106.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10106.gif",
           "types": [
             "ground",
             "steel"
@@ -38648,8 +38648,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10107.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10107.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10107.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10107.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10107.gif",
           "types": [
             "dark"
           ],
@@ -38698,8 +38698,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10108.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10108.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10108.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10108.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10108.gif",
           "types": [
             "dark"
           ],
@@ -38748,8 +38748,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10109.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10109.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10109.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10109.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10109.gif",
           "types": [
             "rock",
             "electric"
@@ -38799,8 +38799,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10110.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10110.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10110.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10110.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10110.gif",
           "types": [
             "rock",
             "electric"
@@ -38850,8 +38850,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10111.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10111.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10111.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10111.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10111.gif",
           "types": [
             "rock",
             "electric"
@@ -38901,8 +38901,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10112.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10112.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10112.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10112.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10112.gif",
           "types": [
             "poison",
             "dark"
@@ -38952,8 +38952,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10113.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10113.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10113.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10113.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10113.gif",
           "types": [
             "poison",
             "dark"
@@ -39003,8 +39003,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10114.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10114.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10114.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10114.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10114.gif",
           "types": [
             "grass",
             "dragon"
@@ -39049,8 +39049,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10115.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10115.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10115.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10115.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10115.gif",
           "types": [
             "fire",
             "ghost"
@@ -39100,8 +39100,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/722.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/722.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/722.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/722.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/722.gif",
           "types": [
             "grass",
             "flying"
@@ -39238,8 +39238,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/725.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/725.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/725.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/725.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/725.gif",
           "types": [
             "fire"
           ],
@@ -39328,8 +39328,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/727.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/727.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/727.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/727.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/727.gif",
           "types": [
             "fire",
             "dark"
@@ -39374,8 +39374,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/728.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/728.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/728.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/728.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/728.gif",
           "types": [
             "water"
           ],
@@ -39421,8 +39421,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/729.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/729.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/729.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/729.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/729.gif",
           "types": [
             "water"
           ],
@@ -39468,8 +39468,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/730.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/730.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/730.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/730.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/730.gif",
           "types": [
             "water",
             "fairy"
@@ -39516,8 +39516,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/731.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/731.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/731.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/731.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/731.gif",
           "types": [
             "normal",
             "flying"
@@ -39567,8 +39567,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/732.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/732.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/732.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/732.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/732.gif",
           "types": [
             "normal",
             "flying"
@@ -39618,8 +39618,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/733.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/733.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/733.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/733.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/733.gif",
           "types": [
             "normal",
             "flying"
@@ -39669,8 +39669,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/734.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/734.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/734.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/734.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/734.gif",
           "types": [
             "normal"
           ],
@@ -39719,8 +39719,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/735.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/735.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/735.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/735.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/735.gif",
           "types": [
             "normal"
           ],
@@ -39769,8 +39769,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/736.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/736.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/736.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/736.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/736.gif",
           "types": [
             "bug"
           ],
@@ -39809,8 +39809,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/737.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/737.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/737.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/737.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/737.gif",
           "types": [
             "bug",
             "electric"
@@ -39850,8 +39850,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/738.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/738.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/738.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/738.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/738.gif",
           "types": [
             "bug",
             "electric"
@@ -39891,8 +39891,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/739.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/739.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/739.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/739.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/739.gif",
           "types": [
             "fighting"
           ],
@@ -39941,8 +39941,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/740.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/740.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/740.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/740.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/740.gif",
           "types": [
             "fighting",
             "ice"
@@ -40074,8 +40074,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/742.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/742.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/742.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/742.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/742.gif",
           "types": [
             "bug",
             "fairy"
@@ -40127,8 +40127,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/743.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/743.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/743.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/743.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/743.gif",
           "types": [
             "bug",
             "fairy"
@@ -40180,8 +40180,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/744.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/744.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/744.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/744.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/744.gif",
           "types": [
             "rock"
           ],
@@ -40230,8 +40230,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/745.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/745.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/745.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/745.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/745.gif",
           "types": [
             "rock"
           ],
@@ -40280,8 +40280,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/746.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/746.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/746.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/746.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/746.gif",
           "types": [
             "water"
           ],
@@ -40371,8 +40371,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/748.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/748.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/748.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/748.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/748.gif",
           "types": [
             "poison",
             "water"
@@ -40422,8 +40422,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/749.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/749.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/749.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/749.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/749.gif",
           "types": [
             "ground"
           ],
@@ -40472,8 +40472,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/750.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/750.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/750.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/750.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/750.gif",
           "types": [
             "ground"
           ],
@@ -40522,8 +40522,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/751.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/751.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/751.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/751.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/751.gif",
           "types": [
             "water",
             "bug"
@@ -40570,8 +40570,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/752.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/752.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/752.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/752.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/752.gif",
           "types": [
             "water",
             "bug"
@@ -40618,8 +40618,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/753.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/753.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/753.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/753.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/753.gif",
           "types": [
             "grass"
           ],
@@ -40663,8 +40663,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/754.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/754.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/754.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/754.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/754.gif",
           "types": [
             "grass"
           ],
@@ -40708,8 +40708,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/755.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/755.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/755.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/755.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/755.gif",
           "types": [
             "grass",
             "fairy"
@@ -40759,8 +40759,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/756.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/756.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/756.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/756.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/756.gif",
           "types": [
             "grass",
             "fairy"
@@ -40906,8 +40906,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/759.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/759.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/759.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/759.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/759.gif",
           "types": [
             "normal",
             "fighting"
@@ -40957,8 +40957,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/760.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/760.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/760.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/760.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/760.gif",
           "types": [
             "normal",
             "fighting"
@@ -41008,8 +41008,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/761.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/761.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/761.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/761.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/761.gif",
           "types": [
             "grass"
           ],
@@ -41058,8 +41058,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/762.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/762.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/762.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/762.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/762.gif",
           "types": [
             "grass"
           ],
@@ -41158,8 +41158,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/764.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/764.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/764.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/764.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/764.gif",
           "types": [
             "fairy"
           ],
@@ -41304,8 +41304,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/767.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/767.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/767.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/767.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/767.gif",
           "types": [
             "bug",
             "water"
@@ -41427,8 +41427,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/769.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/769.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/769.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/769.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/769.gif",
           "types": [
             "ghost",
             "ground"
@@ -41473,8 +41473,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/770.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/770.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/770.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/770.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/770.gif",
           "types": [
             "ghost",
             "ground"
@@ -41519,8 +41519,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/771.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/771.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/771.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/771.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/771.gif",
           "types": [
             "water"
           ],
@@ -41564,8 +41564,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/772.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/772.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/772.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/772.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/772.gif",
           "types": [
             "normal"
           ],
@@ -41644,8 +41644,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/774.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/774.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/774.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/774.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/774.gif",
           "types": [
             "rock",
             "flying"
@@ -41685,8 +41685,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/775.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/775.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/775.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/775.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/775.gif",
           "types": [
             "normal"
           ],
@@ -41725,8 +41725,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/776.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/776.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/776.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/776.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/776.gif",
           "types": [
             "fire",
             "dragon"
@@ -41768,8 +41768,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/777.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/777.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/777.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/777.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/777.gif",
           "types": [
             "electric",
             "steel"
@@ -41821,8 +41821,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/778.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/778.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/778.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/778.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/778.gif",
           "types": [
             "ghost",
             "fairy"
@@ -41862,8 +41862,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/779.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/779.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/779.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/779.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/779.gif",
           "types": [
             "water",
             "psychic"
@@ -41913,8 +41913,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/780.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/780.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/780.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/780.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/780.gif",
           "types": [
             "normal",
             "dragon"
@@ -42009,8 +42009,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/781.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/781.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/781.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/781.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/781.gif",
           "types": [
             "ghost",
             "grass"
@@ -42050,8 +42050,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/782.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/782.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/782.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/782.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/782.gif",
           "types": [
             "dragon"
           ],
@@ -42100,8 +42100,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/783.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/783.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/783.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/783.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/783.gif",
           "types": [
             "dragon",
             "fighting"
@@ -42151,8 +42151,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/784.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/784.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/784.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/784.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/784.gif",
           "types": [
             "dragon",
             "fighting"
@@ -42202,8 +42202,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/785.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/785.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/785.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/785.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/785.gif",
           "types": [
             "electric",
             "fairy"
@@ -42248,8 +42248,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/786.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/786.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/786.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/786.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/786.gif",
           "types": [
             "psychic",
             "fairy"
@@ -42294,8 +42294,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/787.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/787.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/787.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/787.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/787.gif",
           "types": [
             "grass",
             "fairy"
@@ -42386,8 +42386,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/789.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/789.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/789.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/789.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/789.gif",
           "types": [
             "psychic"
           ],
@@ -42426,8 +42426,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/790.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/790.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/790.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/790.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/790.gif",
           "types": [
             "psychic"
           ],
@@ -42466,8 +42466,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/791.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/791.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/791.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/791.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/791.gif",
           "types": [
             "psychic",
             "steel"
@@ -42507,8 +42507,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/792.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/792.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/792.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/792.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/792.gif",
           "types": [
             "psychic",
             "ghost"
@@ -42548,8 +42548,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/793.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/793.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/793.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/793.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/793.gif",
           "types": [
             "rock",
             "poison"
@@ -42589,8 +42589,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/794.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/794.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/794.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/794.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/794.gif",
           "types": [
             "bug",
             "fighting"
@@ -42630,8 +42630,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/795.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/795.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/795.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/795.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/795.gif",
           "types": [
             "bug",
             "fighting"
@@ -42671,8 +42671,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/796.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/796.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/796.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/796.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/796.gif",
           "types": [
             "electric"
           ],
@@ -42711,8 +42711,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/797.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/797.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/797.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/797.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/797.gif",
           "types": [
             "steel",
             "flying"
@@ -42752,8 +42752,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/798.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/798.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/798.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/798.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/798.gif",
           "types": [
             "grass",
             "steel"
@@ -42834,8 +42834,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/800.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/800.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/800.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/800.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/800.gif",
           "types": [
             "psychic"
           ],
@@ -42874,8 +42874,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/801.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/801.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/801.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/801.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/801.gif",
           "types": [
             "steel",
             "fairy"
@@ -42950,8 +42950,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/802.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/802.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/802.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/802.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/802.gif",
           "types": [
             "fighting",
             "ghost"
@@ -43031,8 +43031,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/804.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/804.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/804.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/804.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/804.gif",
           "types": [
             "poison",
             "dragon"
@@ -43072,8 +43072,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/805.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/805.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/805.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/805.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/805.gif",
           "types": [
             "rock",
             "steel"
@@ -43113,8 +43113,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/806.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/806.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/806.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/806.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/806.gif",
           "types": [
             "fire",
             "ghost"
@@ -43154,8 +43154,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/807.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/807.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/807.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/807.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/807.gif",
           "types": [
             "electric"
           ],
@@ -43228,8 +43228,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/808.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/808.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/808.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/808.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/808.gif",
           "types": [
             "steel"
           ],
@@ -43268,8 +43268,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/809.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/809.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/809.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/809.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/809.gif",
           "types": [
             "steel"
           ],
@@ -43313,8 +43313,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10161.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10161.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10161.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10161.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10161.gif",
           "types": [
             "steel"
           ],
@@ -43465,8 +43465,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10162.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10162.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10162.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10162.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10162.gif",
           "types": [
             "psychic"
           ],
@@ -43566,8 +43566,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10164.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10164.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10164.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10164.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10164.gif",
           "types": [
             "psychic"
           ],
@@ -43618,8 +43618,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10165.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10165.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10165.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10165.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10165.gif",
           "types": [
             "poison",
             "psychic"
@@ -43671,8 +43671,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10166.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10166.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10166.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10166.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10166.gif",
           "types": [
             "fighting"
           ],
@@ -43718,8 +43718,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10231.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10231.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10231.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10231.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10231.gif",
           "types": [
             "electric",
             "grass"
@@ -43820,8 +43820,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10167.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10167.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10167.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10167.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10167.gif",
           "types": [
             "poison",
             "fairy"
@@ -43922,8 +43922,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10169.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10169.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10169.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10169.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10169.gif",
           "types": [
             "psychic",
             "flying"
@@ -43963,8 +43963,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10170.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10170.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10170.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10170.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10170.gif",
           "types": [
             "fighting",
             "flying"
@@ -44091,8 +44091,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10172.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10172.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10172.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10172.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10172.gif",
           "types": [
             "poison",
             "psychic"
@@ -44246,8 +44246,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10173.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10173.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10173.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10173.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10173.gif",
           "types": [
             "ghost"
           ],
@@ -44293,8 +44293,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10174.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10174.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10174.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10174.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10174.gif",
           "types": [
             "dark",
             "normal"
@@ -44344,8 +44344,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10175.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10175.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10175.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10175.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10175.gif",
           "types": [
             "dark",
             "normal"
@@ -44395,8 +44395,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10245.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10245.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10245.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10245.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10245.gif",
           "types": [
             "steel",
             "dragon"
@@ -44487,8 +44487,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10236.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10236.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10236.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10236.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10236.gif",
           "types": [
             "water",
             "dark"
@@ -44533,8 +44533,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10237.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10237.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10237.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10237.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10237.gif",
           "types": [
             "grass",
             "fighting"
@@ -44758,8 +44758,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10239.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10239.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10239.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10239.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10239.gif",
           "types": [
             "normal",
             "ghost"
@@ -44893,8 +44893,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10241.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10241.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10241.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10241.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10241.gif",
           "types": [
             "steel",
             "dragon"
@@ -44944,8 +44944,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10242.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/10242.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/10242.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10242.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10242.gif",
           "types": [
             "steel",
             "dragon"
@@ -45095,7 +45095,7 @@
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/810.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/810.png",
           "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/810.gif",
           "types": [
             "grass"
           ],
@@ -45141,8 +45141,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/811.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/811.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/811.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/811.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/811.gif",
           "types": [
             "grass"
           ],
@@ -45236,7 +45236,7 @@
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/813.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/813.png",
           "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/813.gif",
           "types": [
             "fire"
           ],
@@ -45282,8 +45282,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/814.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/814.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/814.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/814.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/814.gif",
           "types": [
             "fire"
           ],
@@ -45377,7 +45377,7 @@
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/816.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/816.png",
           "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/816.gif",
           "types": [
             "water"
           ],
@@ -45423,8 +45423,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/817.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/817.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/817.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/817.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/817.gif",
           "types": [
             "water"
           ],
@@ -45470,8 +45470,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/818.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/818.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/818.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/818.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/818.gif",
           "types": [
             "water"
           ],
@@ -45607,8 +45607,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/821.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/821.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/821.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/821.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/821.gif",
           "types": [
             "flying"
           ],
@@ -45657,8 +45657,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/822.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/822.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/822.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/822.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/822.gif",
           "types": [
             "flying"
           ],
@@ -45708,7 +45708,7 @@
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/823.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/823.png",
           "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/823.gif",
           "types": [
             "flying",
             "steel"
@@ -45758,8 +45758,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/824.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/824.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/824.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/824.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/824.gif",
           "types": [
             "bug"
           ],
@@ -46060,8 +46060,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/830.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/830.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/830.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/830.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/830.gif",
           "types": [
             "grass"
           ],
@@ -46111,7 +46111,7 @@
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/831.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/831.png",
           "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/831.gif",
           "types": [
             "normal"
           ],
@@ -46160,8 +46160,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/832.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/832.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/832.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/832.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/832.gif",
           "types": [
             "normal"
           ],
@@ -46210,8 +46210,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/833.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/833.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/833.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/833.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/833.gif",
           "types": [
             "water"
           ],
@@ -46262,8 +46262,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/834.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/834.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/834.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/834.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/834.gif",
           "types": [
             "water",
             "rock"
@@ -46315,8 +46315,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/835.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/835.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/835.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/835.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/835.gif",
           "types": [
             "electric"
           ],
@@ -46405,8 +46405,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/837.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/837.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/837.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/837.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/837.gif",
           "types": [
             "rock"
           ],
@@ -46455,8 +46455,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/838.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/838.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/838.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/838.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/838.gif",
           "types": [
             "rock",
             "fire"
@@ -46506,8 +46506,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/839.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/839.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/839.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/839.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/839.gif",
           "types": [
             "rock",
             "fire"
@@ -46557,8 +46557,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/840.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/840.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/840.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/840.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/840.gif",
           "types": [
             "grass",
             "dragon"
@@ -46716,8 +46716,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/843.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/843.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/843.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/843.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/843.gif",
           "types": [
             "ground"
           ],
@@ -46820,8 +46820,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/845.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/845.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/845.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/845.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/845.gif",
           "types": [
             "flying",
             "water"
@@ -46863,8 +46863,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/846.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/846.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/846.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/846.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/846.gif",
           "types": [
             "water"
           ],
@@ -46908,8 +46908,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/847.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/847.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/847.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/847.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/847.gif",
           "types": [
             "water"
           ],
@@ -46953,8 +46953,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/848.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/848.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/848.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/848.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/848.gif",
           "types": [
             "electric",
             "poison"
@@ -47004,8 +47004,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/849.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/849.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/849.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/849.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/849.gif",
           "types": [
             "electric",
             "poison"
@@ -47157,8 +47157,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/852.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/852.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/852.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/852.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/852.gif",
           "types": [
             "fighting"
           ],
@@ -47345,8 +47345,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/856.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/856.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/856.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/856.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/856.gif",
           "types": [
             "psychic"
           ],
@@ -47445,8 +47445,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/858.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/858.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/858.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/858.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/858.gif",
           "types": [
             "psychic",
             "fairy"
@@ -47496,8 +47496,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/859.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/859.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/859.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/859.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/859.gif",
           "types": [
             "dark",
             "fairy"
@@ -47602,8 +47602,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/861.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/861.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/861.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/861.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/861.gif",
           "types": [
             "dark",
             "fairy"
@@ -47655,8 +47655,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/862.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/862.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/862.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/862.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/862.gif",
           "types": [
             "dark",
             "normal"
@@ -47706,8 +47706,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/862.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/862.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/862.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/862.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/862.gif",
           "types": [
             "dark",
             "normal"
@@ -47757,8 +47757,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/863.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/863.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/863.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/863.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/863.gif",
           "types": [
             "steel"
           ],
@@ -47807,8 +47807,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/863.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/863.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/863.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/863.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/863.gif",
           "types": [
             "steel"
           ],
@@ -47857,8 +47857,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/864.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/864.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/864.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/864.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/864.gif",
           "types": [
             "ghost"
           ],
@@ -47904,8 +47904,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/864.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/864.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/864.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/864.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/864.gif",
           "types": [
             "ghost"
           ],
@@ -48045,8 +48045,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/866.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/866.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/866.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/866.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/866.gif",
           "types": [
             "ice",
             "psychic"
@@ -48096,8 +48096,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/866.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/866.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/866.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/866.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/866.gif",
           "types": [
             "ice",
             "psychic"
@@ -48147,8 +48147,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/867.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/867.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/867.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/867.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/867.gif",
           "types": [
             "ground",
             "ghost"
@@ -48190,8 +48190,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/867.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/867.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/867.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/867.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/867.gif",
           "types": [
             "ground",
             "ghost"
@@ -48233,8 +48233,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/868.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/868.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/868.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/868.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/868.gif",
           "types": [
             "fairy"
           ],
@@ -48327,8 +48327,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/870.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/870.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/870.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/870.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/870.gif",
           "types": [
             "fighting"
           ],
@@ -48410,8 +48410,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/871.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/871.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/871.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/871.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/871.gif",
           "types": [
             "electric"
           ],
@@ -48457,8 +48457,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/872.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/872.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/872.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/872.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/872.gif",
           "types": [
             "ice",
             "bug"
@@ -48503,8 +48503,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/873.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/873.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/873.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/873.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/873.gif",
           "types": [
             "ice",
             "bug"
@@ -48549,8 +48549,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/874.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/874.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/874.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/874.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/874.gif",
           "types": [
             "rock"
           ],
@@ -48589,8 +48589,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/875.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/875.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/875.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/875.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/875.gif",
           "types": [
             "ice"
           ],
@@ -48631,8 +48631,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/876.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/876.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/876.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/876.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/876.gif",
           "types": [
             "psychic",
             "normal"
@@ -48682,8 +48682,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/877.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/877.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/877.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/877.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/877.gif",
           "types": [
             "electric",
             "dark"
@@ -48725,8 +48725,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/878.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/878.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/878.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/878.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/878.gif",
           "types": [
             "steel"
           ],
@@ -48819,8 +48819,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/880.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/880.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/880.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/880.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/880.gif",
           "types": [
             "electric",
             "dragon"
@@ -48921,8 +48921,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/882.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/882.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/882.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/882.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/882.gif",
           "types": [
             "water",
             "dragon"
@@ -48972,8 +48972,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/883.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/883.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/883.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/883.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/883.gif",
           "types": [
             "water",
             "ice"
@@ -49024,7 +49024,7 @@
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/884.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/884.png",
           "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/884.gif",
           "types": [
             "steel",
             "dragon"
@@ -49076,8 +49076,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/885.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/885.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/885.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/885.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/885.gif",
           "types": [
             "dragon",
             "ghost"
@@ -49129,8 +49129,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/886.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/886.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/886.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/886.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/886.gif",
           "types": [
             "dragon",
             "ghost"
@@ -49182,8 +49182,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/887.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/887.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/887.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/887.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/887.gif",
           "types": [
             "dragon",
             "ghost"
@@ -49235,8 +49235,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/888.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/888.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/888.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/888.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/888.gif",
           "types": [
             "fairy"
           ],
@@ -49275,8 +49275,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/889.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/889.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/889.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/889.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/889.gif",
           "types": [
             "fighting"
           ],
@@ -49315,8 +49315,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/890.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/890.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/890.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/890.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/890.gif",
           "types": [
             "poison",
             "dragon"
@@ -49518,8 +49518,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/895.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/895.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/895.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/895.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/895.gif",
           "types": [
             "dragon"
           ],
@@ -49558,8 +49558,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/896.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/896.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/896.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/896.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/896.gif",
           "types": [
             "ice"
           ],
@@ -49638,8 +49638,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/898.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/898.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/898.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/898.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/898.gif",
           "types": [
             "psychic",
             "grass"
@@ -49679,8 +49679,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/899.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/899.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/899.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/899.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/899.gif",
           "types": [
             "normal",
             "psychic"
@@ -49781,8 +49781,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/901.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/901.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/901.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/901.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/901.gif",
           "types": [
             "ground",
             "normal"
@@ -49832,8 +49832,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/902.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/902.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/902.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/902.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/902.gif",
           "types": [
             "water",
             "ghost"
@@ -49985,8 +49985,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/904.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/904.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/904.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/904.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/904.gif",
           "types": [
             "dark",
             "poison"
@@ -50292,8 +50292,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/899.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/899.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/899.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/899.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/899.gif",
           "types": [
             "normal",
             "psychic"
@@ -50394,8 +50394,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/901.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/901.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/901.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/901.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/901.gif",
           "types": [
             "ground",
             "normal"
@@ -50445,8 +50445,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/902.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/902.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/902.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/902.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/902.gif",
           "types": [
             "water",
             "ghost"
@@ -50547,8 +50547,8 @@
           "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/904.png",
           "normalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/904.png",
           "shinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/shiny/904.png",
-          "animatedNormalImage": null,
-          "animatedShinyImage": null,
+          "animatedNormalImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/904.gif",
+          "animatedShinyImage": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/904.gif",
           "types": [
             "dark",
             "poison"
