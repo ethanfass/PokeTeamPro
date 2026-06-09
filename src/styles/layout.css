@@ -229,11 +229,12 @@ h1 {
 }
 
 .home-team-slot {
+  --home-slot-accent: 90, 132, 255;
   display: grid;
   place-items: center;
   height: 7rem;
   min-height: 0;
-  border: 2px solid rgba(90, 132, 255, 0.18);
+  border: 2px solid rgba(var(--home-slot-accent), 0.18);
   border-radius: 18px;
   background: linear-gradient(180deg, #ffffff 0%, #eef4ff 100%);
 }
@@ -249,12 +250,30 @@ h1 {
   object-fit: contain;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
-  filter: drop-shadow(0 8px 14px rgba(36, 50, 74, 0.14));
 }
 
-.home-team-slot .home-team-sprite[src$='pokeball.png'] {
-  width: min(44px, 48%);
-  height: min(44px, 48%);
+.home-team-slot-fire {
+  --home-slot-accent: 240, 128, 48;
+}
+
+.home-team-slot-water {
+  --home-slot-accent: 104, 144, 240;
+}
+
+.home-team-slot-electric {
+  --home-slot-accent: 248, 208, 48;
+}
+
+.home-team-slot-grass {
+  --home-slot-accent: 120, 200, 80;
+}
+
+.home-team-slot-dragon {
+  --home-slot-accent: 112, 56, 248;
+}
+
+.home-team-slot-fairy {
+  --home-slot-accent: 238, 153, 172;
 }
 
 .home-mini-panel {

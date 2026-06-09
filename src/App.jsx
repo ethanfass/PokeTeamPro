@@ -3925,12 +3925,19 @@ function App() {
       hoveredPokemonCard?.pokemon &&
       getPokemonCacheKey(pokemon) === getPokemonCacheKey(hoveredPokemonCard.pokemon)
     )
-  const homeMascotSprites = [
-    { static: '/lapras.png' },
-    { static: '/pokeball.png' },
-    { static: '/lapras.png' },
-    { static: '/pokeball.png' }
+  const homeHeroTeam = [
+    { name: 'Charizard', sprite: '/home-team/charizard.png', types: ['fire', 'flying'] },
+    { name: 'Lapras', sprite: '/home-team/lapras.png', types: ['water', 'ice'] },
+    { name: 'Jolteon', sprite: '/home-team/jolteon.png', types: ['electric'] },
+    { name: 'Venusaur', sprite: '/home-team/venusaur.png', types: ['grass', 'poison'] },
+    { name: 'Dragonite', sprite: '/home-team/dragonite.png', types: ['dragon', 'flying'] },
+    { name: 'Clefable', sprite: '/home-team/clefable.png', types: ['fairy'] }
   ]
+  const homeHeroCounters = typesList.filter((targetType) =>
+    homeHeroTeam.some((pokemon) =>
+      pokemon.types.some((pokemonType) => typeEffectiveness[pokemonType]?.strong.includes(targetType))
+    )
+  )
   const homeStatCards = [
     { label: 'Pokemon', value: loading ? 'Loading' : allBrowsePokemon.length.toLocaleString(), accent: 'blue' },
     { label: 'Games', value: gamesList.length.toLocaleString(), accent: 'green' },
@@ -4244,22 +4251,24 @@ function App() {
                 </div>
                 <div className="home-hero-showcase" aria-hidden="true">
                   <div className="home-team-preview">
-                    {homeMascotSprites.map((gamePickerSprite, spriteIndex) => (
-                      <div key={`home-mascot-${spriteIndex}`} className="home-team-slot">
+                    {homeHeroTeam.map((pokemon) => (
+                      <div
+                        key={`home-hero-${pokemon.name}`}
+                        className={`home-team-slot home-team-slot-filled home-team-slot-${pokemon.types[0]}`}
+                        title={pokemon.name}
+                      >
                         <img
-                          src={gamePickerSprite.animated || gamePickerSprite.static}
+                          src={pokemon.sprite}
                           alt=""
                           className="home-team-sprite"
                         />
                       </div>
                     ))}
-                    <div className="home-team-slot home-team-slot-empty"></div>
-                    <div className="home-team-slot home-team-slot-empty"></div>
                   </div>
                   <div className="home-mini-panel">
-                    <span className="home-mini-panel-label">Coverage</span>
+                    <span className="home-mini-panel-label">Counters</span>
                     <div className="home-type-row">
-                      {['fire', 'water', 'electric', 'grass', 'dragon', 'fairy'].map((type) => (
+                      {homeHeroCounters.map((type) => (
                         <span key={`home-type-${type}`} className={`type-badge type-${type}`}>
                           {formatDisplayName(type)}
                         </span>

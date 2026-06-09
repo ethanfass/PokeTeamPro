@@ -486,15 +486,15 @@ export const typeEffectiveness = {
   rock: { weakTo: ['water', 'grass', 'fighting', 'ground', 'steel'], strong: ['flying', 'bug', 'fire', 'ice'] },
   bug: { weakTo: ['flying', 'rock', 'fire'], strong: ['grass', 'psychic', 'dark'] },
   ghost: { weakTo: ['ghost', 'dark'], strong: ['ghost', 'psychic'] },
-  steel: { weakTo: ['fire', 'water', 'ground'], strong: ['rock', 'ice', 'fairy'] },
-  fire: { weakTo: ['water', 'ground', 'rock'], strong: ['bug', 'steel', 'grass', 'ice', 'fairy'] },
+  steel: { weakTo: ['fire', 'fighting', 'ground'], strong: ['rock', 'ice', 'fairy'] },
+  fire: { weakTo: ['water', 'ground', 'rock'], strong: ['bug', 'steel', 'grass', 'ice'] },
   water: { weakTo: ['electric', 'grass'], strong: ['ground', 'rock', 'fire'] },
   grass: { weakTo: ['flying', 'poison', 'bug', 'fire', 'ice'], strong: ['ground', 'rock', 'water'] },
   electric: { weakTo: ['ground'], strong: ['water', 'flying'] },
   psychic: { weakTo: ['bug', 'ghost', 'dark'], strong: ['fighting', 'poison'] },
   ice: { weakTo: ['fire', 'fighting', 'rock', 'steel'], strong: ['ground', 'grass', 'flying', 'dragon'] },
   dragon: { weakTo: ['ice', 'dragon', 'fairy'], strong: ['dragon'] },
-  dark: { weakTo: ['fighting', 'bug', 'fairy'], strong: ['ghost', 'dark'] },
+  dark: { weakTo: ['fighting', 'bug', 'fairy'], strong: ['ghost', 'psychic'] },
   fairy: { weakTo: ['poison', 'steel'], strong: ['fighting', 'dragon', 'dark'] }
 }
 
@@ -507,7 +507,7 @@ export const defensiveTypeChart = {
   rock: { weak: ['water', 'grass', 'fighting', 'ground', 'steel'], resist: ['normal', 'flying', 'poison', 'fire'], immune: [] },
   bug: { weak: ['flying', 'rock', 'fire'], resist: ['fighting', 'ground', 'grass'], immune: [] },
   ghost: { weak: ['ghost', 'dark'], resist: ['poison', 'bug'], immune: ['normal', 'fighting'] },
-  steel: { weak: ['fire', 'water', 'ground'], resist: ['normal', 'flying', 'rock', 'bug', 'steel', 'grass', 'psychic', 'ice', 'dragon', 'fairy'], immune: ['poison'] },
+  steel: { weak: ['fire', 'fighting', 'ground'], resist: ['normal', 'flying', 'rock', 'bug', 'steel', 'grass', 'psychic', 'ice', 'dragon', 'fairy'], immune: ['poison'] },
   fire: { weak: ['water', 'ground', 'rock'], resist: ['bug', 'steel', 'fire', 'grass', 'ice', 'fairy'], immune: [] },
   water: { weak: ['electric', 'grass'], resist: ['steel', 'fire', 'water', 'ice'], immune: [] },
   grass: { weak: ['flying', 'poison', 'bug', 'fire', 'ice'], resist: ['ground', 'water', 'grass', 'electric'], immune: [] },
