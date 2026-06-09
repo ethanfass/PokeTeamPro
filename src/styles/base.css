@@ -1083,9 +1083,12 @@
 }
 
 .pokemon-hover-game-item::after {
-  content: '•';
-  margin-left: 3px;
-  color: #91a0b7;
+  content: '';
+  width: 4px;
+  height: 4px;
+  margin-left: 4px;
+  border-radius: 999px;
+  background: #91a0b7;
 }
 
 .pokemon-hover-game-item:last-child::after {

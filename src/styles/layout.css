@@ -77,9 +77,9 @@
 
 h1 {
   margin: 0;
-  font-size: clamp(3rem, 4.8vw, 4.4rem);
-  line-height: 0.92;
-  letter-spacing: -0.08em;
+  font-size: 3.7rem;
+  line-height: 1;
+  letter-spacing: 0;
   color: var(--theme-display-heading);
   text-wrap: balance;
   text-shadow: var(--theme-title-shadow);
@@ -88,7 +88,10 @@ h1 {
 .page-title-main {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  max-width: 100%;
   gap: 0.18em;
+  flex-wrap: wrap;
 }
 
 .page-subtitle {
@@ -138,7 +141,7 @@ h1 {
 
 .home-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.98fr);
+  grid-template-columns: minmax(0, 1.04fr) minmax(300px, 0.96fr);
   gap: 26px;
   align-items: center;
 }
@@ -155,8 +158,9 @@ h1 {
   max-width: 760px;
   margin: 0;
   color: var(--theme-heading);
-  font-size: clamp(2.4rem, 5vw, 4.4rem);
-  line-height: 0.98;
+  font-size: 3.35rem;
+  line-height: 1.04;
+  text-wrap: balance;
 }
 
 .home-copy {
@@ -178,16 +182,17 @@ h1 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 46px;
-  min-width: 138px;
-  padding: 12px 16px;
+  min-height: 64px;
+  min-width: 210px;
+  padding: 18px 32px;
   border: 1px solid var(--theme-control-border);
-  border-radius: 14px;
+  border-radius: 16px;
   background: var(--theme-control-background);
   color: var(--theme-shell-text);
   font-family: 'PKMN RBYGSC', monospace;
-  font-size: 0.62rem;
+  font-size: 0.82rem;
   line-height: 1.2;
+  text-align: center;
   cursor: pointer;
   box-shadow: var(--theme-control-shadow);
   transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
@@ -206,7 +211,9 @@ h1 {
 }
 
 .home-hero-showcase {
+  width: min(100%, 500px);
   min-width: 0;
+  justify-self: end;
   padding: 18px;
   border: 1px solid rgba(108, 128, 161, 0.14);
   border-radius: 22px;
@@ -224,8 +231,8 @@ h1 {
 .home-team-slot {
   display: grid;
   place-items: center;
-  aspect-ratio: 1;
-  min-height: 92px;
+  height: 7rem;
+  min-height: 0;
   border: 2px solid rgba(90, 132, 255, 0.18);
   border-radius: 18px;
   background: linear-gradient(180deg, #ffffff 0%, #eef4ff 100%);
@@ -243,6 +250,11 @@ h1 {
   image-rendering: pixelated;
   image-rendering: crisp-edges;
   filter: drop-shadow(0 8px 14px rgba(36, 50, 74, 0.14));
+}
+
+.home-team-slot .home-team-sprite[src$='pokeball.png'] {
+  width: min(44px, 48%);
+  height: min(44px, 48%);
 }
 
 .home-mini-panel {
@@ -294,8 +306,9 @@ h1 {
 
 .home-stat-value {
   color: rgb(var(--home-accent-rgb, 90, 132, 255));
-  font-size: clamp(1.25rem, 2.3vw, 1.85rem);
+  font-size: 1.65rem;
   line-height: 1.1;
+  overflow-wrap: anywhere;
 }
 
 .home-stat-label {
@@ -307,7 +320,7 @@ h1 {
 }
 
 .home-feature-grid {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   margin-top: 14px;
 }
 
@@ -326,12 +339,13 @@ h1 {
 .home-feature-section-title {
   margin: 0;
   color: var(--theme-heading);
-  font-size: clamp(1.45rem, 2.4vw, 2rem);
+  font-size: 1.85rem;
   line-height: 1.15;
+  text-wrap: balance;
 }
 
 .home-feature-card {
-  min-height: 230px;
+  min-height: 248px;
   padding: 18px;
   border-radius: 18px;
   color: var(--theme-shell-text);
@@ -348,6 +362,7 @@ h1 {
 }
 
 .home-feature-visual {
+  display: flex;
   min-height: 126px;
   margin-bottom: 14px;
   padding: 12px;
@@ -363,6 +378,7 @@ h1 {
   color: var(--theme-heading);
   font-size: 0.9rem;
   line-height: 1.25;
+  overflow-wrap: anywhere;
 }
 
 .home-feature-copy {
@@ -370,12 +386,14 @@ h1 {
   color: var(--theme-muted);
   font-size: 0.64rem;
   line-height: 1.65;
+  overflow-wrap: anywhere;
 }
 
 .home-preview-team {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
+  width: 100%;
 }
 
 .home-preview-team-slot,
@@ -396,19 +414,18 @@ h1 {
   background: linear-gradient(180deg, #ffffff 0%, rgba(var(--home-accent-rgb, 90, 132, 255), 0.12) 100%);
 }
 
-.home-preview-sprite-dot,
-.home-preview-item-icon,
-.home-preview-suggestion-avatar,
-.home-preview-trainer-member {
+.home-preview-item-icon {
   display: inline-flex;
   border-radius: 999px;
   background: rgb(var(--home-accent-rgb, 90, 132, 255));
   box-shadow: 0 8px 14px rgba(var(--home-accent-rgb, 90, 132, 255), 0.18);
 }
 
-.home-preview-sprite-dot {
-  width: 22px;
-  height: 22px;
+.home-preview-slot-sprite {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  image-rendering: pixelated;
 }
 
 .home-preview-browser,
@@ -422,6 +439,7 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 9px;
+  width: 100%;
   min-height: 100%;
 }
 
@@ -458,9 +476,18 @@ h1 {
 }
 
 .home-preview-pokemon-card {
+  display: grid;
+  place-items: center;
   min-height: 42px;
-  opacity: 0.9;
+  opacity: 0.92;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.34);
+}
+
+.home-preview-card-sprite {
+  width: 82%;
+  height: 82%;
+  object-fit: contain;
+  image-rendering: pixelated;
 }
 
 .home-preview-bar-row {
@@ -495,11 +522,18 @@ h1 {
   background: rgba(255, 255, 255, 0.62);
 }
 
-.home-preview-suggestion-avatar,
 .home-preview-item-icon {
   width: 18px;
   height: 18px;
   flex-shrink: 0;
+}
+
+.home-preview-suggestion-sprite {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  object-fit: contain;
+  image-rendering: pixelated;
 }
 
 .home-preview-item {
@@ -555,10 +589,20 @@ h1 {
 }
 
 .home-preview-trainer-member {
+  display: grid;
+  place-items: center;
   width: 100%;
   aspect-ratio: 1;
   border-radius: 12px;
-  opacity: 0.82;
+  border: 1px solid rgba(var(--home-accent-rgb, 90, 132, 255), 0.22);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(var(--home-accent-rgb, 90, 132, 255), 0.14) 100%);
+}
+
+.home-preview-member-sprite {
+  width: 84%;
+  height: 84%;
+  object-fit: contain;
+  image-rendering: pixelated;
 }
 
 .home-preview-saved-actions {
@@ -637,8 +681,9 @@ h1 {
 .game-picker-title {
   margin: 0 0 10px;
   color: var(--theme-heading);
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-size: 2.2rem;
   line-height: 1.05;
+  text-wrap: balance;
 }
 
 .game-picker-copy {

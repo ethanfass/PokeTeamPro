@@ -2403,7 +2403,7 @@ function App() {
     selectedGame === 'all' || selectedGame === 'champions'
       ? 'Move rules combine every tracked game this Pokemon can learn in.'
       : getVersionGroupsForGameKey(selectedGame).length === 0
-        ? `${selectedGameDetails?.name || 'This game'} is not on PokéAPI's learnset list yet, so move selection falls back to each Pokemon's most recent supported learnset.`
+        ? `${selectedGameDetails?.name || 'This game'} is not on PokeAPI's learnset list yet, so move selection falls back to each Pokemon's most recent supported learnset.`
         : `Moves are filtered by ${selectedGameDetails?.name || 'the selected game'}.`
   const baseFilteredMoves = moves.filter((move) => {
     const matchesSearch =
@@ -3595,7 +3595,7 @@ function App() {
         assignmentLabel: fallbackGame.name,
         helperText:
           requestedVersionGroups.length === 0
-            ? `${requestedGame?.name || 'This game'} is not on PokéAPI's learnset list yet, so this uses ${fallbackGame.name}.`
+            ? `${requestedGame?.name || 'This game'} is not on PokeAPI's learnset list yet, so this uses ${fallbackGame.name}.`
             : `No direct learnset data was found for ${requestedGame?.name || 'this game'}, so this uses ${fallbackGame.name}.`
       }
     }
@@ -3925,9 +3925,12 @@ function App() {
       hoveredPokemonCard?.pokemon &&
       getPokemonCacheKey(pokemon) === getPokemonCacheKey(hoveredPokemonCard.pokemon)
     )
-  const homeMascotSprites = ['all', 'red', 'blue', 'gold']
-    .flatMap((gameKey) => getGamePickerSprites(gameKey).slice(0, 1))
-    .slice(0, 4)
+  const homeMascotSprites = [
+    { static: '/lapras.png' },
+    { static: '/pokeball.png' },
+    { static: '/lapras.png' },
+    { static: '/pokeball.png' }
+  ]
   const homeStatCards = [
     { label: 'Pokemon', value: loading ? 'Loading' : allBrowsePokemon.length.toLocaleString(), accent: 'blue' },
     { label: 'Games', value: gamesList.length.toLocaleString(), accent: 'green' },
@@ -3996,13 +3999,16 @@ function App() {
       previewKind: 'saved'
     }
   ]
+  const homeSpriteUrl = (speciesId) => getGamePickerSpriteUrls(speciesId, showShinySprites).static
+
   const renderHomeFeaturePreview = (previewKind) => {
     if (previewKind === 'team') {
+      const teamSpriteIds = [6, 9, 3, 25]
       return (
         <div className="home-preview-team">
           {[0, 1, 2, 3, 4, 5].map((slotIndex) => (
             <div key={`home-team-preview-${slotIndex}`} className={`home-preview-team-slot ${slotIndex < 4 ? 'filled' : ''}`}>
-              {slotIndex < 4 ? <span className="home-preview-sprite-dot"></span> : null}
+              {slotIndex < 4 ? <img className="home-preview-slot-sprite" src={homeSpriteUrl(teamSpriteIds[slotIndex])} alt="" /> : null}
             </div>
           ))}
         </div>
@@ -4010,6 +4016,12 @@ function App() {
     }
 
     if (previewKind === 'browser') {
+      const browserEntries = [
+        ['fire', 4],
+        ['water', 7],
+        ['grass', 1],
+        ['electric', 135]
+      ]
       return (
         <div className="home-preview-browser">
           <div className="home-preview-filter-row">
@@ -4017,8 +4029,10 @@ function App() {
             <span>BST 500+</span>
           </div>
           <div className="home-preview-card-grid">
-            {['fire', 'water', 'grass', 'electric'].map((type) => (
-              <span key={`home-browser-${type}`} className={`home-preview-pokemon-card type-${type}`}></span>
+            {browserEntries.map(([type, speciesId]) => (
+              <span key={`home-browser-${type}`} className={`home-preview-pokemon-card type-${type}`}>
+                <img className="home-preview-card-sprite" src={homeSpriteUrl(speciesId)} alt="" />
+              </span>
             ))}
           </div>
         </div>
@@ -4045,11 +4059,16 @@ function App() {
     }
 
     if (previewKind === 'suggestions') {
+      const suggestionEntries = [
+        ['Patch Water', 134],
+        ['Adds Ground', 445],
+        ['BST 540', 462]
+      ]
       return (
         <div className="home-preview-suggestions">
-          {['Patch Water', 'Adds Ground', 'BST 540'].map((label) => (
+          {suggestionEntries.map(([label, speciesId]) => (
             <div key={`home-suggestion-${label}`} className="home-preview-suggestion-row">
-              <span className="home-preview-suggestion-avatar"></span>
+              <img className="home-preview-suggestion-sprite" src={homeSpriteUrl(speciesId)} alt="" />
               <span>{label}</span>
             </div>
           ))}
@@ -4105,6 +4124,7 @@ function App() {
     }
 
     if (previewKind === 'gyms' || previewKind === 'elite') {
+      const trainerSpriteIds = previewKind === 'elite' ? [442, 609, 711, 778] : [94, 426, 354, 477]
       return (
         <div className="home-preview-trainer">
           <div className="home-preview-trainer-header">
@@ -4112,8 +4132,10 @@ function App() {
             <span className="type-badge type-ghost">Ghost</span>
           </div>
           <div className="home-preview-trainer-team">
-            {[0, 1, 2, 3].map((memberIndex) => (
-              <span key={`home-trainer-${previewKind}-${memberIndex}`} className="home-preview-trainer-member"></span>
+            {trainerSpriteIds.map((speciesId, memberIndex) => (
+              <span key={`home-trainer-${previewKind}-${memberIndex}`} className="home-preview-trainer-member">
+                <img className="home-preview-member-sprite" src={homeSpriteUrl(speciesId)} alt="" />
+              </span>
             ))}
           </div>
         </div>
@@ -4197,7 +4219,7 @@ function App() {
             )}
             <h1>
               <span className="page-title-main">
-                PokéTeamPro
+                Pokemon Team Pro
               </span>
               <br />
               <span className="page-subtitle">Pokemon{' '}Team{' '}Builder</span>

@@ -245,7 +245,7 @@
   margin: 0;
   font-size: 1.8rem;
   font-weight: 800;
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
   color: #22304a;
   text-align: center;
 }
@@ -276,7 +276,7 @@
   opacity: 0.94;
   cursor: default;
   font-size: 1em;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
   transition: transform 0.28s ease, color 0.45s ease-in-out, text-shadow 0.45s ease-in-out, filter 0.45s ease-in-out, opacity 0.45s ease-in-out;
 }
 
@@ -377,7 +377,7 @@
   margin-bottom: 4px;
   font-size: 0.98rem;
   font-weight: 800;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   color: var(--theme-muted);
 }
 

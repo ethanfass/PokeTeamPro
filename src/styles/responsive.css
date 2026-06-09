@@ -83,6 +83,10 @@
     padding: 88px 16px 24px;
   }
 
+  h1 {
+    font-size: 2.9rem;
+  }
+
   .home-button {
     top: 16px;
     left: 16px;
@@ -126,9 +130,18 @@
 
   .home-hero {
     grid-template-columns: 1fr;
+    align-items: stretch;
   }
 
-  .home-stat-grid,
+  .home-hero-showcase {
+    width: 100%;
+    justify-self: stretch;
+  }
+
+  .home-stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .home-feature-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -163,9 +176,23 @@
 }
 
 @media (max-width: 640px) {
+  .app-wrapper {
+    padding: 78px 12px 18px;
+  }
+
   .home-button {
     top: 14px;
     left: 14px;
+  }
+
+  h1 {
+    font-size: 2.05rem;
+    line-height: 1.08;
+  }
+
+  .page-subtitle {
+    margin-top: 6px;
+    font-size: 0.46em;
   }
 
   .pokemon-hover-card {
@@ -216,11 +243,26 @@
   }
 
   .home-page-section {
-    padding: 20px;
+    padding: 16px;
   }
 
   .home-title {
-    font-size: clamp(2.1rem, 11vw, 3rem);
+    font-size: 2.08rem;
+    line-height: 1.1;
+  }
+
+  .home-copy {
+    font-size: 0.72rem;
+    line-height: 1.65;
+  }
+
+  .home-hero-showcase {
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .home-stat-value {
+    font-size: 1.38rem;
   }
 
   .home-actions,
@@ -235,13 +277,60 @@
   }
 
   .home-stat-grid,
-  .home-feature-grid,
-  .home-team-preview {
+  .home-feature-grid {
     grid-template-columns: 1fr;
   }
 
   .home-team-preview {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .home-team-slot {
+    height: 5.7rem;
+  }
+
+  .home-feature-card {
+    min-height: auto;
+    padding: 15px;
+  }
+
+  .home-feature-visual {
+    min-height: 104px;
+    padding: 10px;
+  }
+
+  .home-feature-title {
+    font-size: 0.82rem;
+  }
+
+  .home-feature-copy {
+    font-size: 0.58rem;
+    line-height: 1.55;
+  }
+
+  .home-preview-card-grid,
+  .home-preview-trainer-team {
+    gap: 6px;
+  }
+
+  .home-preview-pokemon-card {
+    min-height: 34px;
+  }
+
+  .home-preview-bar-row {
+    grid-template-columns: 68px minmax(0, 1fr);
+  }
+
+  .home-entry-title {
+    font-size: 0.82rem;
+  }
+
+  .home-entry-copy {
+    font-size: 0.56rem;
+  }
+
+  .game-picker-title {
+    font-size: 1.55rem;
   }
 
   .game-picker-grid {
@@ -382,5 +471,65 @@
 
   .pokemon-list {
     grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+  }
+}
+
+@media (max-width: 420px) {
+  h1 {
+    font-size: 1.72rem;
+  }
+
+  .app-wrapper {
+    padding-inline: 10px;
+  }
+
+  .home-page-section,
+  .game-picker-section {
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .home-title {
+    font-size: 1.72rem;
+  }
+
+  .home-kicker {
+    font-size: 0.58rem;
+    line-height: 1.3;
+  }
+
+  .home-team-preview {
+    gap: 9px;
+  }
+
+  .home-team-slot {
+    height: 4.8rem;
+    border-radius: 14px;
+  }
+
+  .home-type-row .type-badge {
+    font-size: 0.58rem;
+    padding: 4px 7px;
+  }
+
+  .home-stat-card {
+    padding: 14px;
+  }
+
+  .home-feature-section-title {
+    font-size: 1.28rem;
+  }
+
+  .home-preview-list-row,
+  .home-preview-suggestion-row,
+  .home-preview-saved-row,
+  .home-preview-item {
+    min-height: 28px;
+    padding-inline: 7px;
+  }
+
+  .game-picker-card {
+    height: auto;
+    min-height: 172px;
   }
 }
